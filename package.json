@@ -1,0 +1,17 @@
+{
+  "name": "blog_vuepress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "vuepress": "^1.0.0-alpha.46",
+    "vuepress-theme-meteorlxy": "^1.0.0-alpha.34"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src --dest dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
