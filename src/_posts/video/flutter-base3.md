@@ -13,16 +13,18 @@ Flutter第二季学完，你已经可以作一些效果出来了。但是你想�
 
 这季里我我会讲解水平布局、垂直布局、GridView布局、ListView布局、Container布局......等多种布局形式。
 
-你学习这季视频，最好可以先学一下前两季，这样可以保证你学起来更顺畅和容易。贴出前两季的文章路径。
 
-- 第一季Flutter视频教程地址：[http://jspang.com/post/flutter1.html](http://jspang.com/post/flutter1.html)
-
-
-- 第二季Flutter视频教程地址：[http://jspang.com/post/flutter2.html](http://jspang.com/post/flutter2.html)
-
-当然，如果你想和大家一起学习和讨论，还可以加入专门的Flutter群，我们一起学习。
 
 <!-- more -->
+
+你学习这季视频，最好可以先学一下前两季，这样可以保证你学起来更顺畅和容易。贴出前两季的文章路径。
+
+- 第一季Flutter视频教程地址：[https://jspang.com/posts/2019/01/20/flutter-base.html](https://jspang.com/posts/2019/01/20/flutter-base.html)
+
+
+- 第二季Flutter视频教程地址：[https://jspang.com/posts/2019/01/21/flutter-base2.html](https://jspang.com/posts/2019/01/21/flutter-base2.html)
+
+当然，如果你想和大家一起学习和讨论，还可以加入专门的Flutter群，我们一起学习。
 
 
 >学习讨论QQ群：806799257

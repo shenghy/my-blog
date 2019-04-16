@@ -13,16 +13,18 @@ vssue-title: Flutter-base04
 
 不过你不要害怕，其实也不难，大不了多练习几遍，熟练一下就好。
 
-学习这个视频，你最好先把Flutter的前三季给看了，否则你可能看蒙圈。
-
-- 第一季Flutter视频教程地址：[http://jspang.com/post/flutter1.html](http://jspang.com/post/flutter1.html)
-
-
-- 第二季Flutter视频教程地址：[http://jspang.com/post/flutter2.html](http://jspang.com/post/flutter2.html)
-
-- 第三季Flutter视频教程地址：[http://jspang.com/post/flutter3.html](http://jspang.com/post/flutter3.html)
 
 <!-- more -->
+
+
+学习这个视频，你最好先把Flutter的前三季给看了，否则你可能看蒙圈。
+
+- 第一季Flutter视频教程地址：[https://jspang.com/posts/2019/01/20/flutter-base.html](https://jspang.com/posts/2019/01/20/flutter-base.html)
+
+- 第二季Flutter视频教程地址：[https://jspang.com/posts/2019/01/21/flutter-base2.html](https://jspang.com/posts/2019/01/21/flutter-base2.html)
+
+- 第三季Flutter视频教程地址：[https://jspang.com/posts/2019/01/28/flutter-base3.html](https://jspang.com/posts/2019/01/28/flutter-base3.html)
+
 
 >学习讨论QQ群：806799257  
 

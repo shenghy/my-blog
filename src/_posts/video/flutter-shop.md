@@ -3,7 +3,7 @@ category: 视频教程
 tags:
   - Flutter
 date: 2019-03-01
-title: Flutter实战视频-移动电商 （第51节更新）
+title: Flutter实战视频-移动电商 （第55节更新）
 vssue-title: Flutter-shop
 ---
 
@@ -72,7 +72,7 @@ Flutter实战电商开始预售了，课程采用了**Flutter1.x版本（最新�
 - **复杂页面的布局**：会讲到如何布局复杂页面，如果解决多层嵌套地狱，如何写出优雅的代码。
 - **其他知识点**：还会设计到很多其他知识点，基本的Widget操作就超过50个，是目前市面教程中最多的实战课程。
 
-- **随时增加的知识技巧**：如果你参加了预售，你可以根据自己的需求，提交需要增加的知识点，会根据需求的普遍性 ，随时增加知识点。
+- **随时增加的知识技巧**：如果你参加了预售，你可以根据自己的需求，提交需要增加的知识点，会根据需求的普遍性 ，随时增加知识点(全部视频60集左右)。
 
 
 
@@ -109,7 +109,7 @@ Flutter实战电商开始预售了，课程采用了**Flutter1.x版本（最新�
 
 ## 第02节：建立项目和编写入口文件
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 点击链接看视频:[https://m.qlchat.com/topic/details?topicId=2000003619529754](https://m.qlchat.com/topic/details?topicId=2000003619529754)
 
@@ -117,11 +117,11 @@ Flutter实战电商开始预售了，课程采用了**Flutter1.x版本（最新�
 这节课正式开始我们的实战学习，请小伙伴们备好电脑，拿好小板凳，买好瓜子花生米，好戏正式开始了！！！！！
 
 在学习这门课程时，我会默认你已经学习了Flutter的基础知识。（如果你还没学过，那这里为你准备了Flutter45集免费基础视频）
-- 第一季Flutter视频教程地址：http://jspang.com/post/flutter1.html
-- 第二季Flutter视频教程地址：http://jspang.com/post/flutter2.html
-- 第三季Flutter视频教程地址：http://jspang.com/post/flutter3.html
-- 第四季Flutter视频教程地址：http://jspang.com/post/flutter4.html
-- 20个Flutter实例视频教程：http://jspang.com/post/flutterDemo.html
+- 第一季Flutter视频教程地址：https://jspang.com/posts/2019/01/20/flutter-base.html
+- 第二季Flutter视频教程地址：https://jspang.com/posts/2019/01/21/flutter-base2.html
+- 第三季Flutter视频教程地址：https://jspang.com/posts/2019/01/28/flutter-base3.html
+- 第四季Flutter视频教程地址：https://jspang.com/posts/2019/02/01/flutter-base4.html
+- 20个Flutter实例视频教程：https://jspang.com/posts/2019/02/22/flutterdemo.html
 
 -Dart中文文档:https://www.kancloud.cn/marswill/dark2_document/709087
 
@@ -212,7 +212,7 @@ import './pages/index_page.dart';
 
 完全模拟工作开发流程的Flutter实战 全网首发。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 点击链接看视频:[https://m.qlchat.com/topic/details?topicId=2000003624991418](https://m.qlchat.com/topic/details?topicId=2000003624991418)
 
@@ -298,7 +298,7 @@ final List<BottomNavigationBarItem> bottomTabs = [
 
 这节课我们先新建几个页面，页面内容都是简单放入一个TextWidget就算完事，目的是让底部导航栏可以使用和在页面之间进行切换。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 点击链接看视频:[https://m.qlchat.com/topic/details?topicId=2000003625092387](https://m.qlchat.com/topic/details?topicId=2000003625092387)
 
@@ -482,7 +482,7 @@ class _IndexPageState extends State<IndexPage> {
 
 这套课程和现在市面上其它Flutter实战教程的区别就是我们采用了真实接口，用贴近真实工作的开发流程和模式来进行授课。可以简单的认为，就是咱们一起来完成一个项目。那真实的接口，就需要使用一个可以调用接口和从接口返回数据的工具（当然Flutter提供了这样的工具，但是普遍认为不够简单话，也许都是喜欢用再封装一下的插件吧）。所以从这节课我们学习Dart的第三方Http请求库`dio`。这是国人开源的一个项目，截至到我写这篇文章时，有2300多Star。也是国内用的最广泛的Dart Http请求库。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003665355999](https://m.qlchat.com/topic/details?topicId=2000003665355999)
 
@@ -592,7 +592,7 @@ class HomePage extends StatelessWidget {
 
 所以本节就针对于这两个问题作一个小案例，当然这也是为以后的实战作基础准备，基础打牢，我们才能飞速前进。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003674889801](https://m.qlchat.com/topic/details?topicId=2000003674889801)
 
@@ -813,7 +813,7 @@ class _HomePageState extends State<HomePage> {
 
 这节学习一下POST请求的使用，其实POST和Get请求都是在工作中最重要的两种请求。比如我们要传递一组表单数据过去，这时候用Get请求就是不太合适的，使用POST比较好。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003685978382](https://m.qlchat.com/topic/details?topicId=2000003685978382)
@@ -936,7 +936,7 @@ EasyMock在工作中我使用的也是比较多，因为要和后台同步开发
 
 这节学完，大家就应该知道如何读取别人的端口数据了，比如你学完这个实战课，想自己作一个掘金或者极客时间，这都是很简单的事情了。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003696361209](https://m.qlchat.com/topic/details?topicId=2000003696361209)
@@ -1119,7 +1119,7 @@ class _HomePageState extends State<HomePage> {
 
 前几节已经对Dio的基础知识作了讲解，当然Dio还有一些比较高级的用法，这些用法就不单独拿出来讲了，在项目中遇到后再详细讲解。从这节开始，我们来制作商城的首页，那制作商城的首页第一步还是需要从后端接口获取需要使用的记录。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003709189599](https://m.qlchat.com/topic/details?topicId=2000003709189599)
@@ -1251,7 +1251,7 @@ class _HomePageState extends State<HomePage> {
 
 已经有了项目需要的数据，只是现在看起来比较乱（一坨一坨的），有很多格式化JSON的方法，这里我就不给大家墨迹了（要不又有人说我骗时长了）。如果说格式化也懒得格式化，你就直接看博客文章后方的API就可以了。如果你API都懒得看，那就泡杯茶，看视频吧。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003715926266](https://m.qlchat.com/topic/details?topicId=2000003715926266)
@@ -1428,7 +1428,7 @@ class SwiperDiy extends StatelessWidget {
 
 移动端的屏幕大小不一，IOS端就有很多种，Android端更是多如牛毛。美工或UI妹子也会经常，甜甜的问我们：“哥，设计用啥尺寸的？” 作为一个公司的技术和颜值担当，你一定要很轻松的回答这个问题。你回答后会不会心里胆怯，不用怕，学完今天这节课，你就可以轻松的回答这个问题。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003742578086](https://m.qlchat.com/topic/details?topicId=2000003742578086)
@@ -1593,7 +1593,7 @@ class SwiperDiy extends StatelessWidget {
 
 导航区是每个APP（爱啪啪，今天同事教我的，我觉的生动形象，充满娱乐性）必备的一个功能。这节课就利用`GridView` 小部件进行制作，当然制作中我们也会讲到一些布局技巧。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003752252817](https://m.qlchat.com/topic/details?topicId=2000003752252817)
@@ -1676,7 +1676,7 @@ class TopNavigator extends StatelessWidget {
 这节课的内容相对简单一点，只要制作一个广告的Bannder条就可以了。
 
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003772586514](https://m.qlchat.com/topic/details?topicId=2000003772586514)
@@ -1740,7 +1740,7 @@ AdBanner(advertesPicture:advertesPicture),   //广告组件
 
 拨打电话的功能在app里也很常见，比如一般的外卖app都会有这个才做。其实Flutter本身是没给我们提供拨打电话的能力的，那我们如何来拨打电话那?这节课我们就使用url_launcher来制作拨打电话的效果。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003776880627](https://m.qlchat.com/topic/details?topicId=2000003776880627)
@@ -1856,7 +1856,7 @@ class LeaderPhone extends StatelessWidget {
 
 简单的部门就适当省略些，中间放图片的步骤就省略点了，这节课学习一下商品推荐这个部分的编写。这个部分是一个横向列表，而且为了避免嵌套，所以要把个个组件进行内部拆分。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003787531070](https://m.qlchat.com/topic/details?topicId=2000003787531070)
@@ -2104,7 +2104,7 @@ class Recommend extends StatelessWidget {
 
 这节课算是一个补充，因为这几天一直有小伙伴问我在底部导航栏切换的时候，我作的程序页面并没有保持页面结果，就是每次切换都需要重新加载。这节课我们就来解决一下这个问题。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003797063448](https://m.qlchat.com/topic/details?topicId=2000003797063448)
@@ -2259,7 +2259,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
 
 这节课主要学习一下楼层区域的编写，楼层目前是有3层的，而且布局都比较特殊，但每个楼层都是一样的，只是商品图片不同，那就可以把每个楼层抽象为一个部件，这样可以减少维护成本。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003821054022](https://m.qlchat.com/topic/details?topicId=2000003821054022)
@@ -2390,7 +2390,7 @@ class FloorContent extends StatelessWidget {
 
 这节课我们开始读取火爆专区部分的接口，这个接口制作起来还是稍微有一些麻烦的，比如他里边有上拉加载更多数据这样的操作。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/live/channel/channelPage/2000003595896347.htm](https://m.qlchat.com/live/channel/channelPage/2000003595896347.htm)
@@ -2515,7 +2515,7 @@ request('homePageBelowConten',1).then((val){
 
 上节课已经调通了后端接口，这节课我们把火爆专区的页面制作一下，然后再制作上拉加载效果。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003858690121](https://m.qlchat.com/topic/details?topicId=2000003858690121)
@@ -2697,7 +2697,7 @@ Future request(url,{formData})async{
 
 这节课学习一下上拉加载效果，其实现在上拉加载的插件有很多，但是还没有一个插件可以说完全一枝独秀，我也找了一个插件，这个插件的优点就是服务比较好，作者能及时回答大家的问题。我觉的选插件也是选人，人对了，插件就对了。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003864251505](https://m.qlchat.com/topic/details?topicId=2000003864251505)
@@ -2814,7 +2814,7 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 从这个页面开始，我们的课程也会加大难度，比如数据全部要`model`和状态要使用`bloc`来管理。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003882225568](https://m.qlchat.com/topic/details?topicId=2000003882225568)
@@ -2906,7 +2906,7 @@ class _CategoryPageState extends State<CategoryPage> {
 
 其实转换成model类是有好处的，转换后可以减少上线后APP崩溃和出现异常，所以我们从这节课开始，要制作model类模型，然后用model的形式编辑UI界面。在这里我不讨论两种方法的好坏，这就跟你看小电影是喜欢看欧美还是喜欢看岛国的一样，欧美的可能粗狂豪爽一点，岛国的优美婉约一点。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003908351368](https://m.qlchat.com/topic/details?topicId=2000003908351368)
@@ -3045,7 +3045,7 @@ void _getCategory()async{
 
 上节课我们学习了数据模型的建立，这节学习一下如何把建立好的数据模型展示在UI界面上，特别是这种`List`形式的数据模型。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003921048862](https://m.qlchat.com/topic/details?topicId=2000003921048862)
@@ -3189,7 +3189,7 @@ void initState() {
 所以个人觉的`Flutter_provide`是目前最好的状态管理方案，那我们就采用这种方案来制作项目。
 
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003957012933](https://m.qlchat.com/topic/details?topicId=2000003957012933)
@@ -3407,7 +3407,7 @@ class MemberPage extends StatelessWidget {
 上节课已经学习了基础的`flutter_provide`用法，也作了一个最基本的案例。这节课我们就把学到的知识用到实战案例当中，点击列表页的大类，改变小类的效果，当然这个程序还是稍微有点复杂，所以我们分两节课来讲。这里建议，如果你对上节的知识还没有完全掌握，那你需要多看几遍上节课的视频。并做出课程中的效果。
 
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003957012933](https://m.qlchat.com/topic/details?topicId=2000003957012933)
@@ -3510,7 +3510,7 @@ Widget build(BuildContext context) {
 
 上节课已经进行了二级分类的UI布局，并且已经显示到了页面上。但是并没有实现交互效果，那这节课我们就通过`Provide`管理全局app的状态，实现二级分类和一级分类的交互效果吧。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003958032119](https://m.qlchat.com/topic/details?topicId=2000003958032119)
@@ -3832,7 +3832,7 @@ Widget build(BuildContext context) {
 
 这节先解决上节课遗留的小问题，作为一个有工匠精神的老司机，写程序一定要尽善尽美，所以把现有程序的Bug解决一下。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003967855600](https://m.qlchat.com/topic/details?topicId=2000003967855600)
@@ -3931,7 +3931,7 @@ class ChildCategory with ChangeNotifier{
 
 这节课的主要内容就是调通商品分类页里的商品列表接口，这个接口是这套视频中最复杂也最重要的接口。接口包括上拉加载、大类切换和小类切换的互动，虽然复杂，小伙伴们也不要担心，我们会尽量讲的细致和简单，让每个伙伴都可以学会。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000003992276749](https://m.qlchat.com/topic/details?topicId=2000003992276749)
@@ -4062,7 +4062,7 @@ class _CategoryGoodsListState extends State<CategoryGoodsList> {
 
 这节课我们先用快速的方法，生成我们商品分类李的商品列表数据模型，然后根据数据模型修改一下,读取后台的方法。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004001883543](https://m.qlchat.com/topic/details?topicId=2000004001883543)
 
@@ -4184,7 +4184,7 @@ import '../model/categoryGoodsList.dart';
 
 我们在首页的时候已经使用Wrap的布局方式制作火爆专区列表，这节课如果还用Wrap的形式就没有什么意思了，所以这里使用ListView的形式，可能跟模仿的小程序稍微有些不同，但我们的目标是学知识。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004003962519](https://m.qlchat.com/topic/details?topicId=2000004003962519)
 
@@ -4322,7 +4322,7 @@ import '../model/categoryGoodsList.dart';
 现在页面布局已经基本完成，接下来就要作商品分类页的各种交互效果了，当我们熟练掌握了Provide的状态管理后，这些交互页变的相当容易。但为了实现交互效果，还是需要把页面代码进行重新规划一下的，让页面符合状态管理的规范的。
 
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004014751875](https://m.qlchat.com/topic/details?topicId=2000004014751875)
 
@@ -4571,7 +4571,7 @@ class _CategoryGoodsListState extends State<CategoryGoodsList> {
 
 这节课主要学习小类高亮交互效果的实现，通过几节课的练习，应该对状态管理有了比较深刻的理解。我建议小伙伴们可以先不看视频自己作一下，检验一下自己的学习能力。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004034244833](https://m.qlchat.com/topic/details?topicId=2000004034244833)
 
@@ -4678,7 +4678,7 @@ color:isCheck?Colors.pink:Colors.black ),
 
 其实点击大类切换商品列表效果如果你会了，那点击小类切换商品列表效果几乎是一样。只有很小的改动。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004034340673](https://m.qlchat.com/topic/details?topicId=2000004034340673)
 
@@ -4778,7 +4778,7 @@ onTap: (){
 
 在列表页还是有小Bug的，这节课我们就利用几分钟，进行修复一下.
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004048538961](https://m.qlchat.com/topic/details?topicId=2000004048538961)
 
@@ -4901,7 +4901,7 @@ class ChildCategory with ChangeNotifier{
 
 这节主要制作一下列表页的上拉加载更多功能，因为在首页的视频中，已经讲解了上拉加载更多的效果，所以我们不会再着重讲解语法，而重点会放在上拉加载和Provide结合的方法。小伙伴们学习的侧重点也应该是状态管理的应用。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004087266325](https://m.qlchat.com/topic/details?topicId=2000004087266325)
 
@@ -5107,7 +5107,7 @@ child:ListView.builder(
 
 在APP的使用过程中，对用户的友好提示是必不可少的，比如当列表页上拉加载更多的时候，到达了数据的底部，没有更多数据了，就要给用户一个友好的提示。但是这种提示又不能影响用户的使用，这节课就介绍一个轻提示组件给大家`FlutterToast`。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004097684445](https://m.qlchat.com/topic/details?topicId=2000004097684445)
 
@@ -5199,7 +5199,7 @@ getChildCategory(List<BxMallSubDto> list,String id){
 
 Flutter本身提供了路由机制，作个人的小型项目，完全足够了。但是如果你要作企业级开发，可能就会把入口文件变得臃肿不堪。而再Flutter问世之初，就已经了企业级路由方案fluro。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004113923565](https://m.qlchat.com/topic/details?topicId=2000004113923565)
 
@@ -5268,7 +5268,7 @@ import 'package:fluro/fluro.dart';
 
 handler就是每个路由的规则，编写handler就是配置路由规则，比如我们要传递参数，参数的值是什么，这些都需要在Handler中完成。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004113726401](https://m.qlchat.com/topic/details?topicId=2000004113726401)
 
@@ -5309,7 +5309,7 @@ Handler detailsHanderl =Handler(
 
 Hanlder只是对每个路由的独立配置文件，fluro当然还需要一个总体配置文件。这节课就来学习一下fluro总体配置文件的编写。这样配置好后，我们还需要一个静态化文件，方便我们在UI页面进行使用。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004113726682](https://m.qlchat.com/topic/details?topicId=2000004113726682)
 
@@ -5363,7 +5363,7 @@ class Application{
 
 通过3节课的学习，已经把路由配置好了，但是如果想正常使用，还需要在`main.dart`文件里进行全局注入。注入后就可以爽快的使用了，配置好后的使用方法也是非常简单的。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004114118125](https://m.qlchat.com/topic/details?topicId=2000004114118125)
 
@@ -5435,7 +5435,7 @@ import './routers/application.dart';
 
 开始作商品详细页，这节课主要是调通商品信息页的后端接口和制作数据模型。我们完全安装真实项目的开发目录接口和文件组织来进行开发。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004124061536](https://m.qlchat.com/topic/details?topicId=2000004124061536)
 
@@ -5700,7 +5700,7 @@ class DetailsInfoProvide with ChangeNotifier{
 
 上节课已经把详细页大体的业务结构和跟后台的数据接口调通了，这节课开始搭建页面的UI。会把一个详细页分为6个主要部分来编写，也就是说把一个页面拆成六个大组件，并在不同的页面中。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004136605913](https://m.qlchat.com/topic/details?topicId=2000004136605913)
 
@@ -5840,7 +5840,7 @@ class DetailsPage extends StatelessWidget {
 
 前几节课只把首页的“火爆专区”加了跳转，这节课内容正好不多，就把其它需要加跳转到详细页的位置都加上跳转。需要注意的是，这些都需要加入context，上下文文件。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004136702600](https://m.qlchat.com/topic/details?topicId=2000004136702600)
 
@@ -5877,7 +5877,7 @@ Application.router.navigateTo(context,"/detail?id=${recommendList[index]['goodsI
 这节课把详细页首屏独立出来，这样业务逻辑更具体，以后也会降低维护成本。最主要的是主UI文件不会变的臃肿不堪。
 
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004163770688](https://m.qlchat.com/topic/details?topicId=2000004163770688)
 
@@ -6159,7 +6159,7 @@ body:FutureBuilder(
 
 这节先把说明区域给制作出来，当然这部分也单独的独立出来。然后再自己学一个`tabBar Widget`。对！你没有听错，就是自己写，不用官方自带的。学习吗，就是要变态的折磨自己，现在不是流行盘吗。那我们也要有盘的心态，赏玩Flutter。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004177447745](https://m.qlchat.com/topic/details?topicId=2000004177447745)
 
@@ -6239,7 +6239,7 @@ body:FutureBuilder(
 
 这节课自己建一个`tabBar Widget`，而不用Flutter自带的`tabBar widget`。对！你没有听错，就是自己写，不用官方自带的。学习吗，就是要变态的折磨自己，现在不是流行盘吗。那我们也要有盘的心态，赏玩Flutter。这几天我也花了60大洋买了一个文玩核桃，准备学着盘完一下，磨一下放浪不羁的心性。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004184492944](https://m.qlchat.com/topic/details?topicId=2000004184492944)
 
@@ -6515,7 +6515,7 @@ child:Column(
 
 在详细页里的商品详细部分，是由图片和HTML组成的。但是Flutter本身是不支持Html的解析的，所以需要找个轮子，我之前用的是`flutter_webView_plugin`，但是效果不太好。经过大神网友推荐，最终选择了`flutter_html`.
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004194782674](https://m.qlchat.com/topic/details?topicId=2000004194782674)
 
@@ -6626,7 +6626,7 @@ children: <Widget>[
 
 这节主要制作一下商品详情和评论页面的切换交互效果，思路是利用`Provide`进行业务处理，然后根据状态进行判断返回不同的Widget。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004208877794](https://m.qlchat.com/topic/details?topicId=2000004208877794)
 
@@ -6684,7 +6684,7 @@ class DetailsWeb extends StatelessWidget {
 
 在详细页面底部是有一个操作栏一直在底部的，主要用于进行加入购物车、直接购买商品和进入购物车页面。制作这个只要需要使用`Stack`组件就可以了。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004224296454](https://m.qlchat.com/topic/details?topicId=2000004224296454)
 
@@ -6860,7 +6860,7 @@ Positioned(
 
 购物车中的一项功能是持久化，就是我们关掉APP，下次进入后，还是可以显示出我们放入购物车的商品。但是这些商品不和后台进行数据交互，前台如果使用`sqflite`又显得太重，还要懂SQL知识。所以在购物车页面我们采用`shared_preferences`来进行持久化，它是简单的键-值的操作。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004252820576](https://m.qlchat.com/topic/details?topicId=2000004252820576)
 
@@ -7016,7 +7016,7 @@ class _CartPageState extends State<CartPage> {
 
 从这节课开始，就正式开始制作购物车部分的内容了。这也算是本套视频最复杂的一个章节，也是我们基本掌握Flutter实战技巧关键的一个章节，当然我会还是采用UI代码和业务逻辑完全分开的形式，让代码完全解耦。
 
-![alt](https://jspang.com/static/upload/20190219/RxgEAN5YVIFSqyki0A9R.jpg)
+ 
 
 视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004265575653](https://m.qlchat.com/topic/details?topicId=2000004265575653)
 
@@ -7170,9 +7170,736 @@ onTap: ()async{
 做完这个写，我们就要查看一下效果了，看看是否可以真的持久化。
 
 
+## 第52节：购物车_建立数据模型
+
+上节课使用了字符串进行持久化，然后输出的时候都是Map，但是在真实工作中为了减少异常的发生，都要进行模型化处理，就是把Map转变为对象。
+
+ 
+
+视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004278100281](https://m.qlchat.com/topic/details?topicId=2000004278100281)
+
+### 建立模型文件
+
+
+得到的购物车数据，如下：
+
+```
+{"goodsId":"2171c20d77c340729d5d7ebc2039c08d","goodsName":"五粮液52°500ml","count":1,"price":830.0,"images":"http://images.baixingliangfan.cn/shopGoodsImg/20181229/20181229211422_8507.jpg"}
+```
+拷贝到自动生成mode的页面上,网址是：
+
+> https://javiercbk.github.io/json_to_dart/
+
+生成后，在model文件夹下，建立一个新文件`cartInfo.dart`，然后把生成的mode文件进行改写，代码如下:
+
+
+```
+class CartInfoMode {
+  String goodsId;
+  String goodsName;
+  int count;
+  double price;
+  String images;
+
+  CartInfoMode(
+      {this.goodsId, this.goodsName, this.count, this.price, this.images});
+
+  CartInfoMode.fromJson(Map<String, dynamic> json) {
+    goodsId = json['goodsId'];
+    goodsName = json['goodsName'];
+    count = json['count'];
+    price = json['price'];
+    images = json['images'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['goodsId'] = this.goodsId;
+    data['goodsName'] = this.goodsName;
+    data['count'] = this.count;
+    data['price'] = this.price;
+    data['images'] = this.images;
+    return data;
+  }
+}
+```
+
+这个相对于以前其它Model文件简单很多。其实你完全可以手写练习一下。
+
+### 在provide里使用模型
+
+有了模型文件之后，需要先引入`provide`里，然后进行改造。引入刚刚写好的模型层文件。
+
+```
+import '../model/cartInfo.dart';
+```
+在`provide`类的最上部新声明一个List变量，这就是购物车页面用于显示的购物车列表了.
+
+```
+List<CartInfoMode> cartList=[];
+```
+然后改造save方法，让他支持模型类，但是要注意，原来的字符串不要改变，因为`shared_preferences`不持支对象的持久化。
+
+```
+  save(goodsId,goodsName,count,price,images) async{
+    //初始化SharedPreferences
+    SharedPreferences prefs = await  SharedPreferences.getInstance();
+    cartString=prefs.getString('cartInfo');  //获取持久化存储的值
+    //判断cartString是否为空，为空说明是第一次添加，或者被key被清除了。
+    //如果有值进行decode操作
+    var temp=cartString==null?[]:json.decode(cartString.toString());
+    //把获得值转变成List
+    List<Map> tempList= (temp as List).cast();
+    //声明变量，用于判断购物车中是否已经存在此商品ID
+    var isHave= false;  //默认为没有
+    int ival=0; //用于进行循环的索引使用
+    tempList.forEach((item){//进行循环，找出是否已经存在该商品
+      //如果存在，数量进行+1操作
+      if(item['goodsId']==goodsId){
+        tempList[ival]['count']=item['count']+1;
+         //关键代码-----------------start
+        cartList[ival].count++;
+         //关键代码-----------------end
+        isHave=true;
+      }
+      ival++;
+    });
+    //  如果没有，进行增加
+    if(!isHave){
+       //关键代码-----------------start
+          Map<String, dynamic> newGoods={
+             'goodsId':goodsId,
+            'goodsName':goodsName,
+            'count':count,
+            'price':price,
+            'images':images
+          };
+          tempList.add(newGoods);
+          cartList.add(new CartInfoMode.fromJson(newGoods));
+       //关键代码-----------------end
+    }
+    //把字符串进行encode操作，
+    cartString= json.encode(tempList).toString();
+    print(cartString);
+    print(cartList.toString());
+    prefs.setString('cartInfo', cartString);//进行持久化
+    notifyListeners();
+  }
+
+```
+
+
+### 得到购物车中商品方法
+
+有了增加方法，我们还需要写一个得到购物车中的方法，现在就学习一下结合Model如何得到持久化的数据。
+
+```
+  //得到购物车中的商品
+  getCartInfo() async {
+     SharedPreferences prefs = await SharedPreferences.getInstance();
+     //获得购物车中的商品,这时候是一个字符串
+     cartString=prefs.getString('cartInfo'); 
+     //把cartList进行初始化，防止数据混乱 
+     cartList=[];
+     //判断得到的字符串是否有值，如果不判断会报错
+     if(cartString==null){
+       cartList=[];
+     }else{
+       List<Map> tempList= (json.decode(cartString.toString()) as List).cast();
+       tempList.forEach((item){
+          cartList.add(new CartInfoMode.fromJson(item));
+       });
+
+     }
+      notifyListeners();
+  }
+
+```
+
+有了这个方法，下节课就可以开心的布局页面了，再也不用在终端里看结果了。
 
 
 
+## 第53节：购物车_大体结构布局
+
+这节课终于可以不再忍受终端中查看结果的苦恼了，开始制作页面。其实在实际开发中也有很多这样的情况。就是先得到数据，再调试页面。
+
+ 
+
+视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004294912896](https://m.qlchat.com/topic/details?topicId=2000004294912896)
+
+### 页面基本结构搭建
+
+先建立页面的基本接口，还是使用脚手架组件`Scaffold`来进行操作。代码如下：
+
+```
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provide/provide.dart';
+import '../provide/cart.dart';
+
+
+class CartPage extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('购物车'),
+      ),
+      body:Text('测试')
+    );
+  }
+}
+
+```
+
+再body区域我们使用`Future Widget`，因为就算是本地持久化，还是有一个时间的，当然这个时间可能你肉眼看不见。不过这样控制台可能会把错误信息返回回来。
+
+```
+  body: FutureBuilder(
+    future:_getCartInfo(context),
+    builder: (context,snapshot){
+      List cartList=Provide.value<CartProvide>(context).cartList;
+      if(snapshot.hasData){
+       
+      }else{
+        return Text('正在加载');
+      }
+    },
+  ),
+  );
+  }
+
+```
+
+
+
+### Future方法编写
+
+使用了`Future`组件，自然需要一个返回Future的方法了，在这个方法里，我们使用`Provide`取出本地持久化的数据，然后进行变化。
+
+```
+
+  Future<String> _getCartInfo(BuildContext context) async{
+     await Provide.value<CartProvide>(context).getCartInfo();
+     return 'end';
+  }
+
+```
+
+### 用ListView简单输出
+
+```
+return ListView.builder(
+  itemCount: cartList.length,
+  itemBuilder: (context,index){
+    return ListTile(
+      title:Text(cartList[index].goodsName)
+    );
+  },
+);
+```
+到这步后，就可以简单的进行预览，当然页面还是很丑的，下节课会继续进行美化。会把列表的子项单独拿出一个文件，这样会降低以后的维护成本。
+
+## 第54节：购物车_商品列表子项组件编写
+
+上节课已经把购物车页面的大体结构编写好，并且也可以获得购物车中的商品列表信息了，但是页面依然丑陋，这节课继续上节课完成子项的UI美化.
+
+ 
+
+视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004295310344](https://m.qlchat.com/topic/details?topicId=2000004295310344)
+
+### 编写购物车单项方法
+
+为了以后维护方便，我们还是采用单独编写的方式，把购物车里边的每一个子项统一作一个组件出来。
+
+现在`lib\pages`下建立一个新文件夹`cart_page`，然后在新文件夹下面家里一个`cart_item.dart`文件。先引入几个必要的文件.
+
+```
+
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../model/cartInfo.dart';
+
+```
+然后声明一个stateLessWidget 类，名字叫` CartItem`并设置接收参数，这里的接收参数就是`cartInfo`对象，也就是每个购物车商品的子项。代码如下:
+
+```
+
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../model/cartInfo.dart';
+
+class CartItem extends StatelessWidget {
+  final CartInfoMode item;
+  CartItem(this.item);
+
+  @override
+  Widget build(BuildContext context) {
+    print(item);
+    return Container(
+        margin: EdgeInsets.fromLTRB(5.0,2.0,5.0,2.0),
+        padding: EdgeInsets.fromLTRB(5.0,10.0,5.0,10.0),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border(
+            bottom: BorderSide(width:1,color:Colors.black12)
+          )
+        ),
+        child: Row(
+          children: <Widget>[
+          
+          ],
+        ),
+      );
+  }
+
+
+
+}
+
+```
+
+### 编写多选按钮方法
+
+```
+//多选按钮
+  Widget _cartCheckBt(item){
+    return Container(
+      child: Checkbox(
+        value: true,
+        activeColor:Colors.pink,
+        onChanged: (bool val){},
+      ),
+    );
+  }
+
+```
+
+### 编写商品图片方法
+
+```
+//商品图片 
+  Widget _cartImage(item){
+    
+    return Container(
+      width: ScreenUtil().setWidth(150),
+      padding: EdgeInsets.all(3.0),
+      decoration: BoxDecoration(
+        border: Border.all(width: 1,color:Colors.black12)
+      ),
+      child: Image.network(item.images),
+    );
+  }
+```
+
+### 编写商品名称方法
+
+```
+//商品名称
+  Widget _cartGoodsName(item){
+    return Container(
+      width: ScreenUtil().setWidth(300),
+      padding: EdgeInsets.all(10),
+      alignment: Alignment.topLeft,
+      child: Column(
+        children: <Widget>[
+          Text(item.goodsName)
+        ],
+      ),
+    );
+  }
+```
+### 编写商品价格方法
+
+```
+//商品价格
+  Widget _cartPrice(item){
+
+    return Container(
+        width:ScreenUtil().setWidth(150) ,
+        alignment: Alignment.centerRight,
+        
+        child: Column(
+          children: <Widget>[
+            Text('￥${item.price}'),
+            Container(
+              child: InkWell(
+                onTap: (){},
+                child: Icon(
+                  Icons.delete_forever,
+                  color: Colors.black26,
+                  size: 30,
+                ),
+              ),
+            )
+          ],
+        ),
+      );
+  }
+```
+
+### 进行整合
+这些组件写好以后，我们可以进行一个整合。
+
+```
+child: Row(
+  children: <Widget>[
+    _cartCheckBt(item),
+    _cartImage(item),
+    _cartGoodsName(item),
+    _cartPrice(item)
+  ],
+),
+```
+为了方便学习，全部代码如下：
+
+```
+
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../model/cartInfo.dart';
+
+class CartItem extends StatelessWidget {
+  final CartInfoMode item;
+  CartItem(this.item);
+
+  @override
+  Widget build(BuildContext context) {
+    print(item);
+    return Container(
+        margin: EdgeInsets.fromLTRB(5.0,2.0,5.0,2.0),
+        padding: EdgeInsets.fromLTRB(5.0,10.0,5.0,10.0),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border(
+            bottom: BorderSide(width:1,color:Colors.black12)
+          )
+        ),
+        child: Row(
+          children: <Widget>[
+            _cartCheckBt(item),
+            _cartImage(item),
+            _cartGoodsName(item),
+            _cartPrice(item)
+          ],
+        ),
+      );
+  }
+  //多选按钮
+  Widget _cartCheckBt(item){
+    return Container(
+      child: Checkbox(
+        value: true,
+        activeColor:Colors.pink,
+        onChanged: (bool val){},
+      ),
+    );
+  }
+  //商品图片 
+  Widget _cartImage(item){
+    
+    return Container(
+      width: ScreenUtil().setWidth(150),
+      padding: EdgeInsets.all(3.0),
+      decoration: BoxDecoration(
+        border: Border.all(width: 1,color:Colors.black12)
+      ),
+      child: Image.network(item.images),
+    );
+  }
+  //商品名称
+  Widget _cartGoodsName(item){
+    return Container(
+      width: ScreenUtil().setWidth(300),
+      padding: EdgeInsets.all(10),
+      alignment: Alignment.topLeft,
+      child: Column(
+        children: <Widget>[
+          Text(item.goodsName)
+        ],
+      ),
+    );
+  }
+
+  //商品价格
+  Widget _cartPrice(item){
+
+    return Container(
+        width:ScreenUtil().setWidth(150) ,
+        alignment: Alignment.centerRight,
+        
+        child: Column(
+          children: <Widget>[
+            Text('￥${item.price}'),
+            Container(
+              child: InkWell(
+                onTap: (){},
+                child: Icon(
+                  Icons.delete_forever,
+                  color: Colors.black26,
+                  size: 30,
+                ),
+              ),
+            )
+          ],
+        ),
+      );
+  }
+
+}
+
+```
+
+## 第55节:购物车_制作底部结算栏的UI
+
+这节课主要布局一下底部操作栏。这个使用了`Stack Widget`，由于以前视频中学过，所以做起来也就没那么难了，但是还是有很多样式需要我们书写，以保证完成一个美观的购物车页面的。
+
+ 
+
+视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004307739660](https://m.qlchat.com/topic/details?topicId=2000004307739660)
+
+
+### 建立底部结算栏页面
+
+在`lib/pages/cart_page`文件夹下，新建一个`cart_bottom.dart`文件。文件建立好以后，先引入下面的基础`package`。
+
+```
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+```
+
+引入完成后，用快捷的方式建立一个`StatelessWidget`，建立后，我们使用`Row`来进行总体布局，并给`Container`一些必要的修饰.代码如下:
+
+```
+class CartBottom extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(5.0),
+      color: Colors.white,
+      width: ScreenUtil().setWidth(750),
+      child: Row(
+        children: <Widget>[
+        
+        ],
+      ),
+    );
+  }
+}
+```
+
+这就完成了一个底部结算栏的大体结构确定，大体结构完成后，我们还是把里边的细节，拆分成不同的方法返回对象的组件。
+
+### 全选按钮方法
+
+先来制作全选按钮方法，这个外边采用`Container`，里边使用了一个Row，这样能很好的完成横向布局的需求.
+
+```
+  //全选按钮
+  Widget selectAllBtn(){
+    return Container(
+      child: Row(
+        children: <Widget>[
+          Checkbox(
+            value: true,
+            activeColor: Colors.pink,
+            onChanged: (bool val){},
+          ),
+          Text('全选')
+        ],
+      ),
+    );
+  }
+
+```
+
+### 合计区域方法
+
+合计区域由于布局对齐方式比较复杂，所以这段代码虽然很简单，但是代码设计的样式比较多，需要你有很好的样式编写能力.代码如下：
+
+```
+  // 合计区域
+  Widget allPriceArea(){
+
+    return Container(
+      width: ScreenUtil().setWidth(430),
+      alignment: Alignment.centerRight,
+      child: Column(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Container(
+                alignment: Alignment.centerRight,
+                width: ScreenUtil().setWidth(280),
+                child: Text(
+                  '合计:',
+                  style:TextStyle(
+                    fontSize: ScreenUtil().setSp(36)
+                  )
+                ), 
+              ),
+              Container(
+                 alignment: Alignment.centerLeft,
+                width: ScreenUtil().setWidth(150),
+                child: Text(
+                  '￥1922',
+                  style:TextStyle(
+                    fontSize: ScreenUtil().setSp(36),
+                    color: Colors.red,
+                  )
+                ),
+                
+              )
+             
+              
+            ],
+          ),
+          Container(
+            width: ScreenUtil().setWidth(430),
+            alignment: Alignment.centerRight,
+            child: Text(
+              '满10元免配送费，预购免配送费',
+              style: TextStyle(
+                color: Colors.black38,
+                fontSize: ScreenUtil().setSp(22)
+              ),
+            ),
+          )
+          
+        ],
+      ),
+    );
+
+  }
+```
+
+### 结算按钮方法
+
+这个方法里边的按钮，我们并没有使用`Flutter Button Widget` 而是使用`InkWell`自己制作一个组件。这样作能很好的控制按钮的形状，还可以解决水波纹的问题，一举两得。代码如下:
+
+```
+//结算按钮
+  Widget goButton(){
+    
+    return Container(
+      width: ScreenUtil().setWidth(160),
+      padding: EdgeInsets.only(left: 10),
+      child:InkWell(
+        onTap: (){},
+        child: Container(
+          padding: EdgeInsets.all(10.0),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+             color: Colors.red,
+             borderRadius: BorderRadius.circular(3.0)
+          ),
+          child: Text(
+            '结算(6)',
+            style: TextStyle(
+              color: Colors.white
+            ),
+          ),
+        ),
+      ) ,
+    );
+    
+    
+  }
+```
+
+### 加入到页面中
+
+组件样式基本都各自完成后，接下来就是组合和加入到页面中了，我们先把个个方法组合到底部结算区域,也就是放到`build`方法里。
+
+```
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(5.0),
+      color: Colors.white,
+      width: ScreenUtil().setWidth(750),
+      child: Row(
+        children: <Widget>[
+          selectAllBtn(),
+          allPriceArea(),
+          goButton()
+        ],
+      ),
+    );
+  }
+```
+
+这步完成后就是到`lib/pages/cart_page.dart`文件中，加入底部结算栏的操作了，这里我们需要使用`Stack Widget`组件。
+
+首先需要引入`cart_bottom.dart`。
+
+```
+import './cart_page/cart_bottom.dart';
+
+```
+
+然后改写`FutureBuilder Widget`里边的`builder`方法，这时候返回的是一个`Stack Widget`。代码如下：
+
+```
+import 'package:flutter/material.dart';
+import 'package:provide/provide.dart';
+import '../provide/cart.dart';
+import './cart_page/cart_item.dart';
+import './cart_page/cart_bottom.dart';
+
+
+
+class CartPage extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('购物车'),
+      ),
+      body: FutureBuilder(
+        future:_getCartInfo(context),
+        builder: (context,snapshot){
+          List cartList=Provide.value<CartProvide>(context).cartList;
+          if(snapshot.hasData && cartList!=null){
+            //关键代码-------------------start
+            return Stack(
+              children: <Widget>[
+                ListView.builder(
+                  itemCount: cartList.length,
+                  itemBuilder: (context,index){
+                    return CartItem(cartList[index]);
+                  },
+                ),
+                Positioned(
+                  bottom:0,
+                  left:0,
+                  child: CartBottom(),
+                )
+              ],
+            );
+            //关键代码-----------------end
+
+            
+          }else{
+            return Text('正在加载');
+          }
+        },
+      ),
+    );
+  }
+
+  Future<String> _getCartInfo(BuildContext context) async{
+     await Provide.value<CartProvide>(context).getCartInfo();
+     return 'end';
+  }
+
+  
+}
+```
+
+这步做完之后，就可以进行预览了。相信小伙伴们都可以得到满意的效果，其实学到这里，你应该有自己布局任何页面的能力，你可以试着把这个页面布局成自己想要的样子。下节课制作我们的数量加减组件。
 
 
 ---

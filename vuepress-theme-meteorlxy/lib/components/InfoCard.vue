@@ -94,7 +94,7 @@
     
     <div class="ad-side">
       <a href="http://www.zhufengpeixun.cn/main/course/index.html?ref=jsp" target="_blank">
-        <img src="http://jspang.com/static/myimg/WechatIMG12.jpeg" width="100%" />
+        <img src="http://blogimages.jspang.com/WechatIMG12.jpeg" width="100%" />
       </a>
       <div class="ad-tag">
         广告
@@ -103,14 +103,15 @@
     <!--打赏特权-->
     <div class="dashang-side">
         <div>
-           <img src="http://jspang.com/static/myimg/dashangwx.jpg" width="100%" /> 
+           <img src="http://blogimages.jspang.com/dashangwx.jpg" width="100%" /> 
         </div>
         <div>
-          <p>打赏获得4项特权</p>
+          <p>打赏获得4项特权:</p>
           <p>1.免费视频离线高清版下载（共288集）</p>
           <p>2.加入微信群，享有更多互动和人脉资源</p>
           <p>3.和11年程序老兵成为微信好友</p>
           <p>4.收费课发布期间享受5折优惠特权;</p>
+          <p>[ <a class="qi-title" href="https://jspang.com/posts/2016/01/01/about.html">打赏后获取特权方法</a> ]</p>
         </div>
     </div>
 

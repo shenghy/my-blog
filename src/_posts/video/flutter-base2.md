@@ -23,7 +23,7 @@ vssue-title: Flutter-base02
 
 **学习的前置知识**
 
-- 会安装基础开发环境，如果你还不会，请阅读和观看这篇文章：《Flutter免费视频第一季-环境搭建》[http://jspang.com/post/flutter1.html](http://jspang.com/post/flutter1.html)
+- 会安装基础开发环境，如果你还不会，请阅读和观看这篇文章：《Flutter免费视频第一季-环境搭建》[https://jspang.com/posts/2019/01/20/flutter-base.html](https://jspang.com/posts/2019/01/20/flutter-base.html)
 
 **到底值不值得学习？**
 

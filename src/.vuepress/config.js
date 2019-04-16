@@ -28,7 +28,7 @@ module.exports = {
         nickname: '技术胖',
   
         // 个人简介
-        description: '光头程序员，专注于WEB和移动前端开发。要录1000集免费前端视频，帮助小伙伴学习。',
+        description: '光头程序员，专注于WEB和移动前端开发。要录1000集免费前端视频的傻X。',
   
         // 电子邮箱
         email: 'web0432@126.com',

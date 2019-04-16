@@ -33,10 +33,13 @@ vssue-title: Flutter-demo
 那在学习这篇文章之前，你应该先学习一下基础知识，至少把下面这四篇文章，共25集视频，先看一边，作一下练习。(这些视频是完全免费的，大家直接可以在博客上收看)。
 
 
-- 第一季Flutter视频教程地址：http://jspang.com/post/flutter1.html
-- 第二季Flutter视频教程地址：http://jspang.com/post/flutter2.html
-- 第三季Flutter视频教程地址：http://jspang.com/post/flutter3.html
-- 第四季Flutter视频教程地址：http://jspang.com/post/flutter4.html
+- 第一季Flutter视频教程地址：[https://jspang.com/posts/2019/01/20/flutter-base.html](https://jspang.com/posts/2019/01/20/flutter-base.html)
+
+- 第二季Flutter视频教程地址：[https://jspang.com/posts/2019/01/21/flutter-base2.html](https://jspang.com/posts/2019/01/21/flutter-base2.html)
+
+- 第三季Flutter视频教程地址：[https://jspang.com/posts/2019/01/28/flutter-base3.html](https://jspang.com/posts/2019/01/28/flutter-base3.html)
+
+- 第四季Flutter视频教程地址：[https://jspang.com/posts/2019/02/01/flutter-base4.html](https://jspang.com/posts/2019/02/01/flutter-base4.html)
 
 
 ## QQ群和微信群
