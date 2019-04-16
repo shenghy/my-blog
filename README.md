@@ -2,7 +2,7 @@
 
 > 本套博客采用了VuePress搭建，样式跟进网络开源模板进行修改。
 
-博客地址：[https://jspang.com](http://blogimages.jspang.com/blog-image.png)
+博客地址：[https://jspang.com](https://jspang.com)
 
 博客图片
 
