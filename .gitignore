@@ -1,3 +1,3 @@
-node_modules/
-!/node_modules/vuepress-theme-meteorlxy/
+/node_modules/
+!/node_modules/vuepress-theme-meteorlxy/*
 dist/
