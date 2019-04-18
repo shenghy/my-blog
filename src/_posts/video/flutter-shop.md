@@ -3,7 +3,7 @@ category: 视频教程
 tags:
   - Flutter
 date: 2019-03-01
-title: Flutter实战视频-移动电商 （第55节更新）
+title: Flutter实战视频-移动电商 （第59节更新）
 vssue-title: Flutter-shop
 ---
 
@@ -7900,6 +7900,619 @@ class CartPage extends StatelessWidget {
 ```
 
 这步做完之后，就可以进行预览了。相信小伙伴们都可以得到满意的效果，其实学到这里，你应该有自己布局任何页面的能力，你可以试着把这个页面布局成自己想要的样子。下节课制作我们的数量加减组件。
+
+## 第56节：购物车_制作数量加减按钮UI
+
+购物车的UI界面已经基本完成了，只差最后一个数量加载的部分没有进行布局，这节课就用几分钟时间，把这个部分的布局制作完成。
+
+视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004346946982](https://m.qlchat.com/topic/details?topicId=2000004346946982)
+
+
+### 建立组件和基本结构
+
+在`lib/pages/cart_page/`文件夹下，建立一个新的文件`cart_count.dart`。先引入两个布局使用的基本文件。
+
+```
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+```
+
+然后开始写基本结构，我们这里使用`Container`和`Row`的形式。
+
+```
+  Widget build(BuildContext context) {
+    return Container(
+      width: ScreenUtil().setWidth(165),
+      margin: EdgeInsets.only(top:5.0),
+      decoration: BoxDecoration(
+        border:Border.all(width: 1 , color:Colors.black12)
+      ),
+      child: Row(
+        children: <Widget>[
+        ],
+      ),
+      
+    );
+  }
+```
+
+写完这个，我们再把`Row`里边的每个子元素进行拆分.
+
+
+### 减少按钮UI编写
+
+```
+  // 减少按钮
+  Widget _reduceBtn(){
+    return InkWell(
+      onTap: (){},
+      child: Container(
+        width: ScreenUtil().setWidth(45),
+        height: ScreenUtil().setHeight(45),
+        alignment: Alignment.center,
+       
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border:Border(
+            right:BorderSide(width:1,color:Colors.black12)
+          )
+        ),
+        child: Text('-'),
+      ),
+    );
+  }
+```
+
+### 添加按钮UI编写
+
+```
+  //添加按钮
+  Widget _addBtn(){
+    return InkWell(
+      onTap: (){},
+      child: Container(
+        width: ScreenUtil().setWidth(45),
+        height: ScreenUtil().setHeight(45),
+        alignment: Alignment.center,
+       
+         decoration: BoxDecoration(
+          color: Colors.white,
+          border:Border(
+            left:BorderSide(width:1,color:Colors.black12)
+          )
+        ),
+        child: Text('+'),
+      ),
+    );
+  }
+```
+
+### 数量区域UI编写
+
+```
+  //中间数量显示区域
+  Widget _countArea(){
+    return Container(
+      width: ScreenUtil().setWidth(70),
+      height: ScreenUtil().setHeight(45),
+      alignment: Alignment.center,
+      color: Colors.white,
+       child: Text('1'),
+    );
+  }
+```
+
+### 进行组合
+
+组件都写好后，要进行组合和加入到页面中的操作。
+
+组合：直接在build区域的`Row`数组中进行组合。
+
+```
+
+  Widget build(BuildContext context) {
+    return Container(
+      width: ScreenUtil().setWidth(165),
+      margin: EdgeInsets.only(top:5.0),
+      decoration: BoxDecoration(
+        border:Border.all(width: 1 , color:Colors.black12)
+      ),
+      child: Row(
+        //关键代码----------------start
+        children: <Widget>[
+          _reduceBtn(),
+          _countArea(),
+          _addBtn(),
+        ],
+        //关键代码----------------end
+      ),
+      
+    );
+  }
+
+```
+
+
+这个不完成后，再到同级目录下的`cart_item.dart`，引入和使用。先进行文件的引入.
+
+```
+import './cart_count.dart';
+```
+
+引入后，再商品名称的方法中直接引入就。
+
+```
+
+ //商品名称
+  Widget _cartGoodsName(item){
+    return Container(
+      width: ScreenUtil().setWidth(300),
+      padding: EdgeInsets.all(10),
+      alignment: Alignment.topLeft,
+      child: Column(
+        children: <Widget>[
+          Text(item.goodsName),
+          //关键代码---------start
+          CartCount()
+          //关键代码---------end
+        ],
+      ),
+    );
+  }
+
+```
+
+完成后就可以进行预览了。通过几节课的制作，终于算是完成了购物车UI界面的编写。下节课开始编写购物车的业务逻辑。
+
+## 第57节：购物车_在Model中增加选中字段
+
+通过布局，我们可以看到是有选中和多选操作的，但是在设计购物车模型时并没有涉及这个操作，所以这节课利用几分钟时间，把坑填补一下。
+
+视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004358384650](https://m.qlchat.com/topic/details?topicId=2000004358384650)
+
+### 修改Model文件
+
+首先我们打开`lib/model/cartInfo.dart`文件，增加一个新的变量`isCheck`。
+
+```
+class CartInfoMode {
+  String goodsId;
+  String goodsName;
+  int count;
+  double price;
+  String images;
+  //------新添加代码----start
+  bool isCheck;
+  //------新添加代码----end
+
+  CartInfoMode(
+      //需要修改---------start-----
+      {this.goodsId, this.goodsName, this.count, this.price, this.images,this.isCheck});
+      //修改需改--------end------
+
+  CartInfoMode.fromJson(Map<String, dynamic> json) {
+    goodsId = json['goodsId'];
+    goodsName = json['goodsName'];
+    count = json['count'];
+    price = json['price'];
+    images = json['images'];
+    //------新添加代码----start
+    isCheck = json['isCheck'];
+    //------新添加代码----end
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['goodsId'] = this.goodsId;
+    data['goodsName'] = this.goodsName;
+    data['count'] = this.count;
+    data['price'] = this.price;
+    data['images'] = this.images;
+    //------新添加代码----start
+    data['isCheck']= this.isCheck;
+    /------新添加代码----end
+    return data;
+  }
+}
+```
+
+### 在增加时加入isCheck
+
+打开`lib/provide/cart.dart`文件，找到添加购物车商品的方法`save`,修改增加的部分代码。
+
+```
+Map<String, dynamic> newGoods={
+  'goodsId':goodsId,
+  'goodsName':goodsName,
+  'count':count,
+  'price':price,
+  'images':images,
+  //-----新添加代码-----start
+  'isCheck': true  //是否已经选择
+  //-----新添加代码-----end
+};
+```
+
+
+### 修改UI的值
+
+之前UI中多选按钮的值，我们是写死的，现在就可以使用这个动态的值了。打开`lib/pages/cart_page/cart_item.dart`文件，找到多选按钮的部分，修改val的值.
+
+```
+Widget _cartCheckBt(context,item){
+  return Container(
+    child: Checkbox(
+      //修改部分--------start----
+      value: item.isCheck,
+      //修改部分--------end------
+      activeColor:Colors.pink,
+      onChanged: (bool val){
+      },
+    ),
+  );
+}
+```
+
+记得修改完成后，要把原来的持久化字符串删除掉，删除掉后再次填入新的商品到购物车，就可以正常显示了。
+
+## 第58节：购物车_删除单个商品功能制作
+
+页面终于制作完成了，剩下来就是逐步完善购物车中的各项功能，这部分的视频可能拆分的比较细致。这节课主要讲一下如何实现购物车中的删除功能。
+
+视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004359459591](https://m.qlchat.com/topic/details?topicId=2000004359459591)
+
+### 编写删除方法
+
+直接在`provide`中的`cart.dart`文件里，增加一个`deleteOneGoods`方法。编写思路是这样的，先从持久化数据里得到数据，然后把纯字符串转换成字List，转换之后进行循环，如果goodsId，相同，说明就是要删除的项，把索引进行记录，记录之后用`removeAt`方法进行删除，删除后再次进行持久化，并重新获得数据。 主要代码如下：
+
+```
+  //删除单个购物车商品
+  deleteOneGoods(String goodsId) async{
+     SharedPreferences prefs = await SharedPreferences.getInstance();
+     cartString=prefs.getString('cartInfo'); 
+     List<Map> tempList= (json.decode(cartString.toString()) as List).cast();
+   
+     int tempIndex =0;
+     int delIndex=0;
+     tempList.forEach((item){
+         
+         if(item['goodsId']==goodsId){
+          delIndex=tempIndex;
+        
+         }
+         tempIndex++;
+     });
+      tempList.removeAt(delIndex);
+      cartString= json.encode(tempList).toString();
+      prefs.setString('cartInfo', cartString);//
+      await getCartInfo();
+     
+
+  }
+```
+
+
+这个部分需要注意的是，为什么循环时不进行删除，因为dart语言不支持迭代时进行修改，这样可以保证在循环时不出错。
+
+### 修改UI界面，实现效果
+
+UI界面主要时增加Proivde组件，就是当值法伤变化时，界面也随着变化。打开`cart_page.dart`文件，主要修改build里的ListView区域，代码如下：
+
+```
+import 'package:flutter/material.dart';
+import 'package:provide/provide.dart';
+import '../provide/cart.dart';
+import './cart_page/cart_item.dart';
+import './cart_page/cart_bottom.dart';
+
+
+
+
+class CartPage extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('购物车'),
+      ),
+      body: FutureBuilder(
+        future:_getCartInfo(context),
+        builder: (context,snapshot){
+          List cartList=Provide.value<CartProvide>(context).cartList;
+          if(snapshot.hasData && cartList!=null){
+              return Stack(
+                children: <Widget>[
+                  //主要代码--------------------start--------
+                  Provide<CartProvide>(
+                   
+                    builder: (context,child,childCategory){
+                       cartList= Provide.value<CartProvide>(context).cartList;
+                      print(cartList);
+                      return ListView.builder(
+                        itemCount: cartList.length,
+                        itemBuilder: (context,index){
+                          return CartItem(cartList[index]);
+                        },
+                      );
+                    }
+                  ), 
+                  //主要代码------------------end---------
+                  Positioned(
+                    bottom:0,
+                    left:0,
+                    child: CartBottom(),
+                  )
+                ],
+              );
+        
+
+          }else{
+            return Text('正在加载');
+          }
+        },
+      ),
+    );
+  }
+
+  Future<String> _getCartInfo(BuildContext context) async{
+     await Provide.value<CartProvide>(context).getCartInfo();
+     return 'end';
+  }
+
+  
+}
+```
+
+### 增加删除响应事件
+
+在`cart_item.dart`文件中，增加删除响应事件，由于所有业务逻辑都在Provide中，所以需要引入下面两个文件。
+
+```
+import 'package:provide/provide.dart';
+import '../../provide/cart.dart';
+```
+
+有了这两个文件后，可以修改对应的方法`_cartPrice`。首先要加入context选项，然后修改里边的`onTap`方法。具体代码如下:
+
+```
+  //商品价格
+  Widget _cartPrice(context,item){
+
+    return Container(
+        width:ScreenUtil().setWidth(150) ,
+        alignment: Alignment.centerRight,
+        
+        child: Column(
+          children: <Widget>[
+            Text('￥${item.price}'),
+            Container(
+              child: InkWell(
+                onTap: (){
+                  //主要代码---------------start----------
+                  Provide.value<CartProvide>(context).deleteOneGoods(item.goodsId);
+                  //主要代码--------------end-----------
+                },
+                child: Icon(
+                  Icons.delete_forever,
+                  color: Colors.black26,
+                  size: 30,
+                ),
+              ),
+            )
+          ],
+        ),
+      );
+  }
+
+```
+
+这步做完，已经有了删除功能，可以进行测试了.
+
+## 第59节：购物车_计算商品价格和数量
+
+购物车中都有自动计算商品价格和商品数量的功能，这节课我们就把这两个小功能实现一下。
+
+视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004358188569](https://m.qlchat.com/topic/details?topicId=2000004358188569)
+
+
+
+### 增加Provide变量
+
+在`lib/provide/cart.dart`文件的类头部，增加总价格`allPrice`和总商品数量`allGoodsCount`两个变量.
+
+```
+class CartProvide with ChangeNotifier{
+
+  String cartString="[]";
+  List<CartInfoMode> cartList=[]; //商品列表对象
+  //新代码----------start
+  double allPrice =0 ;   //总价格
+  int allGoodsCount =0;  //商品总数量
+```
+
+
+
+
+### 修改`getCartInfo（）`方法
+
+主要是在循环是累计增加数量和价格，这里给出全部增加的代码，并标注了修改部分。
+
+```
+getCartInfo() async {
+     SharedPreferences prefs = await SharedPreferences.getInstance();
+     //获得购物车中的商品,这时候是一个字符串
+     cartString=prefs.getString('cartInfo'); 
+     
+     //把cartList进行初始化，防止数据混乱 
+     cartList=[];
+     //判断得到的字符串是否有值，如果不判断会报错
+     if(cartString==null){
+       cartList=[];
+     }else{
+       List<Map> tempList= (json.decode(cartString.toString()) as List).cast();
+        //---------修改代码------start-------------
+       allPrice=0;
+       allGoodsCount=0;
+        //---------修改代码------end-------------
+       tempList.forEach((item){
+           //---------修改代码------start-------------
+          if(item['isCheck']){
+             allPrice+=(item['count']*item['price']);
+             allGoodsCount+=item['count'];
+          }
+           //---------修改代码------end-------------
+         
+          cartList.add(new CartInfoMode.fromJson(item));
+
+       });
+
+     }
+      notifyListeners();
+  }
+
+```
+
+
+### 修改UI界面 显示结果
+
+有了业务逻辑，就应该可以正常的显示出界面效果了。但是需要把原来我们写死的值，都改成动态的。
+
+打开`lib/pages/cart_page/cart_bottom.dart`文件，先用`import `引入`provide package`
+
+```
+import 'package:provide/provide.dart';
+import '../../provide/cart.dart';
+
+```
+然后把底部的三个区域方法都加上`context`上下文参数,因为`Provide`的使用，必须有上下文参数。
+
+```
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(5.0),
+      color: Colors.white,
+      width: ScreenUtil().setWidth(750),
+      child: Provide<CartProvide>(
+        builder: (context,child,childCategory){
+          return  Row(
+            children: <Widget>[
+              //修改部分--------start----------
+              selectAllBtn(context),
+              allPriceArea(context),
+              goButton(context)
+              //修改部分--------end-----------
+            ],
+          );
+        },
+      )
+    );
+  }
+```
+
+然后在两个方法中都从`Provide`里动态获取变量，就可以实现效果了。
+
+合计区域的方法代码：
+
+```
+  // 合计区域
+  Widget allPriceArea(context){
+    //修改代码---------------start------------
+    double allPrice = Provide.value<CartProvide>(context).allPrice;
+    //修改代码---------------end------------
+    return Container(
+      width: ScreenUtil().setWidth(430),
+      alignment: Alignment.centerRight,
+      child: Column(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Container(
+                alignment: Alignment.centerRight,
+                width: ScreenUtil().setWidth(280),
+                child: Text(
+                  '合计:',
+                  style:TextStyle(
+                    fontSize: ScreenUtil().setSp(36)
+                  )
+                ), 
+              ),
+              Container(
+                 alignment: Alignment.centerLeft,
+                width: ScreenUtil().setWidth(150),
+                 //修改代码---------------start------------
+                child: Text(
+                  '￥${allPrice}',
+                  style:TextStyle(
+                    fontSize: ScreenUtil().setSp(36),
+                    color: Colors.red,
+                  )
+                ),
+                 //修改代码---------------end------------
+                
+              )
+             
+              
+            ],
+          ),
+          Container(
+            width: ScreenUtil().setWidth(430),
+            alignment: Alignment.centerRight,
+            child: Text(
+              '满10元免配送费，预购免配送费',
+              style: TextStyle(
+                color: Colors.black38,
+                fontSize: ScreenUtil().setSp(22)
+              ),
+            ),
+          )
+          
+        ],
+      ),
+    );
+
+  }
+```
+
+结算按钮区域
+
+```
+//结算按钮
+  Widget goButton(context){
+    //修改代码---------------start------------
+    int allGoodsCount =  Provide.value<CartProvide>(context).allGoodsCount;
+    //修改代码---------------end--------------
+    return Container(
+      width: ScreenUtil().setWidth(160),
+      padding: EdgeInsets.only(left: 10),
+      child:InkWell(
+        onTap: (){},
+        child: Container(
+          padding: EdgeInsets.all(10.0),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+             color: Colors.red,
+             borderRadius: BorderRadius.circular(3.0)
+          ),
+          //修改代码---------------start------------
+          child: Text(
+            '结算(${allGoodsCount})',
+            style: TextStyle(
+              color: Colors.white
+            ),
+          ),
+          //修改代码---------------end------------
+        ),
+      ) ,
+    );
+    
+  
+  }
+
+```
+
+这步完成后，就应该可以正常动态显示购物车中的商品数量和商品价格了。
+
 
 
 ---
