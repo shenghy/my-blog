@@ -3,7 +3,7 @@ category: 视频教程
 tags:
   - Flutter
 date: 2019-03-01
-title: Flutter实战视频-移动电商 （第59节更新）
+title: Flutter实战视频-移动电商 （第67节更新）
 vssue-title: Flutter-shop
 ---
 
@@ -36,7 +36,7 @@ vssue-title: Flutter-shop
 ## 第01节：课程介绍 
 
 
-<video src="http://blogimages.jspang.com/FlutterExample01.mp4" controls="controls" width="100%">
+<video src="http://blogimages.jspang.com/01%E8%8A%82%E6%96%B0%E7%89%88%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D%E8%A7%86%E9%A2%91.mp4" controls="controls" width="100%">
 </video>
 ### 购买地址
 
@@ -50,6 +50,9 @@ vssue-title: Flutter-shop
 ![图片地址](http://blogimages.jspang.com/Flutter_shop_01.jpg)
 
 
+
+
+
 ### Flutter实战真实接口全网首发
 Flutter实战电商开始预售了，课程采用了**Flutter1.x版本（最新版）**，采用真实接口开发，前后端接口联调和真实工作一样，目前市面首发（其他视频多是界面布局，没有接口调试部分）。
 
@@ -57,10 +60,14 @@ Flutter实战电商开始预售了，课程采用了**Flutter1.x版本（最新�
 
 所以如果你购买盗版将没有这些接口改变的后续服务，你根本不可能做出视频中的效果（请购买正版教程）。
 
-2月18日，跟着技术胖一起开盘Flutter实战吧。
 
 
 ### 你能学到的知识点
+
+在详细说明之前，把所有你能学到的知识点作了一张梳理图，可以帮助小伙伴更好的了解课程概况。
+
+![知识点梳理](http://blogimages.jspang.com/Flutter%E7%A7%BB%E5%8A%A8%E7%94%B5%E5%95%86%E5%AE%9E%E6%88%98-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86.png)
+
 
 - **Dio2.0**:`Dio`是一个强大的Dart Http请求库，支持Restful API、FormData、拦截器、请求取消等操作。视频中将全面学习和使用Dio的操作。
 - **Swiper**：swiper滑动插件的使用，使用Swiper插件图片的切换效果。
@@ -8513,7 +8520,1041 @@ import '../../provide/cart.dart';
 
 这步完成后，就应该可以正常动态显示购物车中的商品数量和商品价格了。
 
+## 第60节：购物车_商品选中功能制作
 
+在购物车里是有选择和取消选择，还有全选的功能按钮的。当我们选择时，价格和数量都是跟着自动计算的，列表也是跟着刷新的。这节课主要完成单选和全选按钮的交互效果。
+
+视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004371854914](https://m.qlchat.com/topic/details?topicId=2000004371854914)
+
+
+### 制作商品单选按钮的交效果
+
+这些业务逻辑代码，当然需要写到`Provide`中，打开`lib/provide/cart.dart`文件。新建一个`changeCheckState`方法：
+
+```
+  changeCheckState(CartInfoMode cartItem) async{
+     SharedPreferences prefs = await SharedPreferences.getInstance();
+     cartString=prefs.getString('cartInfo');  //得到持久化的字符串
+     List<Map> tempList= (json.decode(cartString.toString()) as List).cast(); //声明临时List，用于循环，找到修改项的索引
+     int tempIndex =0;  //循环使用索引
+     int changeIndex=0; //需要修改的索引
+     tempList.forEach((item){
+         
+         if(item['goodsId']==cartItem.goodsId){
+          //找到索引进行复制
+          changeIndex=tempIndex;
+         }
+         tempIndex++;
+     });
+     tempList[changeIndex]=cartItem.toJson(); //把对象变成Map值
+     cartString= json.encode(tempList).toString(); //变成字符串
+     prefs.setString('cartInfo', cartString);//进行持久化
+     await getCartInfo();  //重新读取列表
+    
+  }
+
+```
+
+业务逻辑写完后到到UI层进行修改，打开`lib/pages/cart_page/cart_item.dart`文件，修改多选按钮的`onTap`方法。
+
+```
+//多选按钮
+  Widget _cartCheckBt(context,item){
+    return Container(
+      child: Checkbox(
+        value: item.isCheck,
+        activeColor:Colors.pink,
+        //-------新增代码--------start---------
+        onChanged: (bool val){
+          item.isCheck=val;
+          Provide.value<CartProvide>(context).changeCheckState(item);
+        },
+        //-------新增代码--------end---------
+      ),
+    );
+  }
+
+```
+
+修改完成后，可以点击测试一下效果，如果一切正常，就可以进行选中和取消的交互了。
+
+
+### 全选按钮交互效果制作
+
+声明一个状态变量`isAllCheck`,然后在读取购物车商品数据时进行更改。
+```
+  bool isAllCheck= true; //是否全选
+```
+修改`getCartInfo`方法，就是获取购物车列表的方法.
+
+```
+ //得到购物车中的商品
+  getCartInfo() async {
+     SharedPreferences prefs = await SharedPreferences.getInstance();
+     //获得购物车中的商品,这时候是一个字符串
+     cartString=prefs.getString('cartInfo'); 
+     
+     //把cartList进行初始化，防止数据混乱 
+     cartList=[];
+     //判断得到的字符串是否有值，如果不判断会报错
+     if(cartString==null){
+       cartList=[];
+     }else{
+       List<Map> tempList= (json.decode(cartString.toString()) as List).cast();
+       allPrice=0;
+       allGoodsCount=0;
+       //--------新增代码----------start--------
+       isAllCheck=true;
+       //--------新增代码----------end--------
+       tempList.forEach((item){
+           //--------新增代码----------start--------
+          if(item['isCheck']){
+             allPrice+=(item['count']*item['price']);
+             allGoodsCount+=item['count'];
+          }else{
+            isAllCheck=false;
+          }
+          //--------新增代码----------end--------
+         
+          cartList.add(new CartInfoMode.fromJson(item));
+
+       });
+
+     }
+      notifyListeners();
+  }
+
+```
+
+全选按钮的方法和当个商品很类似，也是在`Provide`中，新建一个`changeAllCheckBtnState`方法，写入下面的代码.
+
+```
+  //点击全选按钮操作
+  changeAllCheckBtnState(bool isCheck) async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    cartString=prefs.getString('cartInfo'); 
+    List<Map> tempList= (json.decode(cartString.toString()) as List).cast(); 
+    List<Map> newList=[]; //新建一个List，用于组成新的持久化数据。
+    for(var item in tempList ){
+      var newItem = item; //复制新的变量，因为Dart不让循环时修改原值
+      newItem['isCheck']=isCheck; //改变选中状态
+      newList.add(newItem);
+    } 
+   
+     cartString= json.encode(newList).toString();//形成字符串
+     prefs.setString('cartInfo', cartString);//进行持久化
+     await getCartInfo();
+
+  }
+
+```
+
+完成后，到UI界面加入交互效果,打开`lib/pages/cart_page/cart_bottom.dart`文件,修改`selectAllBtn(context)`方法。
+
+```
+  //全选按钮
+  Widget selectAllBtn(context){
+    //--------新增代码----------start--------
+    bool isAllCheck = Provide.value<CartProvide>(context).isAllCheck;
+    //--------新增代码----------end--------
+    return Container(
+      child: Row(
+        children: <Widget>[
+          Checkbox(
+            value: isAllCheck,
+            activeColor: Colors.pink,
+            //--------新增代码----------start--------
+            onChanged: (bool val){
+              Provide.value<CartProvide>(context).changeAllCheckBtnState(val);
+            },
+            //--------新增代码----------end--------
+          ),
+          Text('全选')
+        ],
+      ),
+    );
+  }
+
+```
+
+做完这步，就可以测试一下交互效果了。这的代码比较零散，所以修改的时候要特别注意，防止犯错。
+
+
+## 第61节：购物车_商品数量的加减操作
+
+现在基本购物车页面只差一个商品数量的加减操作了，通过几节课的学习，应该大部分小伙i版已经掌握了编写业务逻辑和持久化的方法。你可以先自己试着能不能做出这个效果。
+
+视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004371757854](https://m.qlchat.com/topic/details?topicId=2000004371757854)
+
+
+### 编写业务逻辑方法
+
+直接在`lib/provide/cart.dart`文件中，新建立一个方法`addOrReduceAction()`方法。方法接收两个参数.
+
+- cartItem:要修改的项.
+- todo: 是加还是减。
+
+代码如下：
+
+```
+  addOrReduceAction(var cartItem, String todo )async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    cartString=prefs.getString('cartInfo'); 
+    List<Map> tempList= (json.decode(cartString.toString()) as List).cast();
+    int tempIndex =0;
+    int changeIndex=0;
+    tempList.forEach((item){
+         if(item['goodsId']==cartItem.goodsId){
+          changeIndex=tempIndex; 
+         }
+         tempIndex++;
+     });
+     if(todo=='add'){
+       cartItem.count++;
+     }else if(cartItem.count>1){
+       cartItem.count--;
+     }
+     tempList[changeIndex]=cartItem.toJson();
+     cartString= json.encode(tempList).toString();
+     prefs.setString('cartInfo', cartString);//
+     await getCartInfo();
+
+  }
+
+
+```
+
+方法写完后，就可以修改UI部分了，让其有交互效果.
+
+
+### UI交互效果的修改
+
+现在页面中引入`Provide`相关的文件.
+
+```
+import 'package:provide/provide.dart';
+import '../../provide/cart.dart';
+```
+
+然后设置接收参数，接收item就可以了
+
+```
+  var item;
+  CartCount(this.item);
+```
+
+然后把组件的内部方法都加入参数`context`,这里直接给出所有代码，方便你学习。
+
+
+
+```
+
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provide/provide.dart';
+import '../../provide/cart.dart';
+
+class CartCount extends StatelessWidget {
+  //--------------新增加代码------------start--------
+  var item;
+  CartCount(this.item);
+  //--------------新增加代码------------end--------
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: ScreenUtil().setWidth(165),
+      margin: EdgeInsets.only(top:5.0),
+      decoration: BoxDecoration(
+        border:Border.all(width: 1 , color:Colors.black12)
+      ),
+      child: Row(
+        children: <Widget>[
+          //--------------新增加代码------------start--------
+          _reduceBtn(context),
+          _countArea(),
+          _addBtn(context),
+          //--------------新增加代码------------end--------
+        ],
+      ),
+      
+    );
+  }
+  // 减少按钮
+  Widget _reduceBtn(context){
+    return InkWell(
+      onTap: (){
+        //--------------新增加代码------------start--------
+        Provide.value<CartProvide>(context).addOrReduceAction(item,'reduce');
+        //--------------新增加代码------------end--------
+      },
+      child: Container(
+        width: ScreenUtil().setWidth(45),
+        height: ScreenUtil().setHeight(45),
+        alignment: Alignment.center,
+       
+        decoration: BoxDecoration(
+          //--------------新增加代码------------start--------
+          color: item.count>1?Colors.white:Colors.black12,
+          //--------------新增加代码------------end--------
+          border:Border(
+            right:BorderSide(width:1,color:Colors.black12)
+          )
+        ),
+        //--------------新增加代码------------start--------
+        child:item.count>1? Text('-'):Text(' '),
+        //--------------新增加代码------------end--------
+      ),
+    );
+  }
+
+  //添加按钮
+  Widget _addBtn(context){
+    return InkWell(
+      onTap: (){
+       //--------------新增加代码------------start--------
+        Provide.value<CartProvide>(context).addOrReduceAction(item,'add');
+        //--------------新增加代码------------end--------
+      },
+      child: Container(
+        width: ScreenUtil().setWidth(45),
+        height: ScreenUtil().setHeight(45),
+        alignment: Alignment.center,
+       
+         decoration: BoxDecoration(
+          color: Colors.white,
+          border:Border(
+            left:BorderSide(width:1,color:Colors.black12)
+          )
+        ),
+        child: Text('+'),
+      ),
+    );
+  }
+
+  //中间数量显示区域
+  Widget _countArea(){
+    return Container(
+      width: ScreenUtil().setWidth(70),
+      height: ScreenUtil().setHeight(45),
+      alignment: Alignment.center,
+      color: Colors.white,
+      //--------------新增加代码------------start--------
+       child: Text('${item.count}'),
+      //--------------新增加代码------------end--------
+    );
+  }
+
+}
+```
+
+全部改完后，还需要到`cart_item.dart`里的`_cartGoodsName`里的调用组件的方法。
+
+```
+
+  //商品名称
+  Widget _cartGoodsName(item){
+    return Container(
+      width: ScreenUtil().setWidth(300),
+      padding: EdgeInsets.all(10),
+      alignment: Alignment.topLeft,
+      child: Column(
+        children: <Widget>[
+          Text(item.goodsName),
+          //-----------修改关键代码------start-------
+          CartCount(item)
+          //-----------修改关键代码------end-------
+        ],
+      ),
+    );
+  }
+
+```
+
+这步完成后，就应该可以实现商品数量的加减交互了。
+
+## 第62节：购物车_首页Provide化 让跳转随心所欲
+
+在开始学习教程时，由于为了教学效果，所以底部导航跳转并没有使用Provide，而是使用了简单的变量，这样作的结果就是其它页面没办法控制首页底部导航的跳转，让项目的跳转非常笨拙，缺乏灵活性。这节课就通过我们小小的改造，把首页`index_page.dart`，加入Provide控制。
+
+视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004370328408](https://m.qlchat.com/topic/details?topicId=2000004370328408)
+
+
+
+###  编写Provide文件
+
+先在`lib/provide`文件夹下面，新建一个`currentIndex.dart`文件,然后声明一个索引变量，这个变量就是控制底部导航和页面跳转的。也就是说我们只要把这个索引进行状态管理，那所以的页面可以轻松的控制首页的跳转了。代码如下：
+
+```
+import 'package:flutter/material.dart';
+
+class CurrentIndexProvide with ChangeNotifier{
+  int currentIndex=0;
+  
+  changeIndex(int newIndex){
+    currentIndex=newIndex;
+    notifyListeners();
+  }
+
+}
+
+```
+
+### 重新编写首页
+
+现在就要改造首页了，这次改动的地方比较多，所以干脆先注释掉所有代码，然后重新进行编写。
+
+```
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'home_page.dart';
+import 'category_page.dart';
+import 'cart_page.dart';
+import 'member_page.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provide/provide.dart';
+import '../provide/currentIndex.dart';
+
+
+class IndexPage extends StatelessWidget {
+  final List<BottomNavigationBarItem> bottomTabs = [
+    BottomNavigationBarItem(
+      icon:Icon(CupertinoIcons.home),
+      title:Text('首页')
+    ),
+    BottomNavigationBarItem(
+      icon:Icon(CupertinoIcons.search),
+      title:Text('分类')
+    ),
+    BottomNavigationBarItem(
+      icon:Icon(CupertinoIcons.shopping_cart),
+      title:Text('购物车')
+    ),
+     BottomNavigationBarItem(
+      icon:Icon(CupertinoIcons.profile_circled),
+      title:Text('会员中心')
+    ),
+  ];
+
+   final List<Widget> tabBodies = [
+      HomePage(),
+      CategoryPage(),
+      CartPage(),
+      MemberPage()
+   ];
+
+  @override
+  Widget build(BuildContext context) {
+   
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
+  
+    return Provide<CurrentIndexProvide>(
+
+      builder: (context,child,val){
+        //------------关键代码----------start---------
+        int currentIndex= Provide.value<CurrentIndexProvide>(context).currentIndex;
+        // ----------关键代码-----------end ----------
+        return Scaffold(
+            backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
+            bottomNavigationBar: BottomNavigationBar(
+              type:BottomNavigationBarType.fixed,
+              currentIndex: currentIndex,
+              items:bottomTabs,
+              onTap: (index){
+                //------------关键代码----------start---------
+                Provide.value<CurrentIndexProvide>(context).changeIndex(index);
+                // ----------关键代码-----------end ----------
+              },
+            ),
+             body: IndexedStack(
+                    index: currentIndex,
+                    children: tabBodies
+                  ),
+        ); 
+      }
+    );
+     
+  }
+}
+
+```
+
+修改思路是这样的，把原来的`statfulWidget`换成静态的`statelessWeidget`然后进行主要修改`build`方法里。加入`Provide Widget`，然后再每次变化时得到索引，点击下边导航时改变索引.
+
+
+### 修改商品详细页，实现跳转
+
+打开`/lib/pages/details_page/details_bottom.dart`文件，先引入`curretnIndex.dart`文件.
+```
+import '../../provide/currentIndex.dart';
+```
+
+然后修改`build`方法里的购物车图标区域.在图标的`onTap `方法里,加入下面的代码.
+
+```
+InkWell(
+  onTap: (){
+      //--------------关键代码----------start-----------
+      Provide.value<CurrentIndexProvide>(context).changeIndex(2);
+      Navigator.pop(context);
+      //-------------关键代码-----------end--------
+  },
+  child: Container(
+      width: ScreenUtil().setWidth(110) ,
+      alignment: Alignment.center,
+      child:Icon(
+            Icons.shopping_cart,
+            size: 35,
+            color: Colors.red,
+          ), 
+    ) ,
+),
+```
+
+这步做完，可以试着测试一下了，看看是不是可以从详细页直接跳转到购物车页面了。
+
+
+## 第63节：购物车_详细页显示购物车商品数量
+
+现在购物车的基本功能都已经做完了，但是商品详细页面还有一个小功能没有完成，就是在商品详细页添加商品到购物车时，购物车的图标要动态显示出此时购物车的数量。这节课就利用点时间完成这个功能。
+
+视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004370328408](https://m.qlchat.com/topic/details?topicId=2000004370328408)
+
+https://m.qlchat.com/topic/details?topicId=2000004370328408
+
+### 修改文件结构
+
+打开`/lib/pages/details_page/details_bottom.dart`文件，修改图片区域，增加层叠组件`Stack Widget`,然后在右上角加入购物车现有商品数量。
+
+```
+ children: <Widget>[
+          //关键代码--------------------start--------------
+           Stack(
+             children: <Widget>[
+               InkWell(
+                  onTap: (){
+                      Provide.value<CurrentIndexProvide>(context).changeIndex(2);
+                      Navigator.pop(context);
+                  },
+                  child: Container(
+                      width: ScreenUtil().setWidth(110) ,
+                      alignment: Alignment.center,
+                      child:Icon(
+                            Icons.shopping_cart,
+                            size: 35,
+                            color: Colors.red,
+                          ), 
+                    ) ,
+                ),
+                Provide<CartProvide>(
+                  builder: (context,child,val){
+                    int  goodsCount = Provide.value<CartProvide>(context).allGoodsCount;
+                    return  Positioned(
+                        top:0,
+                        right: 10,
+                        child: Container(
+                          padding:EdgeInsets.fromLTRB(6, 3, 6, 3),
+                          decoration: BoxDecoration(
+                            color:Colors.pink,
+                            border:Border.all(width: 2,color: Colors.white),
+                            borderRadius: BorderRadius.circular(12.0)
+                          ),
+                          child: Text(
+                            '${goodsCount}',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: ScreenUtil().setSp(22)
+                            ),
+                          ),
+                        ),
+                      ) ;
+                  },
+                )
+              
+             ],
+           ),
+           
+           //关键代码--------------------end----------------
+```
+
+
+### 修改`provide/cart.dart`文件
+
+因为我们要实现动态展示，所以在添加购物车商品时，应该也有数量的变化，所以需要修改`cart.dart`文件里的`save()`方法。
+
+```
+  save(goodsId,goodsName,count,price,images) async{
+    //初始化SharedPreferences
+    SharedPreferences prefs = await  SharedPreferences.getInstance();
+    cartString=prefs.getString('cartInfo');  //获取持久化存储的值
+    var temp=cartString==null?[]:json.decode(cartString.toString());
+    //把获得值转变成List
+    List<Map> tempList= (temp as List).cast();
+    //声明变量，用于判断购物车中是否已经存在此商品ID
+    var isHave= false;  //默认为没有
+    int ival=0; //用于进行循环的索引使用
+    //-----------------关键代码---------start---------
+    allPrice=0; 
+    allGoodsCount=0;  //把商品总数量设置为0
+    //-----------------关键代码---------end---------
+    tempList.forEach((item){//进行循环，找出是否已经存在该商品
+      //如果存在，数量进行+1操作
+      if(item['goodsId']==goodsId){
+        tempList[ival]['count']=item['count']+1;
+        cartList[ival].count++;
+        isHave=true;
+      }
+      //-----------------关键代码---------start---------
+      if(item['isCheck']){
+         allPrice+= (cartList[ival].price* cartList[ival].count);
+         allGoodsCount+= cartList[ival].count;
+      }
+      //-----------------关键代码---------end---------
+     
+     
+      ival++;
+    });
+    //  如果没有，进行增加
+    if(!isHave){
+      Map<String, dynamic> newGoods={
+        'goodsId':goodsId,
+        'goodsName':goodsName,
+        'count':count,
+        'price':price,
+        'images':images,
+        'isCheck': true  //是否已经选择
+      };
+      tempList.add(newGoods);
+      cartList.add(new CartInfoMode.fromJson(newGoods));
+      //-----------------关键代码---------start---------
+      allPrice+= (count * price);
+      allGoodsCount+=count;
+      //-----------------关键代码---------end---------
+    }
+    //把字符串进行encode操作，
+    cartString= json.encode(tempList).toString();
+
+    prefs.setString('cartInfo', cartString);//进行持久化
+    notifyListeners();
+  }
+
+```
+
+完成后，就可以实现商品详细页购物车中商品数量的动态展示了。也算我们购物车区域所有功能都已经完成了。
+
+
+## 第64节：会员中心_首页头部布局
+
+这节课开始布局会员中心的UI，如果你前边的课程都认真听了，并且也跟着作了，那这部分的内容对你来说就比较简单了。你可以作为一个练习来作。
+
+
+### 页面大体架构的编写
+
+打开以前建立的`/lib/pages/member_page.dart`文件，先删除里边的代码，然后引入我们需要的`package`代码。
+
+```
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+```
+
+引入package后，就可以编写一个`StatelessWidget`，代码如下：
+
+```
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+
+class MemberPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+   
+  }
+}
+
+```
+
+然后返回一个`Scaffold`，在`body`区域里加入一个ListView。
+
+```
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+
+class MemberPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+     appBar: AppBar(
+       title: Text('会员中心'),
+     ),
+     body:ListView(
+       children: <Widget>[
+       ],
+     ) ,
+   );
+  }
+}
+
+```
+
+这样大体结构就已经编写完成了，编写完成后我们把`ListView`的进行分离出来，编写成不同的方法。
+
+### 顶部头像区域编写
+
+头像区域我们外边套一层`Container`，然后里边放入`Column`，圆形头像这个部分，我们使用`ClipOval Widget`。代码我直接放在下面了。
+
+
+```
+  Widget _topHeader(){
+
+    return Container(
+      width: ScreenUtil().setWidth(750),
+      padding: EdgeInsets.all(20),
+      color: Colors.pinkAccent,
+      child: Column(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(top: 30), 
+            child: ClipOval(
+              
+              child:Image.network('http://blogimages.jspang.com/blogtouxiang1.jpg')
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            child: Text(
+              '技术胖',
+              style: TextStyle(
+                fontSize: ScreenUtil().setSp(36),
+                color:Colors.white,
+
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+
+  }
+
+```
+
+写完后把这个组件加入到build的ListView里就可以了。然后就可以进行一个预览了。
+
+
+## 第65节：会员中心_订单区域UI编写
+
+头部区域编写好后，我们就可以编写订单区域了，这部分我们简单分成两个方法来进行编写。
+
+### 订单标题区域
+
+直接上代码了。
+
+```
+//我的订单顶部
+  Widget _orderTitle(){
+
+    return Container(
+      margin: EdgeInsets.only(top:10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border(
+          bottom:BorderSide(width: 1,color:Colors.black12)
+        )
+      ),
+      child: ListTile(
+        leading: Icon(Icons.list),
+        title:Text('我的订单'),
+        trailing: Icon(Icons.arrow_right),
+      ),
+    );
+
+  }
+
+```
+
+### 订单列表区域
+
+直接上代码
+
+```
+
+  Widget _orderType(){
+
+    return Container(
+      margin: EdgeInsets.only(top:5),
+      width: ScreenUtil().setWidth(750),
+      height: ScreenUtil().setHeight(150),
+      padding: EdgeInsets.only(top:20),
+      color: Colors.white,
+      child: Row(
+        children: <Widget>[
+          Container(
+            width: ScreenUtil().setWidth(187),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.party_mode,
+                  size: 30,
+                ),
+                Text('待付款'),
+              ],
+            ),
+          ),
+          //-----------------
+          Container(
+            width: ScreenUtil().setWidth(187),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.query_builder,
+                  size: 30,
+                ),
+                Text('待发货'),
+              ],
+            ),
+          ),
+           //-----------------
+          Container(
+            width: ScreenUtil().setWidth(187),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.directions_car,
+                   size: 30,
+                ),
+                Text('待收货'),
+              ],
+            ),
+          ),
+          Container(
+            width: ScreenUtil().setWidth(187),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.content_paste,
+                   size: 30,
+                ),
+                Text('待评价'),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+
+  }
+
+```
+
+这两个方法写完后，直接加到`Build`里就可以了。
+
+
+## 第66节:会员中心_编写ListTile的通用方法
+
+
+这节课我们就把会员中心的剩下UI做完，可以看到，订单下面就全部都是类似List的形式了。那我们可以编写一个通用的方法，然后传递不同的值，来快速布局出下面的部分。
+
+### ListTile通用方法
+
+我们利用方法传递参数的形式，创建一个可以通用的方法，只要传递不同的参数，就可以形成不同的组件。代码如下
+
+```
+ Widget _myListTile(String title){
+
+    return Container(
+       decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border(
+          bottom:BorderSide(width: 1,color:Colors.black12)
+        )
+      ),
+      child: ListTile(
+        leading: Icon(Icons.blur_circular),
+        title: Text(title),
+        trailing: Icon(Icons.arrow_right),
+      ),
+    );
+  }
+
+```
+
+
+### 组合List布局
+
+有了通用的方法后，我们就可以进行组合List布局，代码如下：
+
+```
+  Widget _actionList(){
+    return Container(
+      margin: EdgeInsets.only(top: 10),
+      child: Column(
+        children: <Widget>[
+            _myListTile('领取优惠券'),
+            _myListTile('已领取优惠券'),
+            _myListTile('地址管理'),
+            _myListTile('客服电话'),
+            _myListTile('关于我们'),
+        ],
+      ),
+    );
+  }
+```
+
+这个组件编写完成后，可以组合到Build方法里面。这步完成后，就形成了一个完成的会员中心页面。
+
+
+总结:这节课结束后，我原计划的所有知识点就已经讲完了。但是课程并没有结束，我后边还会不断的更新课程，我管这个叫做加餐。
+
+- 优化现有程序：我会不断优化现有程序和存在的Bug，有重大优化时，就会更新课程。
+- 对小伙伴期望的知识点作补充讲解：这个要10人以上提出的共性知识点作补充讲解。
+- 后续功能升级：如果后期后台API有重点变化，影响学习，我会录课补充修改。
+
+
+## 第67课：加餐_高德地图插件的使用
+
+这是一个加餐课，很多小伙伴都给我留言说，需要这个功能，经过两天的摸索，总算是可以使用了，当然这个插件的坑也是巨多的。使用的插件叫`amap_base_flutter`,也是国内用的最多的地图一个插件。此节课收到了很多小伙伴的帮助，**特别感谢"鲁隽彧(网名)"**。
+
+
+视频链接地址：[https://m.qlchat.com/topic/details?topicId=2000004451659358](https://m.qlchat.com/topic/details?topicId=2000004451659358)
+
+
+### 1.注册和建立高德API应用
+
+
+这个需要到高德的网站进行，网站地址为：[https://lbs.amap.com/](https://lbs.amap.com/)。
+
+> 你需要先注册一个账号，这个过程我就不演示了。这个你自己再弄不明白，那么接下来我就不带你去找小姐姐了。
+
+有了账号之后到控制台-应用管理-创建应用（这个我就再视频中演示了）
+
+
+### 2.获得SHA1
+
+在创建应用的时候，需要填入SHA1，这个必须需要在`Android Studio`里进行，`VS Code`里还没有摸清如何获得，如果你知道如何获得，可以文章下方给技术胖留言。（获得方式，在视频中进行演示）
+
+
+### 3.获得PackageName
+
+这个的获得比较简单，打开`/android/app/build.gradle`文件，然后找到`applicationId`，这个就是`packageName`，比如我的项目的`packageName`就是`com.example.amap_test`。
+
+把这两项填写好后，我们就可以开心的编写程序了。
+
+
+### 4.配置`AndoridManifest.xml`文件
+
+这个文件在`/android/app/src/main/AndroidManifest.xml`，然后在`<activity>`标签里，加入下面的代码:
+
+```
+<meta-data
+  android:name="com.amap.api.v2.apikey"
+  android:value="自己的key" />
+
+```
+
+### 5.编写代码
+
+需要先进入根目录的`pubspec.yaml`文件，进行依赖注册，这个`package`下载还是需要挺长时间的，我反正用了将近15分钟。
+
+```
+amap_base: ^0.3.5
+```
+写完后点击右上角的`packages get`，剩下的就是耐心等待。
+
+进入`lib/main.dart`文件，写入下面代码。
+
+进的要用`import`引入`amap_base.dart`文件。
+
+
+
+```
+import 'package:flutter/material.dart';
+import 'package:amap_base/amap_base.dart';
+
+
+
+void main()async{
+  runApp(MyApp());
+
+}
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(title: '高德地图测试'),
+    );
+  }
+}
+
+
+
+
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+  final String title;
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  AMapController _controller;
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: AppBar(
+
+        title: Text(widget.title),
+      ),
+      body:AMapView(
+              onAMapViewCreated: (controller) {
+                _controller = controller;
+              },
+              amapOptions: AMapOptions(
+                compassEnabled: false,
+                zoomControlsEnabled: true,
+                logoPosition: LOGO_POSITION_BOTTOM_CENTER,
+                camera: CameraPosition(
+                  target: LatLng(41.851827, 112.801637),
+                  zoom: 4,
+                ),
+              ),
+          
+     );
+  }
+
+}
+
+
+
+```
+
+
+写完代码后，你要记得不要使用虚拟机进行测试，我在学习的时候，就是使用虚拟机测试，一直是黑屏，后来采用了真机测试，才能出现效果。
+
+这就是我在集成高德地图插件时遇到的几个坑，希望小伙伴们都能别走弯路。
+
+
+
+
+
+后期更多免费Flutter视频，到https://jspang.com进行观看。
 
 ---
 

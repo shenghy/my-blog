@@ -157,6 +157,7 @@ module.exports = {
         repo: 'my-blog',
         clientId: '9a678bc8e26647f7768e',
         clientSecret: '8f66e320aab28596f6182a4b6fe04f40958a0829',
+        autoCreateIssue: process.env.NODE_ENV !== 'development',
       },
     },
   }
