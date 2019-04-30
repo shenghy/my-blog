@@ -3,7 +3,7 @@ category: 视频教程
 tags:
   - Flutter
 date: 2019-03-01
-title: Flutter实战视频-移动电商 （第67节更新）
+title: Flutter实战视频-移动电商 （第69节更新）
 vssue-title: Flutter-shop
 ---
 
@@ -9551,6 +9551,310 @@ class _MyHomePageState extends State<MyHomePage> {
 这就是我在集成高德地图插件时遇到的几个坑，希望小伙伴们都能别走弯路。
 
 
+## 第68节：加餐_极光推送插件使用-1
+
+现在每个app都需要有推送功能，这也是一个app的价值所在，和你的顾客产生联系。极光推送是中国很出色的推送服务提供商，有着很好的口碑和稳定性，送达率也是国内领先的。Flutter1.0版本发布后，极光也很及时的退出了Flutter插件。这节课就带着小伙伴了解一下极光推送的使用。
+
+
+### 申请极光账号和建立应用
+
+极光推送的官方网址为：`https://www.jiguang.cn/`
+
+注册的过程这里我依然省略了，有劳小伙伴们自己辛苦一下。
+
+注册好后，进入'服务中心',然后再进入'开发者平台'，点击创建应用。这时候会出现新页面，让你填写“应用名称”和上传“应用图标”。
+创建完成，极光平台就会给我们两个key。
+
+- appKey : 移动客户端使用的key
+- Master Secret ： 服务端使用的key
+
+我们这里只做移动端不做服务端，所以只需要`appKey`。得到这个Key也算是极光平台操作完了。
+
+### 加入dependencies依赖
+
+> github网址:https://github.com/jpush/jpush-flutter-plugin
+
+要使用极光推送插件必须先下载包，要下载包就需要先添加依赖，直接把下面的代码加入`pubspec.yaml`文件中。
+
+```
+jpush_flutter: 0.0.11
+```
+需要注意的是，使用最新版本，这里使用的只是我录课时的最新版本。
+
+写完代码后，选择`Android Studio`右上角的`Packages get`进行下载，下载完成后进行操作。
+
+
+
+### build.gradle添加可以和cpu型号代码
+
+打开`android/app/src/build.gradle`文件，加入如下代码：
+
+```javascript
+    defaultConfig {
+       ...
+
+
+        ndk {
+            //选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'x86', 'x86_64', 'mips', 'mips64'// 'arm64-v8a',
+            // 还可以添加
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "这里写入你自己申请的Key哦", // NOTE: JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+
+
+    }
+
+```
+
+到这里你的第一步工作算是完成了，你已经可以开发推送功能了。这部分如果对于移动开发者来说，可能很容易。所以单独拿出一课来，这样有移动开发经验的可以跳过这节。
+
+
+
+## 第69节：加餐_极光推送插件使用-2
+
+这节课继续讲解一下极光推送的使用，由于技术胖也是作前端的，PHP也有3年没有碰过了，所以这里讲一下极光推送的本地推送，服务器端代码就不在编写了。工作中应该也不用你编写，这是后端的事情。
+
+
+### 先引入主要文件
+
+打开代码`lib/main.dart`文件，先引入需要使用的主要文件
+
+```
+import 'package:flutter/material.dart';
+import 'dart:async';
+
+import 'package:flutter/services.dart';
+import 'package:jpush_flutter/jpush_flutter.dart';
+```
+
+
+### 主要方法编写
+
+```dart
+void main() => runApp(new MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => new _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+ 
+  @override
+  void initState() {
+    super.initState();
+  }
+// 编写视图
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      home: new Scaffold(
+        appBar: new AppBar(
+          title: const Text('极光推送'),
+        ),
+        body: new Center(
+          child:Text('临时的.........') 
+        ),
+      ),
+    );
+  }
+}
+
+```
+
+### 编写initPlatformState方法
+
+在使用极光推送之前，我们需要初始化一下，初始化时的主要任务就是写一下监听响应方法。在写主要方法之前，需要声明两个变量。
+
+```
+ String debugLable = 'Unknown';   //错误信息
+  final JPush jpush = new JPush();  //初始化极光插件
+```
+
+然后编写initPlatformState方法
+
+```
+
+  Future<void> initPlatformState() async {
+    String platformVersion;
+
+    try {
+      //监听响应方法的编写
+      jpush.addEventHandler(
+        onReceiveNotification: (Map<String, dynamic> message) async {
+          print(">>>>>>>>>>>>>>>>>flutter 接收到推送: $message");
+          setState(() {
+            debugLable = "接收到推送: $message";
+          });
+        }
+      );
+
+    } on PlatformException {
+      platformVersion = '平台版本获取失败，请检查！';
+    }
+
+
+    if (!mounted) return;
+
+    setState(() {
+      debugLable = platformVersion;
+    });
+  }
+
+```
+
+### 编写build的视图
+
+```
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      home: new Scaffold(
+        appBar: new AppBar(
+          title: const Text('极光推送'),
+        ),
+        body: new Center(
+            child: new Column(
+                children:[
+                  new Text('结果: $debugLable\n'),
+                  new FlatButton(
+                      child: new Text('发送推送消息\n'),
+                      onPressed: () {
+                        // 三秒后出发本地推送
+                        var fireDate = DateTime.fromMillisecondsSinceEpoch(DateTime.now().millisecondsSinceEpoch + 3000);
+                        var localNotification = LocalNotification(
+                            id: 234,
+                            title: '技术胖的飞鸽传说',
+                            buildId: 1,
+                            content: '看到了说明已经成功了',
+                            fireTime: fireDate,
+                            subtitle: '一个测试',
+                        );
+                        jpush.sendLocalNotification(localNotification).then((res) {
+                          setState(() {
+                            debugLable = res;
+                          });
+                        });
+
+                      }),
+
+                ]
+            )
+
+        ),
+      ),
+    );
+```
+
+
+这里的详细意思，在视频中解释吧，写注释还是挺累的。为了你能达到很好的学习效果，这里给出全部代码。
+
+```dart
+
+import 'package:flutter/material.dart';
+import 'dart:async';
+
+import 'package:flutter/services.dart';
+import 'package:jpush_flutter/jpush_flutter.dart';
+
+void main() => runApp(new MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => new _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String debugLable = 'Unknown';   //错误信息
+  final JPush jpush = new JPush();  //初始化极光插件
+  @override
+  void initState() {
+    super.initState();
+    initPlatformState();  //极光插件平台初始化
+  }
+
+
+  Future<void> initPlatformState() async {
+    String platformVersion;
+
+    try {
+      //监听响应方法的编写
+      jpush.addEventHandler(
+        onReceiveNotification: (Map<String, dynamic> message) async {
+          print(">>>>>>>>>>>>>>>>>flutter 接收到推送: $message");
+          setState(() {
+            debugLable = "接收到推送: $message";
+          });
+        }
+      );
+
+    } on PlatformException {
+      platformVersion = '平台版本获取失败，请检查！';
+    }
+
+
+    if (!mounted) return;
+
+    setState(() {
+      debugLable = platformVersion;
+    });
+  }
+
+
+
+// 编写视图
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      home: new Scaffold(
+        appBar: new AppBar(
+          title: const Text('极光推送'),
+        ),
+        body: new Center(
+            child: new Column(
+                children:[
+                  new Text('结果: $debugLable\n'),
+                  new FlatButton(
+                      child: new Text('发送推送消息\n'),
+                      onPressed: () {
+                        // 三秒后出发本地推送
+                        var fireDate = DateTime.fromMillisecondsSinceEpoch(DateTime.now().millisecondsSinceEpoch + 3000);
+                        var localNotification = LocalNotification(
+                            id: 234,
+                            title: '技术胖的飞鸽传说',
+                            buildId: 1,
+                            content: '看到了说明已经成功了',
+                            fireTime: fireDate,
+                            subtitle: '一个测试',
+                        );
+                        jpush.sendLocalNotification(localNotification).then((res) {
+                          setState(() {
+                            debugLable = res;
+                          });
+                        });
+
+                      }),
+
+                ]
+            )
+
+        ),
+      ),
+    );
+  }
+}
+
+
+
+```
+
+这里就完成了，现在可以打开虚拟机来测试一下效果了，看看推送是不是可以成功实现。
+
+
 
 
 
@@ -9622,32 +9926,3 @@ URL地址是不断变化的，所以不会提供准确的地址给你们。
     - image： 商品的图片
     - oriPrice： 市场价格（贵的价格）
     - presentPrice：商城价格(便宜的价格)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
