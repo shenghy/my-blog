@@ -20,7 +20,7 @@ vssue: false
 这个教程将全面讲解Vue+Koa的实战项目，学完本教程能成为以前端技术为主的全栈程序员。
 这套课程总时长会超过20小时，每节课会控制在15分钟左右。
 - 文字版教程免费：一分钱不花你也可以学习全部内容，可能稍微辛苦一点。
-- 视频加辅导收费：预售阶段前500小伙伴188元（预售指技术胖录制视频过程中，每周更新3-4集，并提供每周一次的直播指导）。超过500名购买376元，在预售结束后，直播指导和群解答也不提供，视频会在CSDN学院上架出售。
+- 视频加辅导收费：188元看全套课程
 
 GitHub地址：https://github.com/shenghy/SmileVue
 
@@ -41,23 +41,15 @@ GitHub地址：https://github.com/shenghy/SmileVue
 
 
 ### 项目完成效果图
-|  列表页 |   首页 |
-| ------------ | ------------ |
-|  ![alt](http://jspang.com/static/upload/20181010/25AxDn5J_LYEN_yWyIglda8H.jpg)|  ![alt](http://jspang.com/static/upload/20181010/fzYWIMqCWa__hf20dHjUjR9_.jpg)  |
 
-
-
-
-|购物车  | 个人中心  |
-| ------------ | ------------ |
-| ![alt](http://jspang.com/static/upload/20181010/fYAUZeCkY6pukTlav82JYnaZ.jpg) | ![alt](http://jspang.com/static/upload/20181010/JWKzryTnaMHEAy-ARp2nxjC2.jpg)  |
+![效果图](http://blogimages.jspang.com/vue_koa2_ad.jpg)
 
 ### 课程特色
-课程用新的授课方式，***视频教程+直播解答+微信群互动***。
+
 
 * 特点一：课程代码全部在视频中当场编写，保证跟着视频可以做出来。
 * 特点二：每周一次的熊猫TV直播解决问题(间和房间号在微信群内公开，预售阶段提供直播指导，预售结束后停止指导)
-* 特点三：每天技术胖群内提供20分钟课程问题解答，保证你的问题有人回答。
+* 特点三：每天技术胖群内提供20分钟课程问题解答，保证你的问题有人回答(预售期间购买有效)。
 
 如果所讲知识学不会，可以直接找技术胖微信退钱。
 
@@ -67,14 +59,14 @@ GitHub地址：https://github.com/shenghy/SmileVue
 
 
 ## 第01节：前端环境的搭建
-2018年4月16日晚更新第一节：
 
-<iframe frameborder="0" width=" 100% " src="https://v.qq.com/iframe/player.html?vid=h0653bo9tvd&tiny=0&auto=0" allowfullscreen></iframe>
+
+<iframe src="//player.bilibili.com/player.html?aid=50740645&cid=88837437&page=3" scrolling="no" border="0" frameborder="no" framespacing="0" width="100%" allowfullscreen="true"> </iframe>>
 
 当你看这套教程的时候，我希望已经有一定的基础知识。如果你没有那学习来并不轻松，幸运的是在博客上可以完全免费的通过视频教程把这些技术知识学会。点击下面链接就可以免费学习。
-1. [Vue的基础知识，技术胖的博客已经提供了很多Vue的免费视频](http://jspang.com/post/vueNav.html)
-2. [Koa2和Node.js的基础知识。技术胖也已经在博客中作了免费的视频教程。](http://jspang.com/post/koa2.html)
-3. [MongoDB的基础知识，技术胖也为你准备好了免费教程。](http://jspang.com/post/mongodb.html)
+1. [Vue的基础知识，技术胖的博客已经提供了很多Vue的免费视频](https://jspang.com/posts/2017/01/11/all-video-list.html#_13-vue2-0%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B-%E5%86%85%E9%83%A8%E6%8C%87%E4%BB%A4-%E5%85%B18%E9%9B%86)
+2. [Koa2和Node.js的基础知识。技术胖也已经在博客中作了免费的视频教程。](https://jspang.com/posts/2017/01/11/all-video-list.html#_9-%E6%8C%91%E6%88%98%E5%85%A8%E6%A0%88-koa2%E5%85%8D%E8%B4%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B-%E5%85%B113%E9%9B%86)
+3. [MongoDB的基础知识，技术胖也为你准备好了免费教程。](https://jspang.com/posts/2017/01/11/all-video-list.html#_8-%E6%8C%91%E6%88%98%E5%85%A8%E6%A0%88-mongodb%E5%9F%BA%E7%A1%80%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B-%E5%85%B121%E9%9B%86)
 
 为了降低教程难度，就算你没有看过以上基础教程，你只要跟着项目一起操作，多练习，也是可以完全上手视频中的项目的，这也算技术胖为自己设置的一个教程挑战吧。
 
@@ -118,12 +110,12 @@ GitHub地址：https://github.com/shenghy/SmileVue
 
 ### 总结
 第一节我们轻松一点，讲了用vue-cli建立我们的项目前端目录。虽然很简单，但如果你vue-cli还不会使用，那你需要花点时间把我以前讲的vue-cli的课程看一遍。这也是我为什么第一节课没有多讲的原因。
-[vue-cli免费视频教程（点击学习）](http://jspang.com/2017/04/10/vue-cli/ "vue-cli免费视频教程（点击学习）")
+[vue-cli免费视频教程（点击学习）](https://jspang.com/posts/2017/01/11/all-video-list.html#_17-vue-cli-%E5%85%8D%E8%B4%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B-%E5%85%B13%E9%9B%86)
 
 ## 第02节：优雅引入Vant组件库
 2018年4月18日晚更新第二节：
 
-<iframe frameborder="0" width="100%" src="https://v.qq.com/iframe/player.html?vid=w0653m1rrce&tiny=0&auto=0" allowfullscreen></iframe>
+<iframe src="//player.bilibili.com/player.html?aid=50740645&cid=88837437&page=4" scrolling="no" border="0" frameborder="no" framespacing="0" width="100%" allowfullscreen="true"> </iframe>
 
 在工作中，有很多自己的组件库，但是在开发这些前都会选择一套稳定的开源的作为轮子作为基础（大公司是有能力造自己轮子的）。因为我们要作电商系统，所以选择有赞的Vant作为Vue的基本组件和样式组件。
 
@@ -194,7 +186,7 @@ Vue.use(Button)
 
 ## 第03节：移动端屏幕适配基础
 2018年4月19日晚更新第二节：
-<iframe frameborder="0" width="100%" src="https://v.qq.com/iframe/player.html?vid=l0653b8rfy6&tiny=0&auto=0" allowfullscreen></iframe>
+<iframe src="//player.bilibili.com/player.html?aid=50740645&cid=88837437&page=5" scrolling="no" border="0" frameborder="no" framespacing="0" width="100%" allowfullscreen="true"> </iframe>
 
 制作webapp时一个很关键的问题就是适配各种机型不同屏幕的大小，让每种机型上的布局看起来都尽量一样，这让很多小伙伴很是头疼。在这里我介绍一下我平时工作中常用的适配方案，当然适配方案有很多种，所以你有更好的方法，也可以使用或者大家一起交流。
 ### 常见移动web布局适配方法
@@ -259,7 +251,7 @@ htmlDom.style.fontSize= htmlWidth/20 + 'px';
 
 ## 第04节：首页布局和路由设置
 
-<iframe frameborder="0" width="100%" src="https://v.qq.com/iframe/player.html?vid=x0653tln1o3&tiny=0&auto=0" allowfullscreen></iframe>
+<iframe src="//player.bilibili.com/player.html?aid=50740645&cid=88837437&page=6" scrolling="no" border="0" frameborder="no" framespacing="0" width="100%" allowfullscreen="true"> </iframe>
 
 这节开始布局首页，课程采用先静后动的原则，就是先用静态数据代替，然后使用Mock模拟数据，最后上真实的接口。这样的好处是，可以满足不同阶段不同岗位的小伙伴动能愉快的上手项目。
 
@@ -340,7 +332,7 @@ Vue.use(Button).use(Row).use(Col)
 ## 第05节：首页搜索区域的布局
 2018年4月23日晚更新第五节：
 
-<iframe frameborder="0" width="100%" src="https://v.qq.com/iframe/player.html?vid=x0653tln1o3&tiny=0&auto=0" allowfullscreen></iframe>
+<iframe src="//player.bilibili.com/player.html?aid=50740645&cid=88837437&page=7" scrolling="no" border="0" frameborder="no" framespacing="0" width="100%" allowfullscreen="true"> </iframe>
 
 课程因为刚开始，我会带着大家写一些CSS样式，但是随着课程的不断深入，我会把CSS样式这个环境省略掉，大家可以直接到GitHub上clone项目，来查看CSS样式。
 
@@ -460,8 +452,10 @@ export default {
 
 
 ## 第06节：首页轮播图的制作
-[![花点小钱看视频](http://7xjyw1.com1.z0.glb.clouddn.com/fukuanover.jpg "花点小钱看视频")](#payFor "花点小钱看视频")
+
 这节课主要来制作轮播图区域（swiper），制作成功后，再了解一下Vant中swipe插件的全貌。
+
+<iframe src="//player.bilibili.com/player.html?aid=50740645&cid=88837437&page=8" scrolling="no" border="0" frameborder="no" framespacing="0" width="100%" allowfullscreen="true"> </iframe>
 
 ### 1.按需加载Swipe组件
 按照惯例我们在使用Vant组件时需要把组件import进来。在`/src/main.js`下按需引入，代码如下：
@@ -537,7 +531,9 @@ Vue.use(Button).use(Row).use(Col).use(Search).use(Swipe).use(SwipeItem).use(Lazy
 
 ## 第07节：easyMock和Axios的使用
 2018年4月27日晚更新第七节：
-[![花点小钱看视频](http://7xjyw1.com1.z0.glb.clouddn.com/fukuanover.jpg "花点小钱看视频")](#payFor "花点小钱看视频")
+
+
+<iframe src="//player.bilibili.com/player.html?aid=50740645&cid=88837437&page=9" scrolling="no" border="0" frameborder="no" framespacing="0" width="100%" allowfullscreen="true"> </iframe>
 
 上节课学完，我在群里组织了一次关于是否讲CSS布局的投票，大家虽然有62.5%的希望不讲，当时还有54个人是希望讲的。课程开始前我也答应要全部手敲代码，所以CSS内容我会在重要的地方进行讲解并手敲代码演示。
 
@@ -1058,7 +1054,8 @@ created(){
 
 
 ## 第08节：Mock数据的使用flex布局
-[![花点小钱看视频](http://7xjyw1.com1.z0.glb.clouddn.com/fukuanover.jpg "花点小钱看视频")](#payFor "花点小钱看视频")
+
+<iframe src="//player.bilibili.com/player.html?aid=50740645&cid=88837437&page=10 scrolling="no" border="0" frameborder="no" framespacing="0" width="100%" allowfullscreen="true"> </iframe>
 
 这节课我们开始首页的布局,如果你flex布局和CSS掌握的很好，完全可以跳过这节课程，当初答应小伙伴们项目代码全部手写，自己挖的坑一定要自己埋上。上节课我们已经取得了mock数据。
 
@@ -1168,7 +1165,7 @@ html代码编写
 
 ## 第09节：商品推荐vue-awesome-swiper
 
-[![花点小钱看视频](http://7xjyw1.com1.z0.glb.clouddn.com/fukuanover.jpg "花点小钱看视频")](#payFor "花点小钱看视频")
+<iframe src="//player.bilibili.com/player.html?aid=50740645&cid=88837437&page=11" scrolling="no" border="0" frameborder="no" framespacing="0" width="100%" allowfullscreen="true"> </iframe>
 
 这节会讲解首页商品推荐区域的布局和vue-awesome-swiper的使用，作一个可以左右滑动的商品推荐区域出来。学完这节课你将对vue-awesome-swiper有个很好的了解，并能轻松使用在项目和工作中。
 
