@@ -8,7 +8,7 @@
       <main class="main">
 
         <div class="target">
-          目标：已录制288集免费视频，目标1000集免费视频。
+          目标：已录制292集免费视频，目标1000集免费视频。
           [<a href="https://jspang.com/posts/2017/01/11/all-video-list.html" target="_blank">视频目录</a>]
         </div>
 

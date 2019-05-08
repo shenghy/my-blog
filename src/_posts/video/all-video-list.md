@@ -22,9 +22,18 @@ vssue-title: all-video-list
 
 ---
 
-正在逐步完善中，敬请期待。
+## 1-React（新版）基础免费视频教程
 
-## 1-Flutter基础视频教程
+1. [React课程前言](https://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC01%E8%8A%82%EF%BC%9Areact%E8%AF%BE%E7%A8%8B%E5%89%8D%E8%A8%80)
+
+2. [React简介和Vue对比](https://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC02%E8%8A%82%EF%BC%9Areact%E7%AE%80%E4%BB%8B%E5%92%8Cvue%E5%AF%B9%E6%AF%94)
+
+3. [React开发环境搭建](https://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC03%E8%8A%82%EF%BC%9Areact%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA)
+
+4. [脚手架生成的项目目录介绍](https://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC04%E8%8A%82%EF%BC%9A%E8%84%9A%E6%89%8B%E6%9E%B6%E7%94%9F%E6%88%90%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D)
+
+
+## 2-Flutter基础视频教程
 
 
 
@@ -78,7 +87,7 @@ vssue-title: all-video-list
 
 25. [Flutter客户端打包](https://jspang.com/posts/2019/02/01/flutter-base4.html#%E7%AC%AC06%E8%8A%82%EF%BC%9Aflutter%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%89%93%E5%8C%85)
 
-## 2-Flutter 20课小实例练习
+## 3-Flutter 20课小实例练习
 
 1. [底部导航栏制作-1](https://jspang.com/posts/2019/02/22/flutterdemo.html#%E7%AC%AC01%E8%8A%82-%E5%BA%95%E9%83%A8%E5%AF%BC%E8%88%AA%E6%A0%8F%E5%88%B6%E4%BD%9C-1)
 
@@ -120,7 +129,7 @@ vssue-title: all-video-list
 
 20. [Draggable控件实例](https://jspang.com/posts/2019/02/22/flutterdemo.html#_20%E8%8A%82draggable%E6%8E%A7%E4%BB%B6%E5%AE%9E%E4%BE%8B)
 
-## 3-ES6免费视频教程（18集）
+## 4-ES6免费视频教程（18集）
 1. [ES6的开发环境搭建](https://jspang.com/posts/2019/01/20/es6.html#%E7%AC%AC1%E8%8A%82%EF%BC%9Aes6%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA)
 
 2. [新的声明方式](https://jspang.com/posts/2019/01/20/es6.html#%E7%AC%AC2%E8%8A%82%EF%BC%9A%E6%96%B0%E7%9A%84%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F)
@@ -157,7 +166,7 @@ vssue-title: all-video-list
 
 18. [模块化操作](https://jspang.com/posts/2019/01/20/es6.html#%E7%AC%AC18%E8%8A%82%EF%BC%9A%E6%A8%A1%E5%9D%97%E5%8C%96%E6%93%8D%E4%BD%9C)
 
-## 4-前端必会的 Nginx免费教程 (共11集)
+## 5-前端必会的 Nginx免费教程 (共11集)
 
 1. [初识Nginx和环境准备](https://jspang.com/posts/2018/10/05/nginx.html#%E7%AC%AC01%E8%8A%82-%E5%88%9D%E8%AF%86nginx%E5%92%8C%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87)
 
@@ -183,7 +192,7 @@ vssue-title: all-video-list
 11. [Nginx的Gzip压缩配置](https://jspang.com/posts/2018/10/05/nginx.html#%E7%AC%AC11%E8%8A%82%EF%BC%9Anginx%E7%9A%84gzip%E5%8E%8B%E7%BC%A9%E9%85%8D%E7%BD%AE)
 
 
-## 5-TypeScript免费视频教程 ，Deno前置知识 (共15集)
+## 6-TypeScript免费视频教程 ，Deno前置知识 (共15集)
 
 1. [初识TypeScript](https://jspang.com/posts/2018/06/27/typesript.html#%E7%AC%AC01%E8%8A%82%EF%BC%9A%E5%88%9D%E8%AF%86typescript)
 
@@ -215,7 +224,7 @@ vssue-title: all-video-list
 
 15. [面向对象编程-命名空间](https://jspang.com/posts/2018/06/27/typesript.html#%E7%AC%AC15%E8%8A%82-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4)
 
-## 6-Nuxt.js免费视频教程 开启SSR渲染 ( 共11集)
+## 7-Nuxt.js免费视频教程 开启SSR渲染 ( 共11集)
 
 1. [NuxtJS课程介绍](https://jspang.com/posts/2018/02/26/nuxtjs.html#%E7%AC%AC00%E8%8A%82%EF%BC%9A%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D)
 
@@ -237,7 +246,7 @@ vssue-title: all-video-list
 
 10. [静态资源和打包](https://jspang.com/posts/2018/02/26/nuxtjs.html#%E7%AC%AC10%E8%8A%82%EF%BC%9A%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E5%92%8C%E6%89%93%E5%8C%85)
 
-## 7-CocosCreator 从基础到实战免费视频
+## 8-CocosCreator 从基础到实战免费视频
 
 1. [CocosCreator简介和HelloWorld](https://jspang.com/posts/2017/12/11/cocoscreator.html#%E7%AC%AC01%E8%8A%82%EF%BC%9A%E7%AE%80%E4%BB%8B%E5%92%8Chelloworld)
 
@@ -269,7 +278,7 @@ vssue-title: all-video-list
 
 15. [实战-发布游戏](https://jspang.com/posts/2017/12/11/cocoscreator.html#%E7%AC%AC15%E8%8A%82%EF%BC%9A%E5%AE%9E%E6%88%98-%E5%8F%91%E5%B8%83%E6%B8%B8%E6%88%8F)
 
-## 8-挑战全栈 MongoDB基础视频教程 (共21集)
+## 9-挑战全栈 MongoDB基础视频教程 (共21集)
 
 1. [认识和安装MongoDB](https://jspang.com/posts/2017/12/16/mongodb.html#%E7%AC%AC01%E8%8A%82%EF%BC%9A%E8%AE%A4%E8%AF%86%E5%92%8C%E5%AE%89%E8%A3%85mongodb)
 
@@ -313,7 +322,7 @@ vssue-title: all-video-list
 
 21. [管理：图形界面管理（完结）](https://jspang.com/posts/2017/12/16/mongodb.html#%E7%AC%AC21%E8%8A%82%EF%BC%9A%E7%AE%A1%E7%90%86%EF%BC%9A%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%E7%AE%A1%E7%90%86%EF%BC%88%E5%AE%8C%E7%BB%93%EF%BC%89)
 
-## 9-挑战全栈 Koa2免费视频教程 (共13集)
+## 10-挑战全栈 Koa2免费视频教程 (共13集)
 
 1. [Koa开发环境搭建](https://jspang.com/posts/2017/11/13/koa2.html#%E7%AC%AC01%E8%8A%82%EF%BC%9Akoa%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA)
 
@@ -341,7 +350,7 @@ vssue-title: all-video-list
 
 13. [koa-static静态资源中间件](https://jspang.com/posts/2017/11/13/koa2.html#%E7%AC%AC13%E8%8A%82%EF%BC%9Akoa-static%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E4%B8%AD%E9%97%B4%E4%BB%B6)
 
-## 10-React免费视频教程-入门和组件 (共11集)
+## 11-React免费视频教程-入门和组件 (共11集)
 
 1. [React课程介绍](https://jspang.com/posts/2017/08/15/react-base1.html#%E7%AC%AC01%E8%8A%82%EF%BC%9Areact%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D)
 
@@ -365,7 +374,7 @@ vssue-title: all-video-list
 
 11. [React组件：获取真实DOM节点](https://jspang.com/posts/2017/08/15/react-base1.html#%E7%AC%AC11%E8%8A%82%EF%BC%9Areact%E7%BB%84%E4%BB%B6%EF%BC%9A%E8%8E%B7%E5%8F%96%E7%9C%9F%E5%AE%9Edom%E8%8A%82%E7%82%B9)
 
-## 11-React免费视频教程-表单的应用 (共4集)
+## 12-React免费视频教程-表单的应用 (共4集)
 
 1. [表单的事件响应和bind复用](https://jspang.com/posts/2017/09/07/react-base2.html#%E7%AC%AC1%E8%8A%82%EF%BC%9A%E8%A1%A8%E5%8D%95%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%93%8D%E5%BA%94%E5%92%8Cbind%E5%A4%8D%E7%94%A8)
 
@@ -375,7 +384,7 @@ vssue-title: all-video-list
 
 4. [React表单-不可控组件](https://jspang.com/posts/2017/09/07/react-base2.html#%E7%AC%AC4%E8%8A%82%EF%BC%9Areact%E8%A1%A8%E5%8D%95-%E4%B8%8D%E5%8F%AF%E6%8E%A7%E7%BB%84%E4%BB%B6)
 
-## 12-React项目构建和路由 免费视频教程 (共10集)
+## 13-React项目构建和路由 免费视频教程 (共10集)
 
 1. [构建：create-react-app 快速脚手架](https://jspang.com/posts/2017/10/22/react-all.html#%E7%AC%AC01%E8%8A%82%EF%BC%9A%E6%9E%84%E5%BB%BA%EF%BC%9Acreate-react-app-%E5%BF%AB%E9%80%9F%E8%84%9A%E6%89%8B%E6%9E%B6)
 
@@ -397,7 +406,7 @@ vssue-title: all-video-list
 
 10. [路由：prompt用法讲解](https://jspang.com/posts/2017/10/22/react-all.html#%E7%AC%AC10%E8%8A%82%EF%BC%9A%E8%B7%AF%E7%94%B1%EF%BC%9Aprompt%E7%94%A8%E6%B3%95%E8%AE%B2%E8%A7%A3)
 
-## 13-Vue2.0视频教程-内部指令(共8集)
+## 14-Vue2.0视频教程-内部指令(共8集)
 
 1. [走起我的Vue2.0](https://jspang.com/posts/2017/02/23/vue2-1.html#%E7%AC%AC1%E8%8A%82%EF%BC%9A%E8%B5%B0%E8%B5%B7%E6%88%91%E7%9A%84vue2-0)
 
@@ -415,7 +424,7 @@ vssue-title: all-video-list
 
 8. [其他内部指令(v-pre & v-cloak & v-once)](https://jspang.com/posts/2017/02/23/vue2-1.html#%E7%AC%AC8%E8%8A%82%EF%BC%9A%E5%85%B6%E4%BB%96%E5%86%85%E9%83%A8%E6%8C%87%E4%BB%A4-v-pre-v-cloak-v-once)
 
-## 14-【第二季】Vue2.0视频教程-全局API(共9集)
+## 15-【第二季】Vue2.0视频教程-全局API(共9集)
 
 1. [Vue.directive 自定义指令](https://jspang.com/posts/2017/02/24/vue2-2.html#%E7%AC%AC1%E8%8A%82%EF%BC%9Avue-directive-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4)
 
@@ -435,7 +444,7 @@ vssue-title: all-video-list
 
 9. [Component 标签](https://jspang.com/posts/2017/02/24/vue2-2.html#%E7%AC%AC9%E8%8A%82%EF%BC%9Acomponent-%E6%A0%87%E7%AD%BE)
 
-## 15-【第三季】Vue2.0视频教程-选项（共6集）
+## 16-【第三季】Vue2.0视频教程-选项（共6集）
 
 1. [propsData Option 全局扩展的数据传递](https://jspang.com/posts/2017/03/26/vue2-3.html#%E7%AC%AC1%E8%8A%82%EF%BC%9Apropsdata-option-%E5%85%A8%E5%B1%80%E6%89%A9%E5%B1%95%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92)
 
@@ -448,7 +457,7 @@ vssue-title: all-video-list
 5. [Extends Option 扩展选项](https://jspang.com/posts/2017/03/26/vue2-3.html#%E7%AC%AC6%E8%8A%82%EF%BC%9Aextends-option-%E6%89%A9%E5%B1%95%E9%80%89%E9%A1%B9)
 ---
 
-## 16-【第四季】Vue2.0视频教程-实例和内置组件（共4集）
+## 17-【第四季】Vue2.0视频教程-实例和内置组件（共4集）
 
 1. [实例入门-实例属性](https://jspang.com/posts/2017/04/09/vue2-4.html#%E7%AC%AC1%E8%8A%82%EF%BC%9A%E5%AE%9E%E4%BE%8B%E5%85%A5%E9%97%A8-%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7)
 
@@ -458,7 +467,7 @@ vssue-title: all-video-list
 
 4. [内置组件 -slot讲解](https://jspang.com/posts/2017/04/09/vue2-4.html#%E7%AC%AC4%E8%8A%82%EF%BC%9A%E5%86%85%E7%BD%AE%E7%BB%84%E4%BB%B6-slot%E8%AE%B2%E8%A7%A3)
 
-## 17-Vue-cli 免费视频教程(共3集)
+## 18-Vue-cli 免费视频教程(共3集)
 
 1. [Vue-cli，开始吧骚年](https://jspang.com/posts/2017/04/10/vue-cli.html#%E7%AC%AC1%E8%8A%82%EF%BC%9Avue-cli%EF%BC%8C%E5%BC%80%E5%A7%8B%E5%90%A7%E9%AA%9A%E5%B9%B4)
 
@@ -466,7 +475,7 @@ vssue-title: all-video-list
 
 3. [解读Vue-cli的模板](https://jspang.com/posts/2017/04/10/vue-cli.html#%E7%AC%AC3%E8%8A%82%EF%BC%9A%E8%A7%A3%E8%AF%BBvue-cli%E7%9A%84%E6%A8%A1%E6%9D%BF)
 
-## 18-Vue-router免费视频教程(共11集)
+## 19-Vue-router免费视频教程(共11集)
 
 1. [Vue-router入门](https://jspang.com/posts/2017/04/13/vue-router.html#%E7%AC%AC1%E8%8A%82%EF%BC%9Avue-router%E5%85%A5%E9%97%A8)
 
@@ -490,7 +499,7 @@ vssue-title: all-video-list
 
 11. [编程式导航](https://jspang.com/posts/2017/04/13/vue-router.html#%E7%AC%AC11%E8%8A%82%EF%BC%9A%E7%BC%96%E7%A8%8B%E5%BC%8F%E5%AF%BC%E8%88%AA)
 
-## 19-vuex免费视频教程(共6集)
+## 20-vuex免费视频教程(共6集)
 
 1. [初出茅庐 来个小Demo](https://jspang.com/posts/2017/05/03/vuex.html#%E7%AC%AC1%E8%8A%82%EF%BC%9A%E5%88%9D%E5%87%BA%E8%8C%85%E5%BA%90-%E6%9D%A5%E4%B8%AA%E5%B0%8Fdemo)
 
@@ -504,7 +513,7 @@ vssue-title: all-video-list
 
 6. [module模块组](https://jspang.com/posts/2017/05/03/vuex.html#%E7%AC%AC6%E8%8A%82%EF%BC%9Amodule%E6%A8%A1%E5%9D%97%E7%BB%84)
 
-## 20- Vue实战视频-快餐店收银系统 (共11集)
+## 21- Vue实战视频-快餐店收银系统 (共11集)
 
 1. [Mockplus把我们的想法画出来](https://jspang.com/posts/2017/05/22/vuedemo.html#%E7%AC%AC1%E8%8A%82%EF%BC%9Amockplus%E6%8A%8A%E6%88%91%E4%BB%AC%E7%9A%84%E6%83%B3%E6%B3%95%E7%94%BB%E5%87%BA%E6%9D%A5)
 
@@ -528,7 +537,7 @@ vssue-title: all-video-list
 
 11. [项目打包和上线](https://jspang.com/posts/2017/05/22/vuedemo.html#%E7%AC%AC11%E8%8A%82%EF%BC%9A%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%92%8C%E4%B8%8A%E7%BA%BF)
 
-## 21-WEEX免费视频教程-从入门到放肆 (共17集)
+## 22-WEEX免费视频教程-从入门到放肆 (共17集)
 
 1. [课程介绍](https://jspang.com/posts/2017/07/12/weex.html#%E7%AC%AC01%E8%8A%82%EF%BC%9A%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D)
 
@@ -564,7 +573,7 @@ vssue-title: all-video-list
 
 17. [vue-router的使用](https://jspang.com/posts/2017/07/12/weex.html#%E7%AC%AC17%E8%8A%82%EF%BC%9Avue-router%E7%9A%84%E4%BD%BF%E7%94%A8)
 
-## 22-Fabric.js 免费视频教程(共13集)
+## 23-Fabric.js 免费视频教程(共13集)
 
 1. [初识简单而且强大的Fabric.js库](https://jspang.com/posts/2016/12/12/fabricjs.html#%E7%AC%AC01%E8%8A%82%EF%BC%9A%E5%88%9D%E8%AF%86%E7%AE%80%E5%8D%95%E8%80%8C%E4%B8%94%E5%BC%BA%E5%A4%A7%E7%9A%84fabric-js%E5%BA%93)
 
@@ -592,7 +601,7 @@ vssue-title: all-video-list
 
 13. [Fabric.js的序列化和反序列化](https://jspang.com/posts/2016/12/12/fabricjs.html#%E7%AC%AC13%E8%8A%82%EF%BC%9Afabric-js%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96)
 
-## 23-CSS3免费视频教程(共31集)
+## 24-CSS3免费视频教程(共31集)
 
 1. [嫁汉嫁汉穿衣吃饭](https://jspang.com/posts/2016/12/10/css3.html#%E7%AC%AC01%E8%8A%82%EF%BC%9A%E5%AB%81%E6%B1%89%E5%AB%81%E6%B1%89%E7%A9%BF%E8%A1%A3%E5%90%83%E9%A5%AD)
 
