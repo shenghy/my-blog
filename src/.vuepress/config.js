@@ -150,6 +150,7 @@ module.exports = {
       nav: [
         { text: '首页', link: '/', exact: true },
         { text: '文章', link: '/posts/', exact: false },
+        { text: '生活', link: '/posts/2016/01/01/vlog.html'},
       ],
       // 评论配置，参考下方 [页面评论] 章节
       comments: {

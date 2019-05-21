@@ -36,7 +36,7 @@ vssue-title: Flutter-shop
 ## 第01节：课程介绍 
 
 
-<video src="http://blogimages.jspang.com/01%E8%8A%82%E6%96%B0%E7%89%88%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D%E8%A7%86%E9%A2%91.mp4" controls="controls" width="100%">
+<video src="http://27.50.142.212/Flutter01.mp4" controls="controls" width="100%">
 </video>
 ### 购买地址
 
