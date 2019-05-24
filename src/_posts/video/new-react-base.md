@@ -4,7 +4,7 @@ category: 视频教程
 tags:
   - React
 date: 2019-05-04
-title: React16免费视频教程（更新到第9集）
+title: React16免费视频教程（更新到第13集）
 vssue-title: new-react-base
 ---
 
@@ -649,6 +649,7 @@ addList(){
 ## 第10节：React实例-宝剑虽然好 老腰受不了
 
 添加服务虽然很美妙，但是有时候也需要有些节制。这节课就学习如何删除一个服务选项。需求是这样的，当点击已经有的选项后，我们就进行删除。如果使用原生的js来写，这是非常麻烦的，但是有了`React`后就变的简单了。
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=93042890&page=10" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
 
 ### 数组下标的传递
 
@@ -715,9 +716,10 @@ deleteItem(index){
 ```
 记住React是禁止直接操作state的,虽然上面的方法也管用,但是在后期的性能优化上会有很多麻烦,所以一定不要这样操作.这也算是我`React`初期踩的比较深的一个坑,希望小伙伴们可以跳坑.
 
-## 第11节：JSX防踩坑的几个地方
+## 第11节：React进阶-JSX防踩坑的几个地方
 
 上节课作完“大宝剑”菜单后，如果你跟着我做出来了，说明你的`React`已经入门了。也是一个好的开始，接下来的路虽然还很长，但会平坦的多。这节课就讲一下`JSX`语法中需要注意的几个小坑。
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=93042990&page=11" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
 
 ### JSX代码注释
 
@@ -845,5 +847,367 @@ JSX中`<label>`的坑，也算是比较大的一个坑，label是`html`中的一
 
 这节算是我总结的一些`JSX`中的坑吧，总结出来，希望小伙伴们少踩这些坑，能快速上手`React`。
 
+## 第12节：React进阶-Simple React Snippets
+
+ 这节课很短，但是我觉的有必要单独拿出一节来讲讲。在工作中你经常会看到程序老司机写代码是非常快的，甚至让你烟花缭乱，那他们真的是单身那么多年，练就了超级快手吗?当然不是，只是他们使用了快速生成插件，这节课我就向大家介绍一个`vscode`中的`Simple React Snippets`，有了这个插件，稍加练习，你也可以像老司机一样，拥有加藤鹰的圣手(如果不懂请自行搜索吧)。
+
+ <iframe src="//player.bilibili.com/player.html?aid=51455080&cid=93360539&page=12" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+ ### 安装`Simple React Snippets`
+
+ 打开`VSCode`的插件查单，然后在输入框中输入`Simple React Snippets`,然后点击进行安装就可以了。
+
+ ###　快速进行引入`import`
+
+ 直接在`vscode`中输入`imrc`，就会快速生成最常用的import代码。
+ ```javascript
+import React, { Component } from 'react';
+ ```
+
+ ### 快速生成class
+
+在作组件的时候，都需要写一个固定的基本格式，这时候你就可以使用快捷键`cc`.插件就会快速帮我们生成如下代码：
+
+```javascript
+class  extends Component {
+    state = {  }
+    render() { 
+        return (  );
+    }
+}
+ 
+export default ;
+```
+
+还有很多快捷键，我就没必要再这里唠叨了，如果你需要理解，打开插件的说明文件看一下就可以了。这个插件建议小伙伴们要熟练掌握，因为在老板眼里，代码编写速度的快慢直接跟我们的薪资有关，就是没什么关系。我们自己把时间剩下，去看小姐姐跳支舞不好吗?
+
+ 
+
+
+
+## 第13节：React进阶-组件的拆分
+
+现在的小姐姐服务菜单已经完美的制作好了，但是这从头到尾我们只用了一个组件，但是在实际工作中肯定是团队开发，我们会把一个大功能分成不同的组件。比如把文本框和按钮单独一个组件，把下面的服务列表单独一个组件，这涉及了一个组件拆分的能力和知识。这节课就把小姐姐服务菜单进行一个拆分。
+
+ <iframe src="//player.bilibili.com/player.html?aid=51455080&cid=93360539&page=13" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+
+### 新建服务菜单组件
+
+在`src`目录下，新建一个文件，这里就叫做`XiaojiejieItem.js`，然后先把最基础的结构写好（这里最好练习一下上节课学习的快捷键）。
+
+```javascript
+import React, { Component } from 'react'; //imrc
+class XiaojiejieItem  extends Component { //cc
+   
+    render() { 
+        return ( 
+            <div>小姐姐</div>
+         );
+    }
+}
+export default XiaojiejieItem;
+```
+写好这些代码后，就可以到以前写的`Xiaojiejie.js`文件中用import进行引入，代码如下:
+
+```javascript
+import XiaojijieItem from './XiaojiejiItem'
+```
+
+###　修改`Xiaojiejie`组件
+
+已经引入了新写的组件，这时候原来的代码要如何修改才能把新组件加入？
+
+把原来的代码注释掉，当然你也可以删除掉，我这里就注释掉了,注释方法如下:
+
+```javascript
+
+{/*
+<li 
+    key={index+item}
+    onClick={this.deleteItem.bind(this,index)}
+    dangerouslySetInnerHTML={{__html:item}}
+>
+
+</li>
+*/ }
+```
+
+然后在最外层加入包裹元素`<div>`，为的是防止两个以上的标签，产生错误信息。
+
+最后直接写入`Xiaojiejie`标签就可以了.
+
+```jsx
+<XiaojiejieItem />
+```
+
+为了方便你练习，给出全部代码:
+
+```javascript
+
+import React,{Component,Fragment } from 'react'
+import './style.css'
+import XiaojiejieItem from './XiaojiejieItem'
+
+class Xiaojiejie extends Component{
+//js的构造函数，由于其他任何函数执行
+constructor(props){
+    super(props) //调用父类的构造函数，固定写法
+    this.state={
+        inputValue:'' , // input中的值
+        list:['基础按摩','精油推背']    //服务列表
+    }
+}
+
+render(){
+    return  (
+        <Fragment>
+            {/* 正确注释的写法 */}
+<div>
+    <label htmlFor="jspang">加入服务：</label>
+    <input id="jspang" className="input" value={this.state.inputValue} onChange={this.inputChange.bind(this)} />
+    <button onClick={this.addList.bind(this)}> 增加服务 </button>
+</div>
+            <ul>
+                {
+                    this.state.list.map((item,index)=>{
+                        return (
+                            //----------------关键修改代码----start
+                            <div>
+                                <XiaojiejieItem />
+                            </div>
+                            //----------------关键修改代码----end
+                           
+                        )
+                    })
+                }
+            </ul>  
+        </Fragment>
+    )
+}
+
+    inputChange(e){
+        // console.log(e.target.value);
+        // this.state.inputValue=e.target.value;
+        this.setState({
+            inputValue:e.target.value
+        })
+    }
+    //增加服务的按钮响应方法
+    addList(){
+        this.setState({
+            list:[...this.state.list,this.state.inputValue],
+            inputValue:''
+        })
+
+    }
+//删除单项服务
+deleteItem(index){
+    let list = this.state.list
+    list.splice(index,1)
+    this.setState({
+        list:list
+    })
+    
+}
+
+}
+export default Xiaojiejie 
+```
+
+
+这时候可以预览一下效果，虽然现在已经把组件进行了拆分，但是还全是显示的小姐姐，还没有实现传值，下节课我们主要实现一下React组件之间的传值（父组件向子组件传递数据）。
+
+
+
+## 第14节：React进阶-父子组件的传值
+
+通过上节课的学习，已经把"小姐姐"组件做了一个基本的拆分，但是还不能实现随着输入，显示出输入的内容。这里涉及的是父组件向子组件传值。然后点击删除，就相当于子组件向父组件传值。这节课就主要学习一下父子组件传值的一些技巧。
+
+### 父组件向子组件传值
+
+这里只介绍最使用的，最快速的上手方法。就是使用组件属性的形式父组件给子组件传值。比如：我们在`<XiaojiejieItem>`组件中加入`content`属性，然后给属性传递`{item}`，这样就完成了父组件向子组件传值。
+
+```jsx
+<XiaojiejieItem content={item} />
+```
+
+现在值已经顺利的传递了过去，这时候可以通过`this.props.xxx`的形式进行接受，比如传递过来的值，可以用如下代码进行接收。
+
+```javascript
+import React, { Component } from 'react'; //imrc
+class XiaojiejieItem  extends Component { //cc
+   
+    render() { 
+        return ( 
+            <div>{this.props.content}</div>
+         );
+    }
+}
+ 
+export default XiaojiejieItem;
+```
+
+修改完小姐姐子项的组件后，可以打开浏览器进行预览了。试着添加几个新的选项试一下，比如躺式采耳.....。
+
+玩笑归玩笑，学到这里你要记住一点：**父组件向子组件传递内容，靠属性的形式传递。**
+
+###  子组件向父组件传递数据
+
+现在要作这样一个功能：点击组件中的菜单项后，删除改菜单项。在前边的课程中已经学习了这个知识，知识现在组件拆分了，就涉及了一个字组件向父组件传递数据的知识需要掌握。
+
+先来绑定点击事件，这时候当然是要在`XiaojiejieItem`组件中绑定了，代码如下：
+
+```javascript
+import React, { Component } from 'react'; //imrc
+class XiaojiejieItem  extends Component { //cc
+   
+    render() { 
+        return ( 
+            <div onClick={this.handleClick}>{this.props.content}</div>
+         );
+    }
+
+    handleClick(){
+        console.log('撩拨了小姐姐')
+    }
+    
+}
+ 
+export default XiaojiejieItem;
+```
+这时候进行预览，打开F12，再点击服务菜单项，就会再`console`里显示出"撩拨了小姐姐"的字样。但是`console`里还有一个`warning`警告，这个警告我们见过，就是要求循环时必须设置key值。
+
+修改`XiaoJieJie`组件的`render`代码如下：
+
+```javascript
+<ul>
+    {
+        this.state.list.map((item,index)=>{
+            return (
+                <XiaojiejieItem 
+                key={index+item}  
+                content={item} />
+            )
+        })
+    }
+</ul>  
+
+```
+
+绑定成功后，现在就要通过操作子组件删除父组件里的数据了。但是React有明确规定，子组件时不能操作父组件里的数据的，所以需要借助一个父组件的方法，来修改父组件的内容。其实在以前已经写了一个删除方法`deleteItem`，现在要作的就是子组件调用这个方法。
+
+```javascript
+//删除单项服务
+deleteItem(index){
+    let list = this.state.list
+    list.splice(index,1)
+    this.setState({
+        list:list
+    })
+    
+}
+
+```
+
+**获取数组索引下标**
+
+那现在问题来了，要删除就要知道索引值，还是需要通过父组件传递给子组件.这里还是通过`props`属性的形式进行传递。
+
+```jsx
+<ul>
+    {
+        this.state.list.map((item,index)=>{
+            return (
+                <XiaojiejieItem 
+                key={index+item}  
+                content={item}
+                index={index} />
+            )
+        })
+    }
+</ul>  
+```
+
+
+然后修改`XiaojiejieItem`组件，在`handleClick`方法里，写入下面代码：
+
+```javascript
+handleClick(){
+    console.log(this.props.index)
+}
+```
+这时候预览一下，你会发现点击后报错，错误还是我们的老朋友,没有`bind(this)`。那可以用以前的老方法绑定this.
+
+```jsx
+return ( 
+    <div onClick={this.handleClick.bind(this)}>
+        {this.props.content}
+    </div>
+);
+```
+
+这样是可以决解的，但是肯定会有小伙伴说，我看别人不是这样写的，而是在构造函数里绑定的。（有言曰：构造函数中绑定性能会高一些，特别是在高级组件开发中，会有很大的作用）
+
+`constructor`绑定this方法。
+
+```javascript
+
+import React, { Component } from 'react'; //imrc
+class XiaojiejieItem  extends Component { //cc
+   //--------------主要代码--------start
+   constructor(props){
+       super(props)
+       this.handleClick=this.handleClick.bind(this)
+   }
+   //--------------主要代码--------end
+    render() { 
+        return ( 
+            <div onClick={this.handleClick}>
+                {this.props.content}
+            </div>
+        );
+    }
+    handleClick(){
+        console.log(this.props.index)
+    }
+}
+ 
+export default XiaojiejieItem;
+
+```
+
+**子组件调用父组件方法**
+
+如果子组件要调用父组件方法，其实和传递数据差不多，只要在组件调用时，把方法传递给子组件就可以了,记得这里也要进行`this`的绑定，如果不绑定子组件是没办法找到这个父组件的方法的。
+
+```jsx 
+<ul>
+    {
+        this.state.list.map((item,index)=>{
+            return (
+                <XiaojiejieItem 
+                key={index+item}  
+                content={item}
+                index={index}
+                //关键代码-------------------start
+                deleteItem={this.deleteItem.bind(this)}
+                //关键代码-------------------end
+                />
+            )
+        })
+    }
+</ul>  
+```
+传递后，在`XiaojiejieItem`组件里直接hi用就可以了，代码如下：
+
+```javascript
+handleClick(){
+    this.props.deleteItem(this.props.index)
+}
+
+```
+
+到此为止，就算是实现了子组件向父组件传值。特别提醒：这节课是React体系中非常重要的一节课，小伙伴们可以多听几遍，并进行练习。因为真正的React开发工作，每天写的就是各种组件，传值是组件之间产生联系的必要一环，无法跳跃。所以一定要学好。
 
 

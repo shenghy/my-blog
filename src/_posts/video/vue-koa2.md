@@ -28,9 +28,8 @@ GitHub地址：https://github.com/shenghy/SmileVue
 
 课程将从零开始搭建一个移动电商系统，包括首页展示，类别展示，购物功能，注册登录，积分系统，查找页面，后台接口设置。
 
-<video src="http://video.jspang.com/00.Vue%E5%AE%9E%E6%88%98%E7%A7%BB%E5%8A%A8%E7%94%B5%E5%95%86-%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.mp4" controls="controls" width="100%">
+<video src="http://27.50.142.212/video/VueDemo01.mp4" controls="controls" width="100%">
 </video>
-
 
 
 ###  付款方式

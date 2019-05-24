@@ -36,9 +36,10 @@ vssue-title: Flutter-shop
 ## 第01节：课程介绍 
 
 
-<video src="http://27.50.142.212/Flutter01.mp4" controls="controls" width="100%">
+<video src="http://27.50.142.212/video/Flutter01.mp4" controls="controls" width="100%">
 </video>
-### 购买地址
+
+###  购买地址
 
 
 **[点击购买](https://m.qlchat.com/live/channel/channelPage/2000003595896347.htm)**

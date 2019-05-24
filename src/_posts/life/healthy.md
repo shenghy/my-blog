@@ -3,7 +3,7 @@ category: 生活趣事
 tags:
   - VLOG
 date: 2019-05-16
-title: 挑战100天减肥50斤 每日更新
+title: 挑战100天减肥50斤 每周更新一篇
 vssue-title: healthy1
 ---
 
@@ -96,17 +96,36 @@ vssue-title: healthy1
 <iframe src="//player.bilibili.com/player.html?aid=52568797&cid=92691797&page=5" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
 
 
-## 第06天：今日休息 家庭聚餐吃了排骨
+## 第06天：254斤 今日休息聚餐吃排骨
 
 今天算是我运动的一个休息日，跟公司请假，休息一天。中午全家人一起改善伙食，吃排骨炖豆角。
 
+<iframe src="//player.bilibili.com/player.html?aid=52568797&cid=93031279&page=6" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
 
 
-## 第07天：排骨虽然好 体重长不少
 
-昨天中午的排骨炖豆角虽然很好吃，也让我大饱口福，但是今天早上称体重，让我长胖了2斤左右。
+## 第07天：256斤 排骨虽然好 体重长不少
+
+昨天中午的排骨炖豆角虽然很好吃，也让我大饱口福，但是今天早上称体重，让我长胖了2斤左右。没事继续开练，加油。
+<iframe src="//player.bilibili.com/player.html?aid=52568797&cid=93177712&page=7" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
 
 
+## 第08天： 254斤 在减肥的路上 继续努力
+
+今天中午吃了一碗凉面条，不知道会不会长肉，其他的跟平时一样，都是正常吃。晚上准备吃西红柿。
+
+<iframe src="//player.bilibili.com/player.html?aid=52568797&cid=93177712&page=8" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+## 开始以周更新
+
+昨天认识了一个健身达人，他指出了我几点错误。
+错误如下：
+1. 不要每天称体重，这很容产生挫败感，而是要以周为单位。
+2. 要把健身变成习惯，而不是你所谓的挑战，挑战是阶段性的（很容易复胖），习惯是一种生活态度，养成后是一辈子的事情。
+3. 要适当的奖赏自己，他每天会拿出周六或周日的时间奖励自己吃顿好的，虽然减肥效率变慢，但是不容易放弃。
+4. 加强力量训练，有些人吃不胖的原因是基础代谢高，消耗热量就快，所以他们不容易胖。肌肉增多，基础代谢就会增高。
+
+所以我按照他说的，以周为单位开始更新自己的减肥历程。
 
 
 
