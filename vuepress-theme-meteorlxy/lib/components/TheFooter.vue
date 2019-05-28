@@ -42,6 +42,7 @@ export default {
   },
 
   computed: {
+   
     sns () {
       return this.$themeConfig.personalInfo.sns || null
     },

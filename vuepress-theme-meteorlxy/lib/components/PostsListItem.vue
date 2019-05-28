@@ -107,6 +107,7 @@ export default {
 .posts-list-item
   img 
     border-radius 0.3em
+    border 1px solid $arrowBgColor
   padding 0 0.5rem
   &:not(:first-child)
     border-top 1px solid $accentColor

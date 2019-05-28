@@ -23,6 +23,7 @@ module.exports = ({
 
     extendPageData ($page) {
       // Test the page if is a post according to the postsDir
+      
       if ($page.path.startsWith(ensureBothSlash(postsDir))) {
         // Set the meta data of the page
         $page.frontmatter.layout = $page.frontmatter.layout || postsLayout

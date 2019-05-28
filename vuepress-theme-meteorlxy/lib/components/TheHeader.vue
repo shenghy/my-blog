@@ -20,6 +20,8 @@
   </header>
 </template>
 
+
+
 <script>
 import TransitionFadeSlide from './TransitionFadeSlide.vue'
 import TheHeaderNavbar from './TheHeaderNavbar.vue'

@@ -4,7 +4,7 @@ category: 视频教程
 tags:
   - React
 date: 2019-05-04
-title: React16免费视频教程（更新到第13集）
+title: React16免费视频教程（更新到第16集）
 vssue-title: new-react-base
 ---
 
@@ -1024,9 +1024,11 @@ export default Xiaojiejie
 
 通过上节课的学习，已经把"小姐姐"组件做了一个基本的拆分，但是还不能实现随着输入，显示出输入的内容。这里涉及的是父组件向子组件传值。然后点击删除，就相当于子组件向父组件传值。这节课就主要学习一下父子组件传值的一些技巧。
 
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=93670967&page=14" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
 ### 父组件向子组件传值
 
-这里只介绍最使用的，最快速的上手方法。就是使用组件属性的形式父组件给子组件传值。比如：我们在`<XiaojiejieItem>`组件中加入`content`属性，然后给属性传递`{item}`，这样就完成了父组件向子组件传值。
+这里只介绍最实用的，最快速的上手方法。就是使用组件属性的形式父组件给子组件传值。比如：我们在`<XiaojiejieItem>`组件中加入`content`属性，然后给属性传递`{item}`，这样就完成了父组件向子组件传值。
 
 ```jsx
 <XiaojiejieItem content={item} />
@@ -1211,3 +1213,138 @@ handleClick(){
 到此为止，就算是实现了子组件向父组件传值。特别提醒：这节课是React体系中非常重要的一节课，小伙伴们可以多听几遍，并进行练习。因为真正的React开发工作，每天写的就是各种组件，传值是组件之间产生联系的必要一环，无法跳跃。所以一定要学好。
 
 
+## 第15节：React进阶-单项数据流和其他
+
+这节课我们讲一些理论性的东西，比如：React单项数据流、React同其他框架共同工作和函数式编程的一些概念，这节课可能会稍显无聊，因为都是理论的东西，但是这些知识无论是在面试中，还是在工作中都会经常遇到，所以也是跳不过去的一节课。
+
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=93920602&page=15" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+### 单项数据流
+
+React的特性中有一个概念叫做“单项数据流”,可能刚刚接触React的小伙伴不太明白这个概念，还是拿出《小姐姐服务菜单》的Demo，来给大家讲解。比如我们在父组件中可以直接把`this.state.list`传递过来。例如下面代码:
+
+```jsx
+<ul>
+    {
+        this.state.list.map((item,index)=>{
+            return (
+                <XiaojiejieItem 
+                key={index+item}  
+                content={item}
+                index={index}
+                list={this.state.list}
+                deleteItem={this.deleteItem.bind(this)}
+                />
+            )
+        })
+    }
+</ul> 
+
+```
+
+其实这样传是没有问题的，问题是你只能使用这个值，而不能修改这个值，如果你修改了，比如我们把代码写成这样：
+```js
+handleClick(){
+    //关键代码——---------start
+    this.props.list=[]
+    //关键代码-----------end
+    this.props.deleteItem(this.props.index)
+}
+```
+
+就会报下面的错误；
+
+```js
+TypeError: Cannot assign to read only property 'list' of object '#<Object>'
+```
+
+意思就是`list`是只读的，单项数据流。那如果要改变这里边的值怎么办?其实上节课已经讲过了，就是通过传递父组件的方法。
+
+
+### 和其他框架配合使用
+
+有小伙伴问我，`React`和`jquery`能一起使用吗？
+
+答案：是可以的，React其实可以模块化和组件化开发。看`/public/index.html`文件，代码如下：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+   
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!--关键代码start-->
+    <div id="root"></div>
+     <!--关键代码end-->
+   
+  </body>
+</html>
+
+```
+
+其实React只对这一个`<div>`,外边的其他DOM并不受任何影响，比如我们在它的下方再写一个`<div>`，然后查看效果。
+```html
+<div id="root"></div>
+<div style="color:red">今天过的好开心，服务很满意！</div>
+```
+
+你可以在其他的div里加入任何内容，但是这种情况很少，我也不建议这么使用。希望小伙伴们还是统一技术栈。
+
+### 函数式编程
+
+在面试React时，经常会问道的一个问题是：函数式编程的好处是什么？
+
+1. 函数式编程让我们的代码更清晰，每个功能都是一个函数。
+2. 函数式编程为我们的代码测试代理了极大的方便，更容易实现前端自动化测试。
+
+React框架也是函数式编程，所以说优势在大型多人开发的项目中会更加明显，让配合和交流都得心应手。
+
+总结:这节课虽然都是些理论知识，这些知识在面试中经常被问到，所以也是必须掌握的内容。
+
+## 第16节：React高级-调试工具的安装及使用
+
+已经可以简单的写一些React代码了，在视频中，我也是经常使用`console.log`这种很二的形式来调试程序。其实React在浏览器端是有一个调试工具的，这就是`React developer tools`，这个是React人必下的一个调试工具。这节课就主要学习一下`React developer tools`的下载和简单使用。
+
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=94101983&page=16" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+
+### 下载React developer tools
+
+这个需要在`chrome浏览器`里进行，并且需要科学上网（这东西我不能在这里教，所以自行百度吧）。
+
+1. 点击浏览器地址栏最右边的`...`，然后选择`更多工具`,然后选择`扩展程序`。
+
+2. 点击`打开chrome网上应用店`,直接在搜索框里搜索`React`，出现的第一个就是。
+
+3. 点击`添加至Chrome`,然后就是等待了..........
+
+这段内容推荐看视频吧，其实并不复杂，但是都是需要上图的，我又懒得作图。
+
+
+### React developer tools的三种状态
+
+`React developer tools`有三种颜色，三种颜色代表三种状态：
+
+1. 灰色： 这种就是不可以使用，说明页面不是又React编写的。
+2. 黑色:  说明页面是用React编写的，并且处于生成环境当中。
+3. 红色： 说明页面是用React编写的，并且处于调试环境当中。
+
+
+
+### React developer tools使用
+
+打开浏览器，然后按`F12`,打开开发者工具，然后在面板的最后一个，你会返现一个`React`,这个就是安装的插件了。
+   
+在这里你可以清晰的看到React的结构，让自己写的代码更加清晰，你还可以看到组间距的数据传递，再也不用写`console.log`来测试程序了。
+
+
+**总结** : 这节课我们学习了React调试工具的安装和使用，在工作中一个前端的调试都是在这里进行的，所以拿出单独的一节课来讲一下。

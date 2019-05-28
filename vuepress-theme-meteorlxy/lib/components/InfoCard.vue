@@ -133,6 +133,16 @@
       </div>
     </div>
 
+     <!--重学前端广告2019年6月26日到期-->
+    <div class="ad-side">
+      <a href="http://gk.link/a/103wj" target="_blank">
+        <img src="http://blogimages.jspang.com/ad_0005.jpg" width="100%" />
+      </a>
+      <div class="ad-tag">
+        广告
+      </div>
+    </div>
+
 
     <div class="ad-side">
       <a href="http://www.zhufengpeixun.cn/main/course/index.html?ref=jsp" target="_blank">
@@ -148,7 +158,7 @@
            <img src="http://blogimages.jspang.com/dashangwx.jpg" width="100%" /> 
         </div>
         <div>
-          <p>打赏获得4项特权:</p>
+          <p><b>打赏获得4项特权:</b></p>
           <p>1.免费视频离线高清版下载（共288集）</p>
           <p>2.加入微信群，享有更多互动和人脉资源</p>
           <p>3.和11年程序老兵成为微信好友</p>
