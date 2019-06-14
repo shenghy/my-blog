@@ -7,8 +7,11 @@ title: Flutter实战视频-移动电商 （第69节更新）
 vssue-title: Flutter-shop
 ---
 
+![Flutter-shop](https://jspang.com/images/Flutter_shop.png)
 
 春节过完了，新年新气象，年前一直在住院和养病。现在病已经养好，那就来个大招吧。《Flutter实战移动电商》开始更新，小伙伴快来学习吧。
+
+
 
 **有小伙伴肯定会问我，为什么这套视频要收费？**
 
@@ -48,7 +51,7 @@ vssue-title: Flutter-shop
 购买后可以直接**微信**搜索“千聊”，或手机下载千聊**APP**，当然也可以收藏本页，在当前页面用**web**进行观看。
 
 
-![图片地址](http://blogimages.jspang.com/Flutter_shop_01.jpg)
+![图片地址](https://jspang.com/images/Flutter_shop.png)
 
 
 

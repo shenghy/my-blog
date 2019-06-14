@@ -4,11 +4,16 @@ category: 视频教程
 tags:
   - React
 date: 2019-05-04
-title: React16免费视频教程（更新到第16集）
+title: React16免费视频教程（更新到第26集）
 vssue-title: new-react-base
 ---
 
+
+![React免费视频教程](https://jspang.com/images/react16_image.png)
+
 这是一门免费课程，会详细讲解React的基础知识，React版本是16x，也是目前最新版本(我课程录制开始的日期是2019年5月4日)。今年的目标是录制100集前端**免费视频教程**，可能大部分都会在React框架上，毕竟它是现在最火的前端框架，也是前端必会的一个框架。
+
+
 
 我们采用最新的React16.8版本进行讲解，我相信很多人应该也会使用React，但是你可能学的并不是很系统，不妨跟着技术胖来一次详细的学习吧。
 
@@ -20,6 +25,10 @@ vssue-title: new-react-base
 ## 第01节：React课程前言
 
 很高兴你能来到这里学习React.js技术，这是课程的第一节，主要介绍一下小伙伴们常问的一些问题，虽然废话很多，但是还是建议你可以花几分钟看完这节视频。
+
+>技术胖的React交流Q群：159579268
+
+
 
 <iframe src="//player.bilibili.com/player.html?aid=51455080&cid=90064778&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" width="100%" allowfullscreen="true"> </iframe>
 
@@ -58,7 +67,7 @@ React的社区也是非常强大的,随着React的普及也衍生出了更多有
 
 技术胖还是个一线程序员，平时加班也不少，所以有时候会更新不及时，还请大家谅解。
 
-声明：课程借鉴了《深入浅出React和Redux》这本书，但也加入了自己的理解，更不会单纯的抄袭本书的任何话语和章节，如果引用本书话语，都会全部标出，以示对版权的尊重（其实我就是看着这本书学习的，然后录制的课程）。
+声明：课程借鉴了《**深入浅出React和Redux**》这本书，但也加入了自己的理解，更不会单纯的抄袭本书的任何话语和章节，如果引用本书话语，都会全部标出，以示对版权的尊重（其实我就是看着这本书学习的，然后录制的课程）。
 
 如果你觉的看书更好，可以买一本学习。
 
@@ -79,6 +88,8 @@ React的社区也是非常强大的,随着React的普及也衍生出了更多有
 ## 第02节：React简介和Vue对比
 
 这节课简单介绍一下React框架，并通过介绍，引出一个争执很多的话题，到底什么时候用`React.js`？什么时候用`Vue.js`？其实这节课也是偏重于理论的，但是我觉的有必要单独拿出来一节课说一说，因为有很多小伙伴还在犹豫，我已经会了Vue，还有没有必要学习React？答案是肯定的，那就是一定要学。因为这套课可能更多的面向新手，所以必要的理论也是不能缺少的。
+
+>技术胖的React交流Q群：159579268
 
 <iframe src="//player.bilibili.com/player.html?aid=51455080&cid=90254640&page=2" scrolling="no" border="0" frameborder="no" framespacing="0" width="100%" allowfullscreen="true"> </iframe>
 
@@ -127,6 +138,8 @@ React的社区也是非常强大的,随着React的普及也衍生出了更多有
 ## 第03节：React开发环境搭建
 
 通过两节课的理论学习，这节终于可以进入操作环节了，其实技术胖早已经迫不及待了。讲理论就放佛认识一个美女，缺只能让你看，剩下啥都做不了一样。了解我的小伙伴都知道，我一定不是这种性格。这节课就让我们一起动手，把React的开发环境搭建好。在搭建React开发环境前需要你安装Node，如果你已经安装了可以省略这些步骤。
+
+>技术胖的React交流Q群：159579268
 
 <iframe src="//player.bilibili.com/player.html?aid=51455080&cid=90254864&page=3" scrolling="no" border="0" frameborder="no" framespacing="0" width="100%" allowfullscreen="true"> </iframe>
 
@@ -194,6 +207,8 @@ npm start   //预览项目，如果能正常打开，说明项目创建成功
 ## 第04节：脚手架生成的项目目录介绍
 
 用脚手架生成目录后，需要对目录有个基本的认识。最起码知道都是作什么用的，否则我们如何编写程序那？打个比喻：你知道了一个特别好的娱乐场所，你一直很向往，想去体验一把，可是你不了解行情和规矩，那最多你也只能去泡泡澡，吃吃自助餐了。我们现在就是这种情况，所以这节课将带你浏览一下React脚手架生成目录和文件的作用。
+
+>技术胖的React交流Q群：159579268
 
 <iframe src="//player.bilibili.com/player.html?aid=51455080&cid=90482691&page=4" scrolling="no" border="0" frameborder="no" framespacing="0" width="100%" allowfullscreen="true"> </iframe>
 
@@ -1348,3 +1363,946 @@ React框架也是函数式编程，所以说优势在大型多人开发的项目
 
 
 **总结** : 这节课我们学习了React调试工具的安装和使用，在工作中一个前端的调试都是在这里进行的，所以拿出单独的一节课来讲一下。
+
+## 第17节：React高级-PropTypes校验传递值
+
+在父组件向子组件传递数据时，使用了属性的方式，也就是props，但“小姐姐服务菜单”的案例并没有任何的限制。这在工作中时完全不允许的，因为大型项目，如果你不校验，后期会变的异常混乱，业务逻辑也没办法保证。
+
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=94272944&page=17" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+
+### PropTypes的简单应用
+
+我们在`Xiaojiejie.js`组件里传递了4个值，有字符串，有数字，有方法，这些都是可以使用`PropTypes`限制的。在使用需要先引入`PropTypes`。
+
+```js
+import PropTypes from 'prop-types'
+```
+
+引入后，就可以在组件的下方进行引用了，需要注意的是子组件的最下面（不是类里边），写入下面的代码：
+
+```js
+XiaojiejieItem.propTypes={
+    content:PropTypes.string,
+    deleteItem:PropTypes.func,
+    index:PropTypes.number
+}
+```
+具体意思，我会在视频中进行讲解，请观看视频。为了防止你的为止写错，我这里给出这个`XiaojiejieItem.JS`文件的代码。
+
+```js
+import React, { Component } from 'react'; //imrc
+import PropTypes from 'prop-types'
+
+class XiaojiejieItem  extends Component { //cc
+   
+   constructor(props){
+       super(props)
+       this.handleClick=this.handleClick.bind(this)
+   }
+   
+    render() { 
+        return ( 
+            <div onClick={this.handleClick}>
+                {this.props.content}
+            </div>
+        );
+    }
+
+    handleClick(){
+        
+        this.props.deleteItem(this.props.index)
+    }
+    
+}
+ //--------------主要代码--------start
+XiaojiejieItem.propTypes={
+    content:PropTypes.string,
+    deleteItem:PropTypes.func,
+    index:PropTypes.number
+}
+ //--------------主要代码--------end
+export default XiaojiejieItem;
+```
+
+这时候你在浏览器中查看效果，是什么都看不出来的，你需要修改一个错误的校验。比如我们把index改为必须是字符串。
+
+```js
+index:PorpTypes.string
+```
+
+这时候浏览器的`console`里就会报错了，报错信息如下：
+
+```
+Warning: Failed prop type: Invalid prop `index` of type `number` supplied to `XiaojiejieItem`, expected `string`.
+    in XiaojiejieItem (at Xiaojiejie.js:28)
+    in Xiaojiejie (at src/index.js:5)
+```
+意思就是要求传递字符串，而我们却传递了数字过去，所以给了警告。
+
+###　必传值的校验
+
+比如现在我们加入一个`avname`的属性，并放入`JSX`中，就算不传递这个值也不会报错的。代码如下：
+
+```js
+render() { 
+    return ( 
+        <div onClick={this.handleClick}>
+            {this.props.avname}为你做- {this.props.content}
+        </div>
+    );
+}
+```
+
+这时候代码是不会报错的，我们传不传无所谓。比如我们现在传一个属性过来。
+```jsx
+<ul>
+    {
+        this.state.list.map((item,index)=>{
+            return (
+                <XiaojiejieItem 
+                key={index+item}  
+                content={item}
+                index={index}
+                avname='波多野结衣'
+                deleteItem={this.deleteItem.bind(this)}
+                />
+            )
+        })
+    }
+</ul>  
+```
+
+这时候页面显示正常了，但是怎样避免必须传递avname这个属性值?如果不传递就报错,这就需要使用`isRequired`关键字了,它表示必须进行传递，如果不传递就报错。
+
+```js
+avname:PropTypes.string.isRequired
+
+```
+
+
+
+###　使用默认值`defaultProps`
+
+有些人是非常腼腆的，他是不好意思选择的，所以有时候是需要有一个默认的人为她服务的。`defalutProps`就可以实现默认值的功能，比如现在把`avname`的默认值设置成"松岛枫" ，然后把`avname`的属性删除掉。
+
+```js
+XiaojiejieItem.defaultProps = {
+    avname:'松岛枫'
+}
+```
+
+
+其实检测的类型非常多，你最好去官方文档看一下，能得到比较全面的了解。下面的课程有用到特殊的类型，还会继续给小伙伴们讲解。
+
+
+## 第18节：React高级-ref的使用方法
+
+在编写组件中的方法时，经常会遇到语义化很模糊的代码，这对于团队开发是一个很大的问题。因为review代码或者合作时都会影响开发效率。或者到这核心成员离开，项目倒闭的严重影响。所以我们必须重视react代码当中的语义化。ref是个不错的工具，快来学习一下吧。
+
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=95128841&page=18" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+
+### 代替原来的`e.target.value`
+
+以前的案例中，我们写了下面的代码，使用了`e.target`，这并不直观，也不好看。这种情况我们可以使用`ref`来进行解决。
+
+```javascript
+inputChange(e){
+    
+    this.setState({
+        inputValue:e.target.value
+    })
+}
+```
+如果要使用`ref`来进行，需要现在`JSX`中进行绑定， 绑定时最好使用ES6语法中的箭头函数，这样可以简洁明了的绑定DOM元素。
+
+```jsx
+<input 
+    id="jspang" 
+    className="input" 
+    value={this.state.inputValue} 
+    onChange={this.inputChange.bind(this)}
+    //关键代码——----------start
+    ref={(input)=>{this.input=input}}
+    //关键代码------------end
+    />
+```
+绑定后可以把上边的类改写成如下代码:
+
+```js
+inputChange(){
+    this.setState({
+        inputValue:this.input.value
+    })
+}
+```
+这就使我们的代码变得语义化和优雅的多。但是就我个人的经验来讲，我是不建议用`ref`这样操作的，因为`React`的是数据驱动的，所以用ref会出现各种问题。
+
+### `ref`使用中的坑
+
+比如现在我们要用ref绑定取得要服务的数量，可以先用`ref`进行绑定。
+
+```jsx
+<ul ref={(ul)=>{this.ul=ul}}>
+    {
+        this.state.list.map((item,index)=>{
+            return (
+                <XiaojiejieItem 
+                key={index+item}  
+                content={item}
+                index={index}
+                deleteItem={this.deleteItem.bind(this)}
+                />
+            )
+        })
+    }
+</ul>  
+```
+绑定后可以在`addList()`方法中，获取当前`<div>`的值.
+
+```js
+ addList(){
+    this.setState({
+        list:[...this.state.list,this.state.inputValue],
+        inputValue:''
+    })
+    //关键代码--------------start
+    console.log(this.ul.querySelectorAll('div').length)
+    //关键代码--------------end
+
+}
+```
+这时候你打开控制台，点击添加服务按钮，你会返现数量怎么少一个？（就是这个坑），其实这个坑是因为React中更多`setState`是一个异步函数所造成的。也就是这个`setState`，代码执行是有一个时间的，如果你真的想了解清楚，你需要对什么是虚拟DOM有一个了解。简单的说，就是因为是异步，还没等虚拟Dom渲染，我们的`console.log`就已经执行了。
+
+那这个代码怎么编写才会完全正常那，其实`setState`方法提供了一个回调函数，也就是它的第二个函数。下面这样写就可以实现我们想要的方法了。
+```js
+addList(){
+    this.setState({
+        list:[...this.state.list,this.state.inputValue],
+        inputValue:''
+        //关键代码--------------start
+    },()=>{
+        console.log(this.ul.querySelectorAll('div').length)
+    })
+    //关键代码--------------end
+}
+```
+
+现在到浏览器中查看代码，就完全正常了。这节课主要学习了`ref`的用法和`ref`中的坑。学完后练习一下吧，代码这东西，不练习你是学不会的。
+
+## 第19节：React高级-生命周期讲解-1
+
+`React`的生命周期是非常重要的知识点，所以关于React声明周期的课程可以多看几遍，我也会尽量的把React的生命周期讲的细致。生命周期的课程我分成三节来讲，这样更容易让你理解。
+
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=95285149&page=19" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+
+### React生命周期图
+
+![React声明周期图](https://jspang.com/images/React1901.png)
+
+
+这张图看起来有点复杂，但是小伙伴们不要有恐慌心里，我会抽丝剥茧，给你详细讲解。
+
+
+通过这张图你可以看到React声明周期的四个大阶段：
+
+1. `Initialization`:初始化阶段。
+2. `Mounting`: 挂在阶段。
+3. `Updation`: 更新阶段。
+4. `Unmounting`: 销毁阶段
+
+### 什么是生命周期函数
+
+如果非要用一句话把生命周期函数说明白，我觉的可以用这句话来说明：
+
+>生命周期函数指在某一个时刻组件会自动调用执行的函数
+
+
+举例：写的小姐姐的例子。里边的`render()`函数，就是一个生命周期函数，它在state发生改变时自动执行。这就是一个标准的自动执行函数。
+
+
+- `constructor`不算生命周期函数。
+
+`constructor`我们叫构造函数，它是ES6的基本语法。虽然它和生命周期函数的性质一样，但不能认为是生命周期函数。
+
+但是你要心里把它当成一个生命周期函数，我个人把它看成React的`Initialization`阶段，定义属性（props）和状态(state)。
+
+### Mounting阶段
+
+Mounting阶段叫挂载阶段，伴随着整个虚拟DOM的生成，它里边有三个小的生命周期函数，分别是：
+
+1. `componentWillMount` :  在组件即将被挂载到页面的时刻执行。
+2. `render` : 页面state或props发生变化时执行。
+3. `componentDidMount`  : 组件挂载完成时被执行。
+
+
+**componentWillMount**代码
+
+```js
+componentWillMount(){
+    console.log('componentWillMount----组件将要挂载到页面的时刻')
+}
+
+```
+
+**componentDidMount**代码
+
+```js
+componentDidMount(){
+    console.log('componentDidMount----组件挂载完成的时刻执行')
+}
+
+```
+
+**render**代码
+
+```js
+
+render(){
+    console.log('render---组件挂载中.......')
+}
+
+```
+
+这时候我们查看一下控制台，会为我们打出如下提示：
+
+```s
+componentWillMount----组件将要挂载到页面的时刻执行
+render----开始挂载渲染
+componentDidMount----组件挂载完成的时刻执行
+```
+这也是生命周期的顺序。有小伙伴会问我，这个函数书写有顺序吗?哪个在前？哪个在后？其实是没有顺序的，你可以随便改动他们的顺序。
+
+
+**注意的问题**
+
+`componentWillMount`和`componentDidMount`这两个生命周期函数，只在页面刷新时执行一次，而`render`函数是只要有state和props变化就会执行，这个初学者一定要注意。
+
+视频中会举例说明。
+
+总结:这节课讲解了React的生命周期函数，先是简单了解了一下React生命周期函数的四大阶段，然后又详细学习了一下`Mounting`挂载阶段中的三个生命周期函数。下节课会学习`Updation`阶段的生命周期函数。
+
+## 第20节：React高级-生命周期讲解-2
+
+
+这节继续学习React生命周期中的`Updation`阶段,也就是组件发生改变的更新阶段，这是React生命周期中比较复杂的一部分，它有两个基本部分组成，一个是`props`属性改变，一个是`state`状态改变（这个在生命周期的图片中可以清楚的看到）。
+
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=95528070&page=20" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+### shouldComponentUpdate函数
+
+`shouldComponentUpdate`函数会在组件更新之前，自动被执行。比如写入下面的代码:
+
+```javascript
+shouldComponentUpdate(){
+    console.log('shouldComponentUpdate---组件发生改变前执行')
+}
+
+```
+它要求返回一个布尔类型的结果，必须有返回值，这里就直接返回一个`true`了（真实开发中，这个是有大作用的）。
+
+```javascript
+shouldComponentUpdate(){
+    console.log('shouldComponentUpdate---组件发生改变前执行')
+    return true
+}
+```
+
+现在就可以在控制台`console`里看到结果了，并且结果是每次文本框发生改变时都会随着改变。如果你返回了`false`，这组件就不会进行更新了。
+简单点说，就是返回true，就同意组件更新;返回false,就反对组件更新。
+
+### componentWillUpdate函数
+
+`componentWillUpdate`在组件更新之前，但`shouldComponenUpdate`之后被执行。但是如果`shouldComponentUpdate`返回false，这个函数就不会被执行了。
+
+```javascript
+//shouldComponentUpdate返回true才会被执行。
+componentWillUpdate(){
+    console.log('componentWillUpdate---组件更新前，shouldComponentUpdate函数之后执行')
+}
+```
+
+
+### componentDidUpdate
+
+`componentDidUpdate`在组件更新之后执行，它是组件更新的最后一个环节。
+
+```javascript
+componentDidUpdate(){
+    console.log('componentDidUpdate----组件更新之后执行')
+}
+```
+
+为了方便我们看出结果，可以在每个函数前加上序号。最后我们可以看到控制台输出的结果如下：
+```
+1-shouldComponentUpdate---组件发生改变前执行
+2-componentWillUpdate---组件更新前，shouldComponentUpdate函数之后执行
+3-render----开始挂载渲染
+4-componentDidUpdate----组件更新之后执行
+```
+
+结果和我们写的顺序也是相对的，讲到这里，你一定对React的生命周期函数有了比较直观的了解了。
+
+### componentWillReceiveProps 函数
+
+我们可以先在`Xiaojiejie.js`组件里写下这个函数，例如下面的代码。
+
+```javascript
+componentWillReceiveProps(){
+    console.log('componentWillReceiveProps')
+}
+```
+
+这时候会发现函数什么时候都不会被执行，因为`Xiaojiejie.js`算是一个顶层组件，它并没接收任何的`props`。可以把这个函数移动到`XiaojiejieItem.js`组件中。
+
+凡是组件都有生命周期函数，所以子组件也是有的，并且子组件接收了`props`，这时候函数就可以被执行了。
+
+```javascript
+componentWillReceiveProps(){
+        console.log('child - componentWillReceiveProps')
+    }
+```
+
+这个时候再预览，就会看到`componentWillReceiveProps`执行了。那现在可以总结一下它的执行时间了。
+> 子组件接收到父组件传递过来的参数，父组件render函数重新被执行，这个生命周期就会被执行。
+
+- 也就是说这个组件第一次存在于Dom中，函数是不会被执行的;
+- 如果已经存在于Dom中，函数才会被执行。
+
+这个生命周期算是比较复杂的一个生命周期，需要我们花点时间去消化。
+
+这节课就把`updation`里的生命周期函数都讲过了，下节课会把剩下的一点`Unmounting`讲了，然后会讲一下生命周期的实际应用。
+
+## 第21节：React高级-生命周期讲解-3
+
+其实这节课算是一个小的补充，把最后一个React的生命周期函数讲一下，这个生命周期周期函数就是`componentWillUnmount`，它是在组件去除时执行。
+
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=95528070&page=21" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+### componentWillUnmount函数
+
+这个函数时组件从页面中删除的时候执行，比如在`XiaojiejieItem.js`，写入下面的代码:
+
+```javascript
+//当组件从页面中删除的时候执行
+componentWillUnmount(){
+    console.log('child - componentWillUnmount')
+}
+
+```
+写完后，可以到浏览器终端中查看结果，当我们点击服务项，服务项被删除时，这个函数就被执行了。
+
+**总结**:通过三节课的学习，我们已经把React的所有生命周期函数都讲完了，下节课会具体讲一下生命周期函数在实际开发中的应用。
+
+
+## 第22节：React高级-生命周期改善程序性能
+
+已经对`React`生命周期有了认识，那如何利用它提高组件的性能那？这节课我们会讲一个通过`shouldComponentUpdate`函数，改善React组件性能的例子。为了让这节课讲述的内容更加清晰，可以删除上几节课的生命周期函数。
+
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=95528070&page=22" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+### 小姐姐组件存在性能问题
+
+是的，小姐姐组件已经写的很熟悉了，但是它有一个性能问题，我一直没告诉你，那就是子组件`XiaojiejieItem`频繁无用渲染`render`。如何能看出这个问题的那？
+
+首先你要确认你安装了`React Developer Tools` 如果你没有安装，可以到前边的课程学习一下安装。有了这个浏览器插件，就可以在控制台中找到React标签，然后在右边点开设置，选中`highlight Updates`。
+
+这时候你在浏览器的文本框中输入一下内容，你可以清楚的看到子组件也发生了重新`render`的情况。
+
+有很多程序员会忽略这样的性能损耗，认为没有什么大不了的，但是软件的卡顿是一点点产生的，所以必须要减少性能损耗。
+
+可以在`XiaojiejieItem.js`的`render`函数里加入下面的代码，更直观的看到这个问题。
+
+```javascript
+render() { 
+    console.log('child-render')
+    return ( 
+        <div onClick={this.handleClick}>
+            {this.props.avname}为你做- {this.props.content}
+        </div>
+    );
+}
+
+```
+
+
+### 利用`shouldComponentUpdate`解决
+
+
+这个问题看似很小，但是当你页面很复杂时，足以影响用户体验，不要骗自己了。其实用`shouldComponentUpdate`函数就可以简单的解决调这个问题。
+
+直接再`XiaojiejieItem.js`中加入下面的代码:
+
+```javascript
+shouldComponentUpdate(){
+    return false;
+}
+```
+
+这时候在浏览器中查看，问题已经没有了。但是这样做太暴力了，否定了所有的东西，那如果在真实项目中，需要改变值属性值，达到渲染就没办法了。所以我们可以更优雅一下，写出下面的代码。
+
+shouldComponentUpdate有两个参数：
+
+- nextProps:变化后的属性;
+- nextState:变化后的状态;
+
+
+```javascript
+shouldComponentUpdate(nextProps,nextState){
+    if(nextProps.content !== this.props.content){
+        return true
+    }else{
+        return false
+    }
+   
+}
+```
+
+现在的代码就优雅一些了，也不那么暴力了。这就算是完美解决了子组件的渲染性能问题，你写的代码质量也得到了提高。其实在面试React让写TODOList应用的，都是看这个来区分等级的，能写出来的，这算普通程序员;能写出来并作性能优化的，这算有经验的程序员。
+
+
+## 第23节：React高级-axios数据请求
+
+有了生命周期的知识，这节课学习远程数据请求的知识，小伙伴们肯定都知道，`ajax`可以远程请求，但是这写起来太麻烦了，我们用程序的ajax请求框架`Axios`来实现。
+
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=96132666&page=23" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+### 安装Axios
+
+`Axios`的安装可以使用npm来进行安装，你可以直接在项目根目录下，输入下面的代码。
+
+```
+npm install -save axios
+```
+
+输入
+后就可以正在的开始安装了。
+
+### npm install -save 和 -save-dev分不清
+
+- `npm install xxx`: 安装项目到项目目录下，不会将模块依赖写入`devDependencies`或`dependencies`。
+
+- `npm install -g xxx`: `-g`的意思是将模块安装到全局，具体安装到磁盘哪个位置，要看 `npm cinfig prefix`的位置
+
+- `npm install -save xxx`：`-save`的意思是将模块安装到项目目录下，并在`package`文件的`dependencies`节点写入依赖。
+
+- `npm install -save-dev xxx`：`-save-dev`的意思是将模块安装到项目目录下，并在`package`文件的`devDependencies`节点写入依赖。
+
+
+
+作为一个前端，要清楚的知道`npm install `这四种用法，防止项目依赖错误，在别人下载你的代码没办法跑起来。
+
+
+### axios请求数据
+
+安装好`axiso`之后，需要在使用ajax的地方先引入`axios,比如现在想在`Xiaojiejie.js`中使用`axios`，写入下面的代码进行引入:
+
+```js
+import axios from 'axios'
+```
+引入后，可以在`componentDidMount`生命周期函数里请求ajax，我也建议在`componentDidMount`函数里执行，因为在render里执行，会出现很多问题，比如一直循环渲染；在`componentWillMount`里执行，在使用RN时，又会有冲突。所以强烈建议在`componentDidMount`函数里作`ajax`请求。
+
+```js
+componentDidMount(){
+    axios.post('https://web-api.juejin.im/v3/web/wbbr/bgeda')
+        .then((res)=>{console.log('axios 获取数据成功:'+JSON.stringify(res))  })
+        .catch((error)=>{console.log('axios 获取数据失败'+error)})
+}
+```
+
+上面的代码是以掘金的一个接口为例，做了一次`ajax`请求。并且请求到了数据，给我们返回了。
+总结：这节课学习了`Axios`的简单用法，并用最简单的方式，请求到了一个掘金网站的数据接口。ajax请求在你的项目中，会经常使用，也是我们读取和写入数据的一个桥梁，所以学习`React`的过程中，使用`Axios`作ajax请求非常重要，动手练习一下吧。
+
+
+## 第24节：React高级-Axios请求EasyMock
+
+上节课只是小试身手，用了一个掘金的临时接口，这个接口并不是自己写的，没准什么时候就不能使用了。在开发中都是前后端分离的，我们也需要自己模拟数据，通常把自己模拟数据这个过程就叫做`mock`，你可以用软件自己本地模拟数据，但是作为一个云注意者，我还是选择使用`Easy-mock`来模拟接口数据。
+
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=96503392&page=24" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+
+### EasyMock新建一个接口
+
+> EasyMock网站:https://www.easy-mock.com/
+
+然后你没注册需要注册一下，剩下的过程就看视频吧，因为这个都是些图形化的东西，我在视频中会详细讲解。
+
+
+在创建接口时，写下如下代码：
+
+```json
+{
+  "data": ['基础按摩', '躺式采耳', '中药泡脚']
+}
+```
+
+然后在上节课的Axios代码部分，把请求改为`get`,然后预览，到控制台查看结果。
+```javascript
+componentDidMount(){
+    axios.get('改为你自己的接口URL')
+        .then((res)=>{console.log('axios 获取数据成功:'+JSON.stringify(res))  })
+        .catch((error)=>{console.log('axios 获取数据失败'+error)})
+}
+```
+
+这时候你应该可以获得接口数据了，也说明我们的接口制作正常了，这就很类似我们项目中的真实接口了。
+
+
+### 修改程序 变为动态接口
+
+在客户端已经得到了远程数据，那剩下的就是`setState`一下就可以了，代码如下：
+
+```javascript
+
+componentDidMount(){
+    axios.get('xxxx')
+        .then((res)=>{
+            console.log('axios 获取数据成功:'+JSON.stringify(res))
+           
+            this.setState({
+                list:res.data.data
+            })
+          })
+        .catch((error)=>{console.log('axios 获取数据失败'+error)})
+}
+
+```
+
+那这时候再浏览React程序，也是完全可以使用的，不过已经不是以前写死的东西，而是使用远端接口数据。
+
+总结：我们这两节课只是让你简单的学会React远程请求接口的方法，以后会用实战给大家讲解这部分知识，这里只要做到有个基本认识就可以了。
+
+
+
+## 第25节：React高级-用CSS3实现react动画
+
+前端的动画技术发展到现在,完全可以独立出一个岗位。我目前不属于动画岗，能力有限，也只是简单的给小伙伴们讲讲，做一些前端常用的效果。这节课先用我们最熟悉的CSS3在React中制作一个显示隐藏的动画特效，注意这是用CSS3实现的，其实React只做了业务逻辑。
+
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=96677385&page=25" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+### 新建一个Boss组件
+
+其实这个组件你起什么名字都行，我也是临时想到的。
+
+需要给“小姐姐服务菜单”增加一个Boss服务人物，点击一下按钮就会自动出现"Boss级人物-孙悟空"，不要管什么恰当不恰当了，咱们是为了练习一下动画。在`src`文件夹下，新建一个`Boss.js`文件。然后用快速生成的方式生成基本结构:
+
+在使用这些命令前，你要保证你安装了VSCode中的`Simple React Snippets`插件。
+
+- 先输入 `imrc`,然后回车，这是为了用`import`引入`React`和`component`。
+- 再输入 `ccc` 然后回车,生成最基本的带`constructor`的代码结构。
+
+就会生成下面的基本代码了（2秒钟完成下面的代码，这也是你工作中提高效率的关键）:
+
+```javascript
+
+import React, { Component } from 'react';
+class Boss extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {  }
+    }
+    render() { 
+        return (  );
+    }
+}
+ 
+export default Boss;
+```
+然后我们先写一些JSX代码，让页面上有一段文字和一个按钮。代码如下：
+
+```javascript
+import React, { Component } from 'react';
+class Boss extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {  }
+    }
+    render() { 
+        return ( 
+            <div>
+                <div>BOSS级人物-孙悟空</div>
+                <div><button>召唤Boss</button></div>
+            </div>
+          );
+    }
+}
+ 
+export default Boss;
+```
+
+### 编写业务逻辑
+
+目前组件没有任何业务逻辑，只有一个UI，这是没办法实现动画效果的。业务逻辑是点击按钮的时候可以改变字的'<div>'显示隐藏。
+要实现这个业务逻辑，先在`constructor`里增加state值`isShow`，详情请看下面的代码。
+
+```js
+this.state = { 
+    isShow:true
+}
+```
+然后把“字”的'<div>'部分，增加`className`,并用`isShow`进行控制。
+```jsx
+<div className={this.state.isShow ? 'show' : 'hide'}>BOSS级人物-孙悟空</div>
+```
+需要点击按钮时，有响应的事件，所以需要一个方法，我们编写一个`toToggole()`方法，代码如下：
+
+```javascript
+
+toToggole(){
+    this.setState({
+        isShow:this.state.isShow ? false : true
+    })
+}
+```
+
+意思就是当`isShow`为`true`时，我们赋值`false`;当`isShow`为`false时，我们赋值`true`.
+
+有了方法后，可以给`<button>`加上`onClick`响应事件了，代码如下：
+
+```html
+<div><button onClick={this.toToggole}>召唤Boss</button></div>
+```
+写完这个事件，还是需要到`constructor`里绑定一下`this`。代码如下：
+
+```js
+constructor(props) {
+    super(props);
+    this.state = { 
+        isShow:true
+    }
+    this.toToggole = this.toToggole.bind(this);
+}
+
+```
+
+这样我们的基本业务逻辑就算写完了，可以把代码加入到`Xiaojiejie`组件中，看一下效果了。
+
+### 加入CSS动画
+
+在页面上看不出任何的效果，如果你打开浏览器控制台是可以看到每次点击按钮，class都会变化的。界面没变化，知识我们没有写CSS。现在可以在`style.css`里写样式，代码如下:
+
+```css
+.show{ opacity: 1; transition:all 1.5s ease-in;}
+.hide{opacity: 0; transition:all 1.5s ease-in;}
+```
+
+这样就用CSS3实现了React中动画，这知识最简单的实践动画，所以先不要吐槽，接下来几节课我们会继续讲解React中动画的知识。继续跟着技术胖一起学习吧。
+
+## 第26节：React高级-CSS3的keyframes动画
+
+用`transition`只能作一些最简单的动画，如果你想稍微复杂点，`transition`就做不出来了。这时候就可以用CSS3中的关键帧动画`keyframes`。这节课就花几分钟学习一下keyframes，如果你CSS3动画不能分的知识很好，完全可以跳过这节课。
+
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=97007085&page=26" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+
+### keyframes动画介绍
+
+此属性与`animation`属性是密切相关的，`keyframes`译成中文就是关键帧，我最早接触这个关键帧的概念是字flash中，现在Flash已经退出历史舞台了。他和`transition`比的优势是它可以更加细化的定义动画效果。比如我们设置上节课的按钮隐藏动画，不仅可以设置透明度，还可以设置颜色。
+
+```css
+@keyframes hide-item{
+    0% {
+        opacity:1;
+        color:yellow;
+    }
+    50%{
+        opacity: 0.5 ;
+        color:red;
+    }
+    100%{
+        opacity:0;
+        color: green;
+    }
+}
+```
+
+这就算是你的动画制作好了，但是动画还没有使用。
+
+
+### 使用动画
+
+使用动画的关键词是`animation`，然后后边跟上你的制作的动画名称，如下面这段代码。
+
+```css
+.hide{ animation:hide-item 2s ease-in ; }
+```
+这句的意思就是,使用`hide-item`动画，持续时间是2秒钟，然后缓动效果是由慢到快（开始的时候慢，之后快）。
+
+但是你会发现，动画执行一遍后又恢复了原状，这个是因为没设置`forwards `属性，它是用来控制停止到最后一帧的。
+我们把代码改写成下面的样子。
+
+```css
+.hide{ animation:hide-item 2s ease-in forwards; }
+```
+
+### 完整代码的实现
+
+那`keyframes`的动画已经基本学会了，接下来就把所有的代码修改为`keyframes`的形式吧。所有代码如下：
+
+
+```css
+.show{ animation:show-item 2s ease-in forwards; }
+.hide{ animation:hide-item 2s ease-in forwards; }
+
+@keyframes hide-item{
+    0% {
+        opacity:1;
+        color:yellow;
+    }
+    50%{
+        opacity: 0.5 ;
+        color:red;
+    }
+    100%{
+        opacity:0;
+        color: green;
+    }
+}
+
+@keyframes show-item{
+    0% {
+        opacity:0;
+        color:yellow;
+    }
+    50%{
+        opacity: 0.5 ;
+        color:red;
+    }
+    100%{
+        opacity:1;
+        color: green;
+    }
+}
+```
+
+**总结**:`keyframes`也是只能实现很简单的动画效果，一些复杂的动画最好还是使用别人造好的轮子，下节课继续学习`React`中的动画吧。
+
+
+## 第27节：React高级-react-transition-group
+
+React有着极好的开发生态，开发需要的任何基本需求都可以找到官方或大神早的轮子，动画这种必不可少的东西当然也不例外，React生态中有很多第三方的动画组件，你应该学习一下`react-transition-group`动画组件。目前我在工作中使用表现很好，可以满足日常动画开发需求。
+
+推荐的最重要理由是：这个也是react官方提供的动画过渡库，有着完善的API文档（完善到我都不好意思再讲一遍）。
+
+### 安装react-transition-group
+
+使用它要先进行安装，这里使用`npm`的形式进行安装了，当然也可以使用`yarn`。
+
+先用`VSCode`打开项目根目录，然后打开终端，输入下面的命令，进行安装：
+
+```shell
+npm install react-transition-group --save
+```
+
+安装好后，你可以先去github上来看一下文档，他是有着三个核心库（或者叫组件）。
+
+- Transition
+- CSSTransition
+- TransitionGroup
+
+###　使用CSSTransition
+
+其实这个库用起来根`ng-animate`差不多，先来看看如何使用`CSSTransition`。
+
+先用`import`进行引入，代码如下：
+
+```js
+import { CSSTransition } from 'react-transition-group'
+```
+
+引入后便可以使用了，使用的方法就和使用自定义组件一样,直接写`<CSSTransition>`，而且不再需要管理`className`了，这部分由`CSSTransition`进行管理。修改上节课写的`Boss.js`文件里的`render`区域。
+
+```jsx
+render() { 
+    return ( 
+        <div>
+            <CSSTransition 
+                in={this.state.isShow}   //用于判断是否出现的状态
+                timeout={2000}           //动画持续时间
+                classNames="boss-text"   //className值，防止重复
+            >
+                <div>BOSS级人物-孙悟空</div>
+            </CSSTransition>
+            <div><button onClick={this.toToggole}>召唤Boss</button></div>
+        </div>
+        );
+}
+```
+需要注意的是`classNames`这个属性是由`s`的，如果你忘记写，会和原来的`ClassName`混淆出错，这个一定要注意。
+
+我们把上节课的代码进行了改造，然后你就可以到CSS中改写`style`了。在修改样式之前，有那些类名。
+
+- xxx-enter: 进入（入场）前的CSS样式；
+- xxx-enter-active:进入动画直到完成时之前的CSS样式;
+- xxx-enter-done:进入完成时的CSS样式;
+- xxx-exit:退出（出场）前的CSS样式;
+- xxx-exit-active:退出动画知道完成时之前的的CSS样式。
+- xxx-exit-done:退出完成时的CSS样式。
+
+知道了这些要设置的CSS，就可以删除原来写的CSS了，把下面的代码写上：
+
+```css
+.input {border:3px solid #ae7000}
+
+.boss-text-enter{
+    opacity: 0;
+}
+.boss-text-enter-active{
+    opacity: 1;
+    transition: opacity 2000ms;
+
+}
+.boss-text-enter-done{
+    opacity: 1;
+}
+.boss-text-exit{
+    opacity: 1;
+}
+.boss-text-exit-active{
+    opacity: 0;
+    transition: opacity 2000ms;
+
+}
+.boss-text-exit-done{
+    opacity: 0;
+}
+```
+
+这时候你的动画样式就正常了，你回发现我们再也不用自己管理className了，而是完全交给了`react-transition-group`来作。
+
+
+### unmountOnExit 属性
+
+学到这里，会感觉这样写也没有简化多少，更没特殊的效果，技术胖你又玩我。
+
+其实不是的，比如我们给`<CSSTransition>`加上`unmountOnExit`,加上这个的意思是在元素退场时，自动把DOM也删除，这是以前用CSS动画没办法做到的。
+
+比如我们把代码写成这个样子：
+```js
+render() { 
+    return ( 
+        <div>
+            <CSSTransition 
+                in={this.state.isShow}   //用于判断是否出现的状态
+                timeout={2000}           //动画持续时间
+                classNames="boss-text"   //className值，防止重复
+                unmountOnExit
+            >
+                <div>BOSS级人物-孙悟空</div>
+            </CSSTransition>
+            <div><button onClick={this.toToggole}>召唤Boss</button></div>
+        </div>
+        );
+}
+```
+
+
+总结:这几课简单的学习了一下React官方的`react-transition-group`动画库，也实现了一些动画效果。下节课继续学习动画库中的钩子函数和`transition-group`。
+
+
+
+
+
+
