@@ -1,5 +1,4 @@
 ---
-top: true
 category: 视频教程
 tags:
   - React
@@ -17,9 +16,72 @@ vssue-title: new-react-base
 
 我们采用最新的React16.8版本进行讲解，我相信很多人应该也会使用React，但是你可能学的并不是很系统，不妨跟着技术胖来一次详细的学习吧。
 
-目前课程正在更新中..........
+已更新完成........附上文章视频列表。
+
+
+
+
 
 <!-- more -->
+
+## 视频列表
+
+1. [React课程前言(315)](https://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC01%E8%8A%82%EF%BC%9Areact%E8%AF%BE%E7%A8%8B%E5%89%8D%E8%A8%80)
+
+2. [React简介和Vue对比(314)](https://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC02%E8%8A%82%EF%BC%9Areact%E7%AE%80%E4%BB%8B%E5%92%8Cvue%E5%AF%B9%E6%AF%94)
+
+3. [React开发环境搭建(313)](https://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC03%E8%8A%82%EF%BC%9Areact%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA)
+
+4. [脚手架生成的项目目录介绍 (312)](https://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC04%E8%8A%82%EF%BC%9A%E8%84%9A%E6%89%8B%E6%9E%B6%E7%94%9F%E6%88%90%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D)
+
+5. [HelloWorld和组件的讲解 (311)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC05%E8%8A%82%EF%BC%9Ahelloworld%E5%92%8C%E7%BB%84%E4%BB%B6%E7%9A%84%E8%AE%B2%E8%A7%A3)
+
+6. [React中JSX语法简介 (310)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC06%E8%8A%82%EF%BC%9Areact%E4%B8%ADjsx%E8%AF%AD%E6%B3%95%E7%AE%80%E4%BB%8B)
+
+7. [React实例-小姐姐服务菜单 (309)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC07%E8%8A%82%EF%BC%9Areact%E5%AE%9E%E4%BE%8B-%E5%B0%8F%E5%A7%90%E5%A7%90%E6%9C%8D%E5%8A%A1%E8%8F%9C%E5%8D%95)
+
+8. [React实例-宝剑磨的好,理论不能少(308)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC08%E8%8A%82%EF%BC%9Areact%E5%AE%9E%E4%BE%8B-%E5%AE%9D%E5%89%91%E7%A3%A8%E7%9A%84%E5%A5%BD-%E7%90%86%E8%AE%BA%E4%B8%8D%E8%83%BD%E5%B0%91)
+
+9. [React实例-老板我要加个钟(307)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC09%E8%8A%82%EF%BC%9Areact%E5%AE%9E%E4%BE%8B-%E8%80%81%E6%9D%BF%E6%88%91%E8%A6%81%E5%8A%A0%E4%B8%AA%E9%92%9F)
+
+10. [React实例-宝剑虽然好 老腰受不了(306)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC10%E8%8A%82%EF%BC%9Areact%E5%AE%9E%E4%BE%8B-%E5%AE%9D%E5%89%91%E8%99%BD%E7%84%B6%E5%A5%BD-%E8%80%81%E8%85%B0%E5%8F%97%E4%B8%8D%E4%BA%86)
+
+11. [React进阶-JSX防踩坑的几个地方(305)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC11%E8%8A%82%EF%BC%9Areact%E8%BF%9B%E9%98%B6-jsx%E9%98%B2%E8%B8%A9%E5%9D%91%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9C%B0%E6%96%B9)
+
+12. [React进阶-Simple React Snippets(304)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC12%E8%8A%82%EF%BC%9Areact%E8%BF%9B%E9%98%B6-simple-react-snippets)
+
+13. [React进阶-组件的拆分(303)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC13%E8%8A%82%EF%BC%9Areact%E8%BF%9B%E9%98%B6-%E7%BB%84%E4%BB%B6%E7%9A%84%E6%8B%86%E5%88%86)
+
+14. [React进阶-父子组件的传值(303)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC14%E8%8A%82%EF%BC%9Areact%E8%BF%9B%E9%98%B6-%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BC%A0%E5%80%BC)
+
+15. [React进阶-单项数据流和其他(302)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC15%E8%8A%82%EF%BC%9Areact%E8%BF%9B%E9%98%B6-%E5%8D%95%E9%A1%B9%E6%95%B0%E6%8D%AE%E6%B5%81%E5%92%8C%E5%85%B6%E4%BB%96)
+
+16. [React高级-调试工具的安装及使用(301)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC16%E8%8A%82%EF%BC%9Areact%E9%AB%98%E7%BA%A7-%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8)
+
+17. [React高级-PropTypes校验传递值(300)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC17%E8%8A%82%EF%BC%9Areact%E9%AB%98%E7%BA%A7-proptypes%E6%A0%A1%E9%AA%8C%E4%BC%A0%E9%80%92%E5%80%BC)
+
+18. [React高级-ref的使用方法(299)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC18%E8%8A%82%EF%BC%9Areact%E9%AB%98%E7%BA%A7-ref%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+
+19. [React高级-生命周期讲解-1(298)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC19%E8%8A%82%EF%BC%9Areact%E9%AB%98%E7%BA%A7-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%AE%B2%E8%A7%A3-1)
+
+20. [React高级-生命周期讲解-2(297)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC20%E8%8A%82%EF%BC%9Areact%E9%AB%98%E7%BA%A7-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%AE%B2%E8%A7%A3-2)
+
+21. [React高级-生命周期讲解-3(296)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC21%E8%8A%82%EF%BC%9Areact%E9%AB%98%E7%BA%A7-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%AE%B2%E8%A7%A3-3)
+
+22. [React高级-生命周期改善程序性能(295)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC22%E8%8A%82%EF%BC%9Areact%E9%AB%98%E7%BA%A7-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%94%B9%E5%96%84%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD)
+
+23. [React高级-axios数据请求(294)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC23%E8%8A%82%EF%BC%9Areact%E9%AB%98%E7%BA%A7-axios%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82)
+
+24. [React高级-Axios请求EasyMock(293)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC24%E8%8A%82%EF%BC%9Areact%E9%AB%98%E7%BA%A7-axios%E8%AF%B7%E6%B1%82easymock)
+
+25. [React高级-用CSS3实现react动画(292)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC25%E8%8A%82%EF%BC%9Areact%E9%AB%98%E7%BA%A7-%E7%94%A8css3%E5%AE%9E%E7%8E%B0react%E5%8A%A8%E7%94%BB)
+
+26. [React高级-CSS3的keyframes动画(291)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC26%E8%8A%82%EF%BC%9Areact%E9%AB%98%E7%BA%A7-css3%E7%9A%84keyframes%E5%8A%A8%E7%94%BB)
+
+27. [React高级-react-transition-group(290)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC27%E8%8A%82%EF%BC%9Areact%E9%AB%98%E7%BA%A7-react-transition-group)
+
+28. [React高级-多DOM动画制作和编写(289)](http://jspang.com/posts/2019/05/04/new-react-base.html#%E7%AC%AC28%E8%8A%82%EF%BC%9Areact%E9%AB%98%E7%BA%A7-%E5%A4%9Adom%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C%E5%92%8C%E7%BC%96%E5%86%99)
+
 
 
 ## 第01节：React课程前言
@@ -2310,8 +2372,9 @@ render() {
 
 通过上一节的学习，只能控制一个DOM元素的动画，想控制多个动画`react-transition-group`这个动画库也是可以做到的。这节课就带你了解一下多DOM动画控制的方法。
 
+<iframe src="//player.bilibili.com/player.html?aid=51455080&cid=97734733&page=28" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
 
-###　使用`TransitionGroup`
+### 使用`TransitionGroup`
 
 它就是负责多个DOM元素的动画的，我们还是拿小姐姐这个案例作例子，现在可以添加任何的服务项目，但是都是直接出现的，没有任何动画，现在就给它添加上动画。添加动画，先引入`transitionGrop`。
 
@@ -2381,5 +2444,7 @@ import {CSSTransition , TransitionGroup} from 'react-transition-group'
 
 
 学完这节，React的基础知识部分就到这里了，下节课开始讲解`Rudex`的知识，希望你能跟着技术胖继续学习，一起努力进步。
+
+
 
 
