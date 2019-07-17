@@ -4,7 +4,7 @@ category: 视频教程
 tags:
   - React
 date: 2019-06-20
-title: Redux免费视频教程（更新第14集）
+title: Redux免费视频教程（更新第16集）
 vssue-title: redux-base
 ---
 
@@ -25,7 +25,7 @@ React当中的组件通信和状态管理是特别繁琐的，比如子组件和
 
 其实能搜到这篇文章，证明对`Redux`也算有一个基本认识，这篇文章适合初级前端开发者阅读，会详细讲解Redux的基础知识，在了解基础知识后，会逐步增加Redux高级内容。
 
-> 课程内容参照了《深入浅出React和Redux》但是都是从新编排和加入了自己的理解，作者如有异议，可以联系博主。
+> 课程内容参照了《深入浅出React和Redux》但是都是从新编排和加入了自己的理解，作者如有异议或要求删除，可以联系博主。
 
 <iframe src="//player.bilibili.com/player.html?aid=56213747&cid=98253773&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
 
@@ -73,6 +73,9 @@ Redux是一个用来管理管理数据状态和UI状态的JavaScript应用工具
 这节课要学习的知识非常重要，你只有学会了`Redux`工作流程，你才能对`Redux`有个通透的了解。如果你只官方的图或者自己看文档，还是有一点难度的。但是如果你红尘接触的多或者跟胖哥一样，是一个喜欢小姐姐的人，那这个流程就很简单了。（看视频）
 
 <iframe src="//player.bilibili.com/player.html?aid=56213747&cid=98877621&page=2" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+(1.5倍新世界)
+
 
 ### redux官方图片
 
@@ -1350,7 +1353,9 @@ export default TodoListUi;
 
 ## P15:进阶-Axios异步获取数据并和Redux结合
 
-这节课是最近几天小伙伴问我比较多的问题，就是从后端接口获取了数据，如何可以放到`Redux`的`store`中，很多小伙伴放佛被这个困难难住了。这节课就来学习一下如何从后台取得数据，并和`Redux`结合，实现想要的业务逻辑。比如以前我们的列表数据是在`Reducer`里写死的，这节课使用`Axios`从后台获取数据。
+这节课是最近几天小伙伴问我比较多的问题，就是从后端接口获取了数据，如何可以放到`Redux`的`store`中，很多小伙伴被这个困难卡住了。这节课就来学习一下如何从后台取得数据，并和`Redux`结合，实现想要的业务逻辑。比如以前我们的列表数据是在`Reducer`里写死的，这节课使用`Axios`从后台获取数据。
+
+<iframe src="//player.bilibili.com/player.html?aid=56213747&cid=103134905&page=15" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
 
 
 ### 利用easy-mock创建模拟数据
@@ -1359,7 +1364,7 @@ export default TodoListUi;
 
 > 地址：https://www.easy-mock.com/mock/5cfcce489dc7c36bd6da2c99/xiaojiejie/getList
 
-JSON的基本格式:
+JSON的基本格式，如果上面的接口不管用了，你可以用`Easy mock`自己作一个这样的接口:
 
 ```json
 {
@@ -1373,9 +1378,10 @@ JSON的基本格式:
 }
 ```
 
+
 ### 安装并使用`Axios`
 
-因为在`Redux`的学习中使用了新的项目和目录，所以要重新安装`Axios`插件。这里可以直接使用`npm`进行安装。
+因为在`Redux`的学习中，我们使用了新的项目和目录，所以要重新安装`Axios`插件（以前安装的不能再使用了）。直接使用`npm`进行安装。
 
 ```
 npm install --save axios
@@ -1395,7 +1401,7 @@ componentDidMount(){
 }
 ```
 
-做完这一步骤后，可以在浏览器中打开，预览下是否控制台获取数据，如果可以获取，说明完全正常。
+做完这一步骤后，可以在浏览器中打开，预览下是否控制台(console)获取数据，如果可以获取，说明完全正常。
 
 
 ### 获取数据后跟`Redux`相结合（重点）
@@ -1417,7 +1423,7 @@ export const  GET_LIST = 'getList'
 引入到`actionCreatores.js`中
 
 ```js
-import {CHANGE_INPUT , ADD_ITEM,DELETE_ITEM,GET_LIST}  from './actionTypes'
+import {CHANGE_INPUT , ADD_ITEM , DELETE_ITEM , GET_LIST}  from './actionTypes'
 ```
 
 这步完成后，回到`TodoList.js`文件，继续编写`axios`中的回调内容，在写之前，记得先把`getListAction`进行引入。
@@ -1475,4 +1481,145 @@ export default (state = defaultState,action)=>{
 }
 ```
 
-这样就完成了一次从后台请求数据，然后和Redux结合的过程。希望小伙伴都能练习一下，这越来越像真实的开发了。
+这样就完成了一次从后台请求数据，然后和Redux结合的过程。希望小伙伴都能练习一下，我们的程序员越来越像真实的开发了，小伙伴也要在练习中不断熟悉这种开发模式。
+
+
+## P16:进阶-Redux-thunk中间件的安装和配置
+
+通过学习，你已经对`Redux`的基本流程有了全面的了解，也许你已经在项目中开始使用。其实咱们一起学完了大部分的Redux知识，但是我还是决定继续讲解一下`Redux-thunk`这个Redux最常用的插件。什么时候会用到这个插件那？比如在`Dispatch`一个`Action`之后，到达`reducer`之前，进行一些额外的操作，就需要用到`middleware`（中间件）。在实际工作中你可以使用中间件来进行日志记录、创建崩溃报告，调用异步接口或者路由。 这个中间件可以使用是`Redux-thunk`来进行增强(当然你也可以使用其它的)，它就是对Redux中`dispatch`的加强，这节课我们先来学习一下安装和配置（特别是配置的使用很多小伙伴都配置不成功）。
+
+<iframe src="//player.bilibili.com/player.html?aid=56213747&cid=103582284&page=16" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+![Redux-thunk](https://jspang.com/images/redux_action.png)
+
+
+### 安装`Redux-thunk`组件
+
+`Redux-thunk`并不在`Redux`基础组件中，也就是说需要进行新安装。安装使用`npm`就可以了。
+
+```
+npm install --save redux-thunk
+```
+
+在终端命令行输入上面的命令，就可以进行安装了，根据网络不同安装的时间也会有些不同，我办公室的网是秒按，家里的宽带需要10分钟左右。
+
+### 配置`Redux-thunk`组件
+
+安装作起来很容易，但是配置就要稍微注意一下了，这里边还是有几个小坑的，如果你完全按照官方文档是配置不成功的。
+需要在创建store的地方引入`redux-thunk`，对于我们的目录来说，就是`/store/index.js`文件。
+
+1.引入`applyMiddleware`,如果你要使用中间件，就必须在redux中引入`applyMiddleware`.
+
+```js
+import { createStore , applyMiddleware } from 'redux' 
+```
+2.引入`redux-thunk`库
+
+```js
+import thunk from 'redux-thunk'
+```
+如果你按照官方文档来写，你直接把thunk放到`createStore`里的第二个参数就可以了，但以前我们配置了`Redux Dev Tools`，已经占用了第二个参数。
+
+官方文档给的方法:
+
+```js
+const store = createStore(
+    reducer,
+    applyMiddleware(thunk)
+) // 创建数据存储仓库
+```
+这样写是完全没有问题的，但是我们的`Redux Dev Tools`插件就不能使用了，如果想两个同时使用，需要使用**增强函数**。使用增加函数前需要先引入`compose`。
+
+```js
+import { createStore , applyMiddleware ,compose } from 'redux' 
+```
+然后利用`compose`创造一个增强函数，就相当于建立了一个链式函数，代码如下:
+```js
+const composeEnhancers =   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}):compose
+```
+
+有了增强函数后，就可以把`thunk`加入进来了，这样两个函数就都会执行了。
+
+```js
+const enhancer = composeEnhancers(applyMiddleware(thunk))
+```
+这时候直接在`createStore`函数中的第二个参数，使用这个`enhancer`变量就可以了，相当于两个函数都执行了。
+```js
+const store = createStore( reducer, enhancer) // 创建数据存储仓库
+```
+也许你对增加函数还不能完全理解，其实你完全把这个想成固定代码，直接使用就好，我在这里给出全部代码，方便你以后学习使用。
+
+```js
+import { createStore , applyMiddleware ,compose } from 'redux'  //  引入createStore方法
+import reducer from './reducer'    
+import thunk from 'redux-thunk'
+
+const composeEnhancers =   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}):compose
+
+const enhancer = composeEnhancers(applyMiddleware(thunk))
+
+const store = createStore( reducer, enhancer) // 创建数据存储仓库
+export default store   //暴露出去
+```
+
+这样就算把`Redux`的中间件配置好了，可以运行项目，到浏览器看一下结果和看一下`Redux Dev Tools`插件了。
+
+## P17:进阶-Redux-thunk的使用方法
+
+这节课我们把向后台请求数据的程序放到中间件中，这样就形成了一套完整的Redux流程，所有逻辑都是在Redux的内部完成的，这样看起来更完美，而且这样作自动化测试也会变动简单很多，所以工作中你还是要尽量按照这种写法来写。现在就开始学习吧。
+
+
+### 在`actionCreators.js`里编写业务逻辑
+
+以前`actionCreators.js`都是定义好的action，根本没办法写业务逻辑，有了`Redux-thunk`之后，可以把`TodoList.js`中的`componentDidMount`业务逻辑放到这里来编写。也就是把向后台请求数据的代码放到`actionCreators.js`文件里。那我们需要引入`axios`,并写一个新的函数方法。（以前的action是对象，现在的action可以是函数了，这就是`redux-thunk`带来的好处）
+
+```js
+import axios from 'axios'
+...something...
+export const getTodoList = () =>{
+    return ()=>{
+        axios.get('https://www.easy-mock.com/mock/5cfcce489dc7c36bd6da2c99/xiaojiejie/getList').then((res)=>{
+            const data = res.data
+            console.log(data)
+        })
+    }
+}
+```
+现在我们需要执行这个方法，并在控制台查看结果，这时候可以修改`TodoList.js`文件中的`componentDidMount`代码。
+```js
+//先引入getTodoList
+import {getTodoList , changeInputAction , addItemAction ,deleteItemAction,getListAction} from './store/actionCreatores'
+---something---
+componentDidMount(){
+    const action = getTodoList()
+    store.dispatch(action)
+}
+
+```
+然后我们到浏览器的控制台中查看一下，看看是不是已经得到了后端传给我们的数据，如果一切正常，应该是可以得到。得到之后，我们继续走以前的Redux流程就可以了。
+
+```js
+export const getTodoList = () =>{
+    return (dispatch)=>{
+        axios.get('https://www.easy-mock.com/mock/5cfcce489dc7c36bd6da2c99/xiaojiejie/getList').then((res)=>{
+            const data = res.data
+            const action = getListAction(data)
+            dispatch(action)
+            
+        })
+    }
+}
+```
+这个函数可以直接传递`dispatch`进去，这是自动的，然后我们直接用`dispatch(action)`传递就好了。现在我们就可以打开浏览器进行测试了。
+
+这时候还会有一些警告，主要是我们引入了并没有使用，我们按照警告的提示，删除没用的引入就可以了。
+
+
+也许你会觉的这么写程序很绕，其实我刚开始写Redux的时候也会这么想，但是随着项目的越来越大，你会发现把共享`state`的业务逻辑放到你`Redux`提示当中是非常正确的，它会使你的程序更加有条理。而在自动化测试的时候，可以直接对一个方法进行测试，而对生命周期测试是困难的。我目前接触的大公司都是要求这样写的，如果现在还不能理解里边的好处，也不用纠结，先按照这种形式进行编写。等你写过2至3个项目后，你就能理解这种写法的好处了。
+
+
+
+
+
