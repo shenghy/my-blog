@@ -1,10 +1,9 @@
 ---
-top: true
 category: 视频教程
 tags:
   - React
 date: 2019-06-20
-title: Redux免费视频教程（更新第17集）
+title: Redux免费视频教程（共24集）
 vssue-title: redux-base
 ---
 
@@ -19,6 +18,9 @@ React当中的组件通信和状态管理是特别繁琐的，比如子组件和
 博主才疏学浅，不保知识点无误，敬请指正，我也会小心求证，力保知识的正确。
 
 <!-- more -->
+
+这里先给出这个课程的基本大纲，也是你可以学会的知识。
+![Redux免费视频教程](https://jspang.com/images/Redux_list.png)
 
 ## P01:基础-认识Redux和文章介绍
 
@@ -1625,6 +1627,8 @@ export const getTodoList = () =>{
 
 先来说明一点，我们这里讲的中间件不是`React`的中间件，而是`Redux`的中间件，这一点你要明白，否则工作中会出大问题的，你的`React`知识架构也会出现偏差。其实`Redux`的中间件不仅仅只有`Redux-thunk`，还有一个比较出名的是`Redux-saga`.当然这个中间件我们公司并没有使用，只是自己研究，所以可能讲解有不足的地方。目前国内的IT企业一般都在使用这两个中间件，使用其它的很少，这个就像可口可乐和百事可乐，所以很有必要学习一下。
 
+<iframe src="//player.bilibili.com/player.html?aid=56213747&cid=104289320&page=18" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
 
 ### redux-saga的安装
 
@@ -1708,3 +1712,749 @@ export default store
 
 现在已经完全替换成`redux-saga`了，所以以前在`TodoList.js`中的代码需要删除，不删除就会报错。主要删除`componentDidMount`声明周期函数里的代码。
 这样`redux-saga`的安装和配置就算完成了，之后我们就可以编写中间件了。其实这个配置一般在项目中也只需要作一次，你完全可以收藏网页，然后需要时回来看一下就可以了。
+
+
+## P19:进阶-用Redux-saga获取TodoList列表
+
+上节课已经完成了`redux-saga`的安装和基本配置，这篇文章就用`Redux-saga`来完成TodoList的列表获取。其实`redxu-saga`是比`redux-thunk`要复杂的，它多出了很多API需要学习，至少是学习成本增加了。但是有的人说`saga`更适合于大型项目，本人不予表态，也不想引战，如果你的公司用了`saga`，这两篇文章足可以让你入门了。话不多说，我们继续学习。
+
+<iframe src="//player.bilibili.com/player.html?aid=56213747&cid=104710945&page=19" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+
+### 编写`TodoList.js`文件
+
+我们先来改造`TodoList.js`文件，现在`componentDidMount`里边是空的，所以我们要进行redux的基本操作，这个流程我不再多作介绍了，已经练习了10几遍了。
+
+当然可以先引入一个`action`，当然这个action还没有，我们一会再进行编写，给它起名叫做`getMyListAction`(你可以起任何名字，记住就好，因为下面我们要不断使用)
+
+```js
+import {getMyListAction, changeInputAction , addItemAction ,deleteItemAction} from './store/actionCreatores'
+```
+然后顺势在`actionCreators.js`文件里把这个action创建出来。
+```js
+export const getMyListAction = ()=>({
+    type:GET_MY_LIST
+})
+
+```
+写完你会发现`GET_MY_LIST`也没有，需要先引入，再到`actionTypes.js`里进行定义
+
+```js
+import {GET_MY_LIST,CHANGE_INPUT , ADD_ITEM,DELETE_ITEM,GET_LIST}  from './actionTypes'
+```
+actionTypes.js文件定义`GET_MY_LIST`
+```js
+export const  GET_MY_LIST = 'getMyList'
+```
+
+之后就可以回到`TodoList.js`文件，编写`componentDidMount`里的内容了。
+```js
+componentDidMount(){
+    const action =getMyListAction()
+    store.dispatch(action)
+    console.log(action)
+}
+```
+
+测试完成，可以删除`console.log()`,保持代码的简洁和没有冗余代码。
+
+### 编写sagas.js文件(也是业务逻辑)
+
+用`saga`的中间件业务逻辑，就都写在这个`sagas.js`文件里，文件里我们用`mySaga`来作为入口函数。在入口函数中捕获传递过来的`action`类型，根据类型不同调用不同的方法。
+
+```js
+import { takeEvery } from 'redux-saga/effects'  
+import {GET_MY_LIST} from './actionTypes'
+
+//generator函数
+function* mySaga() {
+    //等待捕获action
+    yield takeEvery(GET_MY_LIST, getList)
+}
+
+function* getList(){
+    console.log('jspang')
+}
+  
+export default mySaga;
+```
+
+写完上面的代码，我们看一下是否可以正确在浏览器的控制台打印出结果，如果可以顺利的打印出来，说明到目前为止制作正确。然后接下来我们就要用`axios`来请求结果了。
+
+这里给出`sagas.js`的所有内容，然后详细的意思在视频中进行讲解。
+
+```js
+import { takeEvery ,put } from 'redux-saga/effects'  
+import {GET_MY_LIST} from './actionTypes'
+import {getListAction} from './actionCreatores'
+import axios from 'axios'
+
+//generator函数
+function* mySaga() {
+    //等待捕获action
+    yield takeEvery(GET_MY_LIST, getList)
+}
+
+function* getList(){
+    //这段代码我就不删除了。
+    // axios.get('https://www.easy-mock.com/mock/5cfcce489dc7c36bd6da2c99/xiaojiejie/getList').then((res)=>{
+    //     const data = res.data
+    //     const action = getListAction(data)
+    //     put(action)
+        
+    // })
+    const res = yield axios.get('https://www.easy-mock.com/mock/5cfcce489dc7c36bd6da2c99/xiaojiejie/getList')
+    const action = getListAction(res.data)
+    yield put(action)
+}
+  
+export default mySaga;
+```
+
+总结：这就是`Redux-saga`的基本使用方法，其实saga还有其它一些API，但是我工作中用的也不是很多，所以这里也只能保证你达到入门的水平，至于深入，你可以自己探索。至于`redux-thunk`和`redux-saga`哪个好的问题，这里不作争论，用网上流行的话说，小孩子才做选择题，技术老鸟全都学。
+
+## P20:进阶-React-Redux介绍和安装
+
+`React-Redux`这是一个React生态中常用组件，它可以简化`Redux`流程，这节课我们就重新建立一个项目`Demo02`，然后会利用几节课的时间用`React-redux`把之前的`TodoList`案例重新实现一遍。如果你公司不用这个插件，其实没必要耗费时间学。但是作为一篇文章，必须保证知识尽可能完整。（需要注意的是概念：React、Redux、React-redux是三个不同的东西）
+
+<iframe src="//player.bilibili.com/player.html?aid=56213747&cid=104996624&page=20" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+### `React`项目初始化
+
+因为以前已经安装了脚手架工具`creat-react-app`，所以现在直接在项目的终端中输入下面的命令。
+
+```
+create-react-app demo02
+cd demo02
+npm start
+```
+经过上面的三个命令，应该可以在浏览器中出现下面的界面（出现画面说明我们项目初始化完成）。
+
+![react-redux课程](https://jspang.com/images/react-redux001.png)
+
+安装完成后，删除一些没有必要的样式和代码，在`/src`目录下，只留一个`index.js`文件，其余的全部删除，这时候项目已经不能启动起来了，这很正常。
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+
+### 安装`react-redux`
+
+项目初始化好后，直接使用`npm`在命令行安装`React-redux`，这个网络的不同安装时间也有所不同。
+```js
+npm install --save react-redux
+```
+视频录制视时安装的版本是`7.1.0`版本，你学习的时候可能跟我有所不同，如有不同，可以到Github上查询最新API文档。
+
+
+### 修改代码，让他跑起来
+
+目前项目还是没办法跑起来的，需要建立一个`TodoList.js`的组件。项目代码如下:
+
+```js
+import React, { Component } from 'react';
+class TodoList extends Component {
+    render() { 
+        return ( <div>JSPang</div> );
+    }
+}
+export default TodoList;
+```
+有了`TodoList.js`后，我们引入到`index.js`文件下，然后修改代码如下:
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TodoList from './TodoList'
+ReactDOM.render(<TodoList />, document.getElementById('root'));
+```
+这时候再在浏览器中预览，就会只输出一个`JSPang`的字样。虽然很丑，但是项目已经跑起来了。接下来我们编写一下`render`函数中的JSX页面（为了节省大家的时间，就不再使用`antd`了）。
+
+```js
+render() { 
+    return (
+        <div>
+            <div><input /><button>提交</button></div>
+            <ul>
+                <li>JSPang</li>
+            </ul>
+        </div>
+        );
+}
+```
+这时候界面应该发生了一点变化,这样基本的项目我们就算初始化完成了，接下来我们按原来的`Redux`方式作一个`store`出来。
+
+### `Redux`的安装和使用（复习）
+
+先在终端中安装`Redux`包，因为是一个新项目，所以需要重新安装。
+
+```
+npm install --save redux
+```
+
+
+首先创建一个`store`文件夹，在`/store`下创建一个`index.js`文件,并写入下面代码：
+
+```js
+import {createStore} from 'redux'
+import reducer from './reducer'
+
+const store = createStore(reducer)
+
+export default store
+```
+目前我们还没有`reducer`，所以我们要创建`reducer.js`文件，代码如下:
+
+```js
+const defalutState = {
+    inputValue : 'jspang',
+    list :[]
+}
+
+export default (state = defalutState,action) =>{
+    return state
+}
+```
+然后再`TodoList.js`中的构造函数`constructor`中使用。
+
+```js
+import React, { Component } from 'react';
+//-----关键代码--------start
+import store from './store'
+//-----关键代码--------end
+class TodoList extends Component {
+    //-----关键代码--------start
+    constructor(props){
+        super(props)
+        this.state = store.getState()
+    }
+    //-----关键代码--------end
+    render() { 
+        return (
+            <div>
+                <div>
+                    //-----关键代码--------start
+                    <input value={this.state.inputValue} />
+                    //-----关键代码--------end
+                    <button>提交</button>
+                </div>
+                <ul>
+                    <li>JSPang</li>
+                </ul>
+            </div>
+            );
+    }
+}
+ 
+export default TodoList;
+
+```
+
+写完这段，到浏览器中保存看一下，应该就得到`store`中的值了，到目前为止，我们只是安装了`React-Redux`,但是还并没有进行使用，这节课只要是把基本的环境搭建好和复习一下以前的知识。下节课我们再逐步学习`React-Redux`的知识，小伙伴们先不要着急，先把开发环境搭建好吧。
+
+ ## P21:进阶-React-redux中的Provider和connect
+
+ 上节课已经完成了`React-redux`开发`TodoList`组件的基本环境。现在就可以开心的学习`React-redux`了，这节课主要学习一下`Provider`和`connect`这两个知识点。
+
+<iframe src="//player.bilibili.com/player.html?aid=56213747&cid=105232883&page=21" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+ ### `<Provider>`提供器讲解
+
+ `<Provider>`是一个提供器，只要使用了这个组件，组件里边的其它所有组件都可以使用`store`了，这也是`React-redux`的核心组件了。有了`<Provider>`就可以把`/src/index.js`改写成下面的代码样式，具体解释在视频中介绍了。
+
+ ```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TodoList from './TodoList'
+//---------关键代码--------start
+import { Provider } from 'react-redux'
+import store from './store'
+//声明一个App组件，然后这个组件用Provider进行包裹。
+const App = (
+    <Provider store={store}>
+        <TodoList />
+    </Provider>
+)
+//---------关键代码--------end
+ReactDOM.render(App, document.getElementById('root'));
+ ```
+
+ 写完这个，我们再去浏览器中进行查看，发现代码也是可以完美运行的。需要注意的是，现在还是用传统方法获取的`store`中的数据。有了`Provider`再获取数据就没有那么麻烦了。
+
+ ### `connect`连接器的使用
+
+ 现在如何简单的获取`store`中数据那？先打开`TodoList.js`文件，引入`connect`，它是一个连接器（其实它就是一个方法），有了这个连接器就可以很容易的获得数据了。
+
+ ```js
+ import {connect} from 'react-redux'  //引入连接器
+ ```
+这时候暴露出去的就变成了`connect`了，代码如下。
+
+```js
+export default connect(xxx,null)(TodoList);
+```
+这里的`xxx`代表一个映射关系，目前还没有制作这个映射关系。
+
+### 映射关系的制作
+
+映射关系就是把原来的state映射成组件中的`props`属性，比如我们想映射`inputValue`就可以写成如下代码。
+
+```js
+const stateToProps = (state)=>{
+    return {
+        inputValue : state.inputValue
+    }
+}
+```
+这时候再把`xxx`改为`stateToProps`
+```js
+export default connect(stateToProps,null)(TodoList)
+```
+然后把`<input>`里的`state`标签，改为`props`,代码如下:
+```js
+ <input value={this.props.inputValue} />
+```
+为了方便你学习，我这里给出所有的`TodoList.js`的所有代码。
+```js
+import React, { Component } from 'react';
+import store from './store'
+import {connect} from 'react-redux'
+
+class TodoList extends Component {
+    constructor(props){
+        super(props)
+        this.state = store.getState()
+    }
+    render() { 
+        return (
+            <div>
+                <div>
+                    <input value={this.props.inputValue} />
+                    <button>提交</button>
+                </div>
+                <ul>
+                    <li>JSPang</li>
+                </ul>
+            </div>
+            );
+    }
+}
+
+const stateToProps = (state)=>{
+    return {
+        inputValue : state.inputValue
+    }
+}
+ 
+export default connect(stateToProps,null)(TodoList);
+```
+
+写完之后再到浏览器中查看一下，发现我们映射的关系也是可以用的。这节课就是`React-Redux`插件的使用重点，你需要多写几遍，把这个流程记在心里。先到这里，下节课我们继续实现`TodoList`组件。
+
+ ## P22:进阶-React-redux的数据修改
+
+上节课已经可以用`React-redux`顺利的拿到`Store`中数据了。这节课学习如何改变`Store`中的数据。也就是当我们修改`<input>`中的值时，去改变`store`数据，UI界面也随之进行改变。
+
+<iframe src="//player.bilibili.com/player.html?aid=56213747&cid=105477337&page=22" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+
+### 编写`onChange`响应事件
+
+打开`TodoList.js`文件，然后在`<button>`上注册`onChange`事件,这里我就偷懒直接绑定`this`了。
+
+```jsx
+ <input value={this.props.inputValue} onChange={this.inputChange.bind(this)} />
+```
+有了事件需要编写对应的方法,这里先写一个最简单的`inputChange`方法。
+
+```js
+inputChange(e){
+    console.log(e.target.value)
+}
+```
+然后到浏览器中的控制台就不再有报错，而且输入时可以打印出值，这书名我们的绑定成功了。这步完成我们要改为`react-redux`的了。
+
+### 编写`DispatchToProps`
+
+要使用`react-redux`，我们可以编写另一个映射`DispatchToProps`,先看下面这段代码，你会发现有两个参数，第二个参数我们用的是`null`。
+
+```js
+export default connect(stateToProps,null)(TodoList);
+```
+
+`DispatchToProps`就是要传递的第二个参数，通过这个参数才能改变`store`中的值。
+
+```js
+const dispatchToProps = (dispatch) =>{
+    return {
+        inputChange(e){
+            console.log(e.target.value)
+        }
+    }
+}
+```
+有了这个参数之后可以把响应事件改成下面的代码.
+```js
+ <input value={this.props.inputValue} onChange={this.props.inputChange} />
+```
+然后把connect第二个参数传递过去。
+```js
+export default connect(stateToProps,dispatchToProps)(TodoList);
+```
+这时候原来的`inputChange`方法就没用了，可以删除掉。
+目前整体的代码就改为下面的样子了，我们在浏览器中预览也是可以看到效果的。此步骤成功说明映射关系支持成功。
+```js
+import React, { Component } from 'react';
+import store from './store'
+import {connect} from 'react-redux'
+
+class TodoList extends Component {
+    constructor(props){
+        super(props)
+        this.state = store.getState()
+    }
+    render() { 
+        return (
+            <div>
+                <div>
+                    <input value={this.props.inputValue} onChange={this.props.inputChange} />
+                    <button>提交</button>
+                </div>
+                <ul>
+                    <li>JSPang</li>
+                </ul>
+            </div>
+            );
+    }
+}
+const stateToProps = (state)=>{
+    return {
+        inputValue : state.inputValue
+    }
+}
+
+const dispatchToProps = (dispatch) =>{
+    return {
+        inputChange(e){
+            console.log(e.target.value)
+        }
+    }
+}
+ 
+export default connect(stateToProps,dispatchToProps)(TodoList);
+```
+
+### 派发`action`到store中
+
+映射关系已经做好了，接下来只要进行`action`的派发和`reducer`对业务逻辑的编写就可以了。派发action和以前的流程一样，我就直接给出代码了。
+
+```js
+const dispatchToProps = (dispatch) =>{
+    return {
+        inputChange(e){
+            let action = {
+                type:'change_input',
+                value:e.target.value
+            }
+            dispatch(action)
+        }
+    }
+}
+```
+
+派发后就需求在`reducer`里边，编写对应的业务逻辑了。
+
+```js
+const defalutState = {
+    inputValue : 'jspang',
+    list :[]
+}
+export default (state = defalutState,action) =>{
+    if(action.type === 'change_input'){
+        let newState = JSON.parse(JSON.stringify(state))
+        newState.inputValue = action.value
+        return newState
+    }
+    return state
+}
+```
+这样就算整个修改过程完成了，到浏览器中查看一下，应该就实现了改变input框的效果。这个流程你刚开始学会觉的很绕，但是你作的多了，你就会发现它很简单，就是一个模式，而且会降低程序出错的机率。建议这个流程你至少要写5遍以上，据我所知，几乎所有公司用react都会用到react-redux，所以这个流程重要性不次于`Redux`的流程，一定要熟练掌握。
+
+
+ ## P23:进阶-React-redux增加List数据
+
+ 这节课主要学习一下如何用`React-Redux`增加列表数据，如果你上节课的流程练习熟练了，这节课就不是很难了。这节课要实现的效果，就是点击提交按钮时，可以在列表中进行增加。
+
+ <iframe src="//player.bilibili.com/player.html?aid=56213747&cid=105700812&page=23" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+
+### 给`<button>`按钮增加点击事件
+
+直接在`/src/TodoList.js`里的`Button`增加一个`onClick`事件，代码如下:
+
+```js
+<button onClick={this.props.clickButton}>提交</button>
+```
+注意这里依然使用的`props`，也就是说还需要把方法写在`dispatchToProps`里。我们这里先写一个测试，看看是否绑定上了。
+
+```js
+const dispatchToProps = (dispatch) =>{
+    return {
+        inputChange(e){
+            let action = {
+                type:'change_input',
+                value:e.target.value
+            }
+            dispatch(action)
+        },
+        clickButton(){
+            console.log('111111111')
+        }
+    }
+}
+ 
+```
+写完`clickButton`方法后，在浏览器中预览，打开浏览器的控制台看一下结果，应该在点击时，可以看到显示`111111111`。
+这步完成，就是用`dispatch`派发`action`了。
+```js
+clickButton(){
+    let action = { type:'add_item' }
+    dispatch(action)
+}
+```
+
+### 编写`Reducer`的业务逻辑
+
+派发完成后,到`Reducer`编写业务逻辑，这一步和一起的操作基本一样。
+
+```js
+const defalutState = {
+    inputValue : 'jspang',
+    list :[]
+}
+
+export default (state = defalutState,action) =>{
+    if(action.type === 'change_input'){
+        let newState = JSON.parse(JSON.stringify(state))
+        newState.inputValue = action.value
+        return newState
+    }
+    //----关键代码------start---------
+    if(action.type === 'add_item'){
+        let newState = JSON.parse(JSON.stringify(state))
+        newState.list.push(newState.inputValue)
+        newState.inputValue = ''
+        return newState
+    }
+    //----关键代码------end---------
+    return state
+}
+```
+### 页面UI部分的制作
+
+这步完成后，我们到`TodoList.js`中进行`JSX`部分的编写，编写前需要先把`stateToProps`的映射关系做好。
+
+```js
+const stateToProps = (state)=>{
+    return {
+        inputValue : state.inputValue,
+        list:state.list
+    }
+}
+```
+有了映射关系，就可以再界面中用属性的方式，进行显示，代码如下：
+
+```js
+<ul>
+    {
+        this.props.list.map((item,index)=>{
+            return (<li key={index}>{item}</li>)
+        })
+    }
+</ul>
+```
+这样就实现了增加`TodoList`的列表项，这里给出`TodoList.js`的代码，方便学习使用.
+```js
+import React, { Component } from 'react';
+import store from './store'
+import {connect} from 'react-redux'
+
+class TodoList extends Component {
+    constructor(props){
+        super(props)
+        this.state = store.getState()
+    }
+    render() { 
+        return (
+            <div>
+                <div>
+                    <input value={this.props.inputValue} onChange={this.props.inputChange} />
+                    <button onClick={this.props.clickButton}>提交</button>
+                </div>
+                <ul>
+                    {
+                        this.props.list.map((item,index)=>{
+                            return (<li key={index}>{item}</li>)
+                        })
+                    }
+                </ul>
+            </div>
+        );
+    }
+}
+const stateToProps = (state)=>{
+    return {
+        inputValue : state.inputValue,
+        list:state.list
+    }
+}
+
+const dispatchToProps = (dispatch) =>{
+    return {
+        inputChange(e){
+            let action = {
+                type:'change_input',
+                value:e.target.value
+            }
+            dispatch(action)
+        },
+        clickButton(){
+            let action = {
+                type:'add_item'
+            }
+            dispatch(action)
+        }
+    }
+}
+export default connect(stateToProps,dispatchToProps)(TodoList);
+```
+
+还有一个删除功能我就不浪费大家时间继续制作了，如果你自己有兴趣可以试着作一下。下节课我们主要讲一下目前代码的优化，这样让你在工作中看起来更专业些。   
+
+ ## P24:加餐-React-redux程序优化(完结)
+
+ 这节课把现在写的代码优化一下，作程序的都应该有一些代码洁癖，才能写出让人称赞的程序。写完业务逻辑后作代码优化，也是程序员的本质工作之一。
+ <iframe src="//player.bilibili.com/player.html?aid=56213747&cid=106034541&page=24" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+
+ ### 用结构复制精简代码
+
+ 现在代码中有好几处`this.props`都是重复的，这时候就可以用`javascript`的解构赋值方法，来精简代码。修改`TodoList.js`中的`Render`函数，把原来带代码修改为下面的代码:
+
+```jsx
+    render() { 
+        let {inputValue ,inputChange,clickButton,list} = this.props;
+        return (
+            <div>
+                <div>
+                    <input value={inputValue} onChange={inputChange} />
+                    <button onClick={clickButton}>提交</button>
+                </div>
+                <ul>
+                    {
+                        list.map((item,index)=>{
+                            return (<li key={index}>{item}</li>)
+                        })
+                    }
+                </ul>
+            </div>
+        );
+    }
+
+```
+
+### 把`TodoList`改为UI组件-提高性能
+
+可以看到，现在的`TodoList`组件里没有任何的业务逻辑，只有一个`Render`方法，这时候就可以把它改为UI组件(无状态组件)，UI组件就是一个方法，减少很多冗余操作，从而提高程序运行性能。这时候重新声明一个`TodoList`的变量，然后把render函数里的东西复制过来，只要稍加修改，就可以得到下面的代码：
+
+```js
+const TodoList =(props)=>{
+    let {inputValue ,inputChange,clickButton,list} = props; // 粘贴过来后，此处要进行修改
+    return (
+        <div>
+            <div>
+                <input value={inputValue} onChange={inputChange} />
+                <button onClick={clickButton}>提交</button>
+            </div>
+            <ul>
+                {
+                    list.map((item,index)=>{
+                        return (<li key={index}>{item}</li>)
+                    })
+                }
+            </ul>
+        </div>
+    );
+}
+```
+代码写完后，我们删除一些不用的引入，然后就可以到浏览器中进行预览了。
+
+```js
+import React from 'react';
+import {connect} from 'react-redux'
+```
+为了更好的学习，我在这里给出目前`TodoList.js`的所有代码。
+
+```js
+import React from 'react';
+import {connect} from 'react-redux'
+
+
+const TodoList =(props)=>{
+    let {inputValue ,inputChange,clickButton,list} = props; // 粘贴过来后，此处要进行修改
+    return (
+        <div>
+            <div>
+                <input value={inputValue} onChange={inputChange} />
+                <button onClick={clickButton}>提交</button>
+            </div>
+            <ul>
+                {
+                    list.map((item,index)=>{
+                        return (<li key={index}>{item}</li>)
+                    })
+                }
+            </ul>
+        </div>
+    );
+}
+
+
+const stateToProps = (state)=>{
+    return {
+        inputValue : state.inputValue,
+        list:state.list
+    }
+}
+
+const dispatchToProps = (dispatch) =>{
+    return {
+        inputChange(e){
+            let action = {
+                type:'change_input',
+                value:e.target.value
+            }
+            dispatch(action)
+        },
+        clickButton(){
+            let action = {
+                type:'add_item'
+            }
+            dispatch(action)
+        }
+    }
+}
+export default connect(stateToProps,dispatchToProps)(TodoList);
+```
+那我们反过来，再来理解一下最后一句话代码的意思。
+
+```js
+export default connect(stateToProps,dispatchToProps)(TodoList);
+```
+`connect`的作用是把UI组件（无状态组件）和业务逻辑代码的分开，然后通过connect再链接到一起，让代码更加清晰和易于维护。这也是`React-Redux`最大的有点。
+
+`Redux`的教程和视频到这里就结束了，下套课程我会讲解`React-router`，请小伙伴们持续关注博客，获得的最新的学习视频。
+

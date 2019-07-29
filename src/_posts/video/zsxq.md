@@ -1,7 +1,8 @@
 ---
+top: true
 category: 视频教程
 tags:
-  - React
+  - 会员特权
 date: 2019-06-28
 title: 50元加入小密圈 胖哥带你学一年
 vssue-title: zhishixingqiu
@@ -27,7 +28,10 @@ vssue-title: zhishixingqiu
 
 
 <!-- more -->
+<video src="https://jspang.com/video/ZhiShiXingQiu.mp4" controls="controls" width="100%">
+</video>
 
+![VIP特权](https://jspang.com/images/vip_member.png)
 
 ## 你付费50元能得到什么？
 
