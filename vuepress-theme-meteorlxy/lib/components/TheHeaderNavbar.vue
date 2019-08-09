@@ -14,7 +14,7 @@
           技术胖
           </span>
           <span class="secondTitle">
-            专注于前端开发
+            专注前端开发,每年100集免费视频。
           </span>
         </RouterLink>
 

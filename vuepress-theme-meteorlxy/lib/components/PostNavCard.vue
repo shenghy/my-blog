@@ -4,6 +4,11 @@
     class="post-nav-card"
     :style="style"
   >
+    <div class="pnc-ad">
+      <span>
+        <a class="pnc-link" href="https://jspang.com/posts/2019/06/28/zsxq.html" target="_blank">小密圈成立，前端高手都加入啦!</a>
+      </span>
+    </div>
     <div
       v-if="showContents"
       class="post-nav-contents"
@@ -104,6 +109,13 @@ export default {
 <style lang="stylus">
 @require '~@theme/styles/variables'
 
+.pnc-ad
+  font-size 1rem
+  border-bottom 1px solid $accentColor
+  padding-bottom 0.7rem
+
+.pnc-link
+  color red
 .post-nav-card
   padding 1rem
   color $grayTextColor
