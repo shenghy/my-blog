@@ -8,8 +8,8 @@
       <main class="main">
 
         <div class="target">
-          目标：已录制<span style="color:red;"> 315 </span>集免费视频，目标<span style="color:red;"> 1000 </span>集免费视频。
-          [<a href="https://jspang.com/posts/2017/01/11/all-video-list.html" target="_blank">视频目录(339/1000)</a>]
+          目标：已录制<span style="color:red;"> 348 </span>集免费视频，目标<span style="color:red;"> 1000 </span>集免费视频。
+          [<a href="https://jspang.com/posts/2017/01/11/all-video-list.html" target="_blank">视频目录(348/1000)</a>]
         </div>
 
         <TransitionFadeSlide>
