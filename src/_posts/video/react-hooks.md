@@ -3,7 +3,7 @@ category: 视频教程
 tags:
   - React
 date: 2019-08-12
-title: React Hooks 免费视频教程(更新第8集)
+title: React Hooks 免费视频教程(共11集)
 vssue-title: react-hooks
 ---
 
@@ -863,10 +863,12 @@ export default Buttons
 这样代码就编写完成了，用`useContext`和`useReducer`实现了Redux的效果，这个代码编写过程比Redux要简单，但是也是有一定难度的。希望第一次接触的小伙伴能自己动手写5遍以上，把这种模式掌握好。
 
 
-## P09:useMemo 和 useCallback 优化React程序性能
+## P09:useMemo优化React Hooks程序性能
 
 
-`useMemo`主要用来解决使用React hooks产生的无用渲染的性能优化。使用function的形式来声明组件，时去了`shouldCompnentUpdate`这个生命周期，也就是说我们没有办法通过前后状态来决定组件是否更新。而且在函数组件中，也不再区分`mount`和`update`两个状态，这意味着函数组件的每一次调用都会执行内部的所有逻辑，就带来了非常大的性能损耗。`useMemo`和`useCallback`都是解决性能问题的，这节课先学习`useMemo`.
+`useMemo`主要用来解决使用React hooks产生的无用渲染的性能问题。使用function的形式来声明组件，失去了`shouldCompnentUpdate`（在组件更新之前）这个生命周期，也就是说我们没有办法通过组件更新前条件来决定组件是否更新。而且在函数组件中，也不再区分`mount`和`update`两个状态，这意味着函数组件的每一次调用都会执行内部的所有逻辑，就带来了非常大的性能损耗。`useMemo`和`useCallback`都是解决上述性能问题的，这节课先学习`useMemo`.
+
+<iframe src="//player.bilibili.com/player.html?aid=63409044&cid=112645273&page=9" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
 
 
 ### 性能问题展示案例
@@ -943,3 +945,185 @@ function ChildComponent({name,children}){
 
 这时在浏览器中点击一下`志玲`按钮，`changeXiaohong`就不再执行了。也节省了性能的消耗。案例只是让你更好理解，你还要从程序本身看到优化的作用。好的程序员对自己写的程序都是会进行不断优化的，这种没必要的性能浪费也是绝对不允许的，所以`useMemo`的使用在工作中还是比较多的。希望小伙伴们可以掌握。
 
+
+## P10:useRef获取DOM元素和保存变量
+
+`useRef`在工作中虽然用的不多，但是也不能缺少。它有两个主要的作用:
+
+- 用`useRef`获取React JSX中的DOM元素，获取后你就可以控制DOM的任何东西了。但是一般不建议这样来作，React界面的变化可以通过状态来控制。
+
+- 用`useRef`来保存变量，这个在工作中也很少能用到，我们有了`useContext`这样的保存其实意义不大，但是这是学习，也要把这个特性讲一下。
+
+
+<iframe src="//player.bilibili.com/player.html?aid=63409044&cid=112896821&page=10" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+
+
+### useRef获取DOM元素
+
+界面上有一个文本框，在文本框的旁边有一个按钮，当我们点击按钮时，在控制台打印出`input`的DOM元素，并进行复制到DOM中的value上。这一切都是通过`useRef`来实现。
+
+![useRef图片](https://jspang.com/images/useRef_demo01.png)
+
+在`/src`文件夹下新建一个`Example8.js`文件，然后先引入useRef，编写业务逻辑代码如下:
+
+```js
+import React, { useRef} from 'react';
+function Example8(){
+    const inputEl = useRef(null)
+    const onButtonClick=()=>{ 
+        inputEl.current.value="Hello ,JSPang"
+        console.log(inputEl) //输出获取到的DOM节点
+    }
+    return (
+        <>
+            {/*保存input的ref到inputEl */}
+            <input ref={inputEl} type="text"/>
+            <button onClick = {onButtonClick}>在input上展示文字</button>
+        </>
+    )
+}
+export default Example8
+```
+当点击按钮时，你可以看到在浏览器中的控制台完整的打印出了DOM的所有东西，并且界面上的`<input/>`框的value值也输出了我们写好的`Hello ,JSPang`。这一切说明我们可以使用useRef获取DOM元素，并且可以通过useRefu控制DOM的属性和值。
+
+
+### useRef保存普通变量
+
+这个操作在实际开发中用的并不多，但我们还是要讲解一下。就是`useRef`可以保存React中的变量。我们这里就写一个文本框，文本框用来改变`text`状态。又用`useRef`把`text`状态进行保存，最后打印在控制台上。写这段代码你会觉的很绕，其实显示开发中没必要这样写，用一个state状态就可以搞定，这里只是为了展示知识点。
+
+接着上面的代码来写，就没必要重新写一个文件了。先用`useState`声明了一个`text`状态和`setText`函数。然后编写界面，界面就是一个文本框。然后输入的时候不断变化。
+
+```js
+import React, { useRef ,useState,useEffect } from 'react';
+
+
+
+function Example8(){
+    const inputEl = useRef(null)
+    const onButtonClick=()=>{ 
+        inputEl.current.value="Hello ,useRef"
+        console.log(inputEl)
+    }
+    const [text, setText] = useState('jspang')
+    return (
+        <>
+            {/*保存input的ref到inputEl */}
+            <input ref={inputEl} type="text"/>
+            <button onClick = {onButtonClick}>在input上展示文字</button>
+            <br/>
+            <br/>
+            <input value={text} onChange={(e)=>{setText(e.target.value)}} />
+         
+        </>
+    )
+}
+
+export default Example8
+
+```
+
+这时想每次`text`发生状态改变，保存到一个变量中或者说是`useRef`中，这时候就可以使用`useRef`了。先声明一个`textRef`变量，他其实就是`useRef`函数。然后使用`useEffect`函数实现每次状态变化都进行变量修改，并打印。最后的全部代码如下。
+
+```js
+import React, { useRef ,useState,useEffect } from 'react';
+function Example8(){
+    const inputEl = useRef(null)
+    const onButtonClick=()=>{ 
+        inputEl.current.value="Hello ,useRef"
+        console.log(inputEl)
+    }
+    //-----------关键代码--------start
+    const [text, setText] = useState('jspang')
+    const textRef = useRef()
+
+    useEffect(()=>{
+        textRef.current = text;
+        console.log('textRef.current:', textRef.current)
+    })
+    //----------关键代码--------------end
+    return (
+        <>
+            {/*保存input的ref到inputEl */}
+            <input ref={inputEl} type="text"/>
+            <button onClick = {onButtonClick}>在input上展示文字</button>
+            <br/>
+            <br/>
+            <input value={text} onChange={(e)=>{setText(e.target.value)}} />
+        </>
+    )
+}
+
+export default Example8
+
+```
+
+这时候就可以实现每次状态修改，同时保存到`useRef`中了。也就是我们说的保存变量的功能。那`useRef`的主要功能就是获得DOM和变量保存，我们都已经讲过了。你的编码能力有增加了一些，让我们一起加油。
+
+
+## P11: 自定义Hooks函数获取窗口大小
+
+其实自定义Hooks函数和用Hooks创建组件很相似，跟我们平时用JavaScript写函数几乎一模一样，可能就是多了些`React Hooks`的特性，自定义Hooks函数偏向于功能，而组件偏向于界面和业务逻辑。由于差别不大，所以使用起来也是很随意的。如果是小型项目是可以的，但是如果项目足够复杂，这会让项目结构不够清晰。所以学习自定义Hooks函数还是很有必要的。
+
+<iframe src="//player.bilibili.com/player.html?aid=63409044&cid=110115747&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%"> </iframe>
+
+
+### 编写自定义函数
+
+
+在实际开发中，为了界面更加美观。获取浏览器窗口的尺寸是一个经常使用的功能，这样经常使用的功能，就可以封装成一个自定义`Hooks`函数，记住一定要用use开头，这样才能区分出什么是组件，什么是自定义函数。
+
+新建一个文件`Example9.js`,然后编写一个useWinSize,编写时我们会用到`useState`、`useEffect`和`useCallback`所以先用`import`进行引入。
+
+```js
+import React, { useState ,useEffect ,useCallback } from 'react';
+```
+然后编写函数，函数中先用useState设置`size`状态，然后编写一个每次修改状态的方法`onResize`，这个方法使用`useCallback`，目的是为了缓存方法(useMemo是为了缓存变量)。
+然后在第一次进入方法时用`useEffect`来注册`resize`监听时间。为了防止一直监听所以在方法移除时，使用return的方式移除监听。最后返回size变量就可以了。
+
+```js
+function useWinSize(){
+    const [ size , setSize] = useState({
+        width:document.documentElement.clientWidth,
+        height:document.documentElement.clientHeight
+    })
+
+    const onResize = useCallback(()=>{
+        setSize({
+            width: document.documentElement.clientWidth,
+            height: document.documentElement.clientHeight
+        })
+    },[]) 
+    useEffect(()=>{
+        window.addEventListener('resize',onResize)
+        return ()=>{
+            window.removeEventListener('resize',onResize)
+        }
+    },[])
+
+    return size;
+
+}
+
+```
+
+这就是一个自定义函数，其实和我们以前写的JS函数没什么区别，所以这里也不做太多的介绍。
+
+### 编写组件并使用自定义函数
+
+自定义`Hooks`函数已经写好了，可以直接进行使用，用法和`JavaScript`的普通函数用起来是一样的。直接在`Example9`组件使用`useWinSize`并把结果实时展示在页面上。
+
+```js
+function Example9(){
+
+    const size = useWinSize()
+    return (
+        <div>页面Size:{size.width}x{size.height}</div>
+    )
+}
+
+export default Example9 
+
+```
+
+之后就可以在浏览器中预览一下结果，可以看到当我们放大缩小浏览器窗口时，页面上的结果都会跟着进行变化。说明自定义的函数起到了作用。

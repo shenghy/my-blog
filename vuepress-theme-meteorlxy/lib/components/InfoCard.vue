@@ -177,6 +177,15 @@
         广告
       </div>
     </div>
+
+    <div class="ad-side">
+      <a href="https://sanyuan0704.github.io/react-cloud-music/" target="_blank">
+        <img src="https://jspang.com/images/ad_4.jpg" width="100%" />
+      </a>
+      <div class="ad-tag">
+        广告
+      </div>
+    </div>
    
 
 
